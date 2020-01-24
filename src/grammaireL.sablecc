@@ -33,7 +33,6 @@ equal = '=';
 lire = 'lire';
 ecrire = 'ecrire';
 return = 'retour';
-eps = ;
 
 espaces = (' ' | 13 | 10)+;
 commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
@@ -83,11 +82,11 @@ app_function =
 
 le =
  {list_expression} e e_bis |
- eps;
+ {eps};
 
 e_bis =
  {multiple_elements} comma e e_bis |
- eps;
+ {eps};
 
 //////////////// Partie  Instructions: ///////////////////////////////////////
 i =
@@ -99,7 +98,7 @@ i =
  {write} ecrire po e pf semicolon;
 
 else_block =
- {else} else bi | eps;
+ {else} else bi | {eps};
 
 bi =
  {bloc_instruction} ao li af ;
@@ -108,28 +107,28 @@ li =
  {list_instruction} i i_bis;
 
 i_bis =
- {instruction_suiv} i i_bis | eps ;
+ {instruction_suiv} i i_bis | {eps} ;
 
 //////////////// Partie  Fonction, Vars, Programme: ///////////////////////////////////////
 programme =
  {form_prog} ldv_optional ldf ;
 
 ldf =
- {l_fonc} df ldf | eps;
+ {l_fonc} df ldf | {eps};
 
 df =
  {fonc} id po ldv pf ldv_optional bi;
 
 ldv_optional =
- {opt_var} ldv semicolon | eps;
+ {opt_var} ldv semicolon | {eps};
 
 ldv =
- {l_var} dv ldv_bis | eps;
+ {l_var} dv ldv_bis | {eps};
 
 dv =
  {var} int id | int id co nb cf;
 
 ldv_bis =
- {l_var_after_comma} comma dv ldv_bis | eps;
+ {l_var_after_comma} comma dv ldv_bis | {eps};
 
 

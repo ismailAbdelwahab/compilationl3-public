@@ -201,7 +201,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseALe(ALe node)
+    public void caseAEpsLe(AEpsLe node)
     {
         defaultCase(node);
     }
@@ -213,7 +213,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAEBis(AEBis node)
+    public void caseAEpsEBis(AEpsEBis node)
     {
         defaultCase(node);
     }
@@ -261,7 +261,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAElseBlock(AElseBlock node)
+    public void caseAEpsElseBlock(AEpsElseBlock node)
     {
         defaultCase(node);
     }
@@ -285,7 +285,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAIBis(AIBis node)
+    public void caseAEpsIBis(AEpsIBis node)
     {
         defaultCase(node);
     }
@@ -303,7 +303,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseALdf(ALdf node)
+    public void caseAEpsLdf(AEpsLdf node)
     {
         defaultCase(node);
     }
@@ -321,7 +321,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseALdvOptional(ALdvOptional node)
+    public void caseAEpsLdvOptional(AEpsLdvOptional node)
     {
         defaultCase(node);
     }
@@ -333,7 +333,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseALdv(ALdv node)
+    public void caseAEpsLdv(AEpsLdv node)
     {
         defaultCase(node);
     }
@@ -357,7 +357,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseALdvBis(ALdvBis node)
+    public void caseAEpsLdvBis(AEpsLdvBis node)
     {
         defaultCase(node);
     }
@@ -520,12 +520,6 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTReturn(TReturn node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTEps(TEps node)
     {
         defaultCase(node);
     }

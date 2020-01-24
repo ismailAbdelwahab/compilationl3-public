@@ -468,17 +468,6 @@ public class Lexer
                             this.line = accept_line;
                             return token;
                         }
-                    case 29:
-                        {
-                            @SuppressWarnings("hiding") Token token = new29(
-                                getText(accept_length),
-                                start_line + 1,
-                                start_pos + 1);
-                            pushBack(accept_length);
-                            this.pos = accept_pos;
-                            this.line = accept_line;
-                            return token;
-                        }
                     }
                 }
                 else
@@ -527,9 +516,8 @@ public class Lexer
     Token new24(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TLire(line, pos); }
     Token new25(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TEcrire(line, pos); }
     Token new26(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TReturn(line, pos); }
-    Token new27(@SuppressWarnings("hiding") String text, @SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TEps(text, line, pos); }
-    Token new28(@SuppressWarnings("hiding") String text, @SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TEspaces(text, line, pos); }
-    Token new29(@SuppressWarnings("hiding") String text, @SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TCommentaire(text, line, pos); }
+    Token new27(@SuppressWarnings("hiding") String text, @SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TEspaces(text, line, pos); }
+    Token new28(@SuppressWarnings("hiding") String text, @SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) { return new TCommentaire(text, line, pos); }
 
     private int getChar() throws IOException
     {
@@ -669,7 +657,7 @@ public class Lexer
     private static int[][] accept;
 /*  {
         // INITIAL
-        {27, 28, 28, 28, 16, -1, 14, 2, 3, 18, 13, 20, 17, 19, 1, 21, 23, 0, 4, 5, 0, 0, 0, 0, 0, 0, 0, 6, 15, 7, -1, 29, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, },
+        {-1, 27, 27, 27, 16, -1, 14, 2, 3, 18, 13, 20, 17, 19, 1, 21, 23, 0, 4, 5, 0, 0, 0, 0, 0, 0, 0, 6, 15, 7, -1, 28, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, },
 
     };*/
 

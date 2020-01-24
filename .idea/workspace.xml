@@ -2,9 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compiler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Sc2Xml.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammaireL.sablecc" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammaireL.sablecc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/Analysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/lexer/Lexer$State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/lexer/Lexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/lexer/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/lexer/lexer.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/lexer/lexer.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AEBis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AEBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AElseBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AElseBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AElseI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AIBis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AIBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdvBis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdvBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdvOptional.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALdvOptional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ALe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/TEps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/TEps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/TokenIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/TokenIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/TokenIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/TokenIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/parser.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/parser.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +51,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Wqe3r5fzPLZnxHgOZrrOkIb6ew" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -57,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579881355418</updated>
-      <workItem from="1579881357956" duration="5307000" />
+      <workItem from="1579881357956" duration="5861000" />
     </task>
     <task id="LOCAL-00001" summary="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L">
       <created>1579886133980</created>
@@ -66,21 +106,30 @@
       <option name="project" value="LOCAL" />
       <updated>1579886133980</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adding sc ( result of compiled grammar with sablecc)">
+      <created>1579886722081</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579886722081</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L" />
+    <MESSAGE value="adding sc ( result of compiled grammar with sablecc)" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding sc ( result of compiled grammar with sablecc)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1579886133386">
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1579887328579">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886133386" />
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1579887328579" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl" timestamp="1579881376003">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
@@ -89,10 +138,10 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1579886431530" />
-    <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1579886296090">
+    <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1579886782218">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886296090" />
+    <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886782218" />
     <state x="1103" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1579882263650">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>

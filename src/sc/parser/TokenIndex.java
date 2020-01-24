@@ -172,14 +172,8 @@ class TokenIndex extends AnalysisAdapter
     }
 
     @Override
-    public void caseTEps(@SuppressWarnings("unused") TEps node)
-    {
-        this.index = 27;
-    }
-
-    @Override
     public void caseEOF(@SuppressWarnings("unused") EOF node)
     {
-        this.index = 28;
+        this.index = 27;
     }
 }

@@ -569,25 +569,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAListExpressionLe(node);
     }
 
-    public void inALe(ALe node)
+    public void inAEpsLe(AEpsLe node)
     {
         defaultIn(node);
     }
 
-    public void outALe(ALe node)
+    public void outAEpsLe(AEpsLe node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseALe(ALe node)
+    public void caseAEpsLe(AEpsLe node)
     {
-        inALe(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outALe(node);
+        inAEpsLe(node);
+        outAEpsLe(node);
     }
 
     public void inAMultipleElementsEBis(AMultipleElementsEBis node)
@@ -619,25 +615,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAMultipleElementsEBis(node);
     }
 
-    public void inAEBis(AEBis node)
+    public void inAEpsEBis(AEpsEBis node)
     {
         defaultIn(node);
     }
 
-    public void outAEBis(AEBis node)
+    public void outAEpsEBis(AEpsEBis node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEBis(AEBis node)
+    public void caseAEpsEBis(AEpsEBis node)
     {
-        inAEBis(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outAEBis(node);
+        inAEpsEBis(node);
+        outAEpsEBis(node);
     }
 
     public void inAAffectationI(AAffectationI node)
@@ -867,25 +859,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAElseElseBlock(node);
     }
 
-    public void inAElseBlock(AElseBlock node)
+    public void inAEpsElseBlock(AEpsElseBlock node)
     {
         defaultIn(node);
     }
 
-    public void outAElseBlock(AElseBlock node)
+    public void outAEpsElseBlock(AEpsElseBlock node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAElseBlock(AElseBlock node)
+    public void caseAEpsElseBlock(AEpsElseBlock node)
     {
-        inAElseBlock(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outAElseBlock(node);
+        inAEpsElseBlock(node);
+        outAEpsElseBlock(node);
     }
 
     public void inABlocInstructionBi(ABlocInstructionBi node)
@@ -967,25 +955,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAInstructionSuivIBis(node);
     }
 
-    public void inAIBis(AIBis node)
+    public void inAEpsIBis(AEpsIBis node)
     {
         defaultIn(node);
     }
 
-    public void outAIBis(AIBis node)
+    public void outAEpsIBis(AEpsIBis node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAIBis(AIBis node)
+    public void caseAEpsIBis(AEpsIBis node)
     {
-        inAIBis(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outAIBis(node);
+        inAEpsIBis(node);
+        outAEpsIBis(node);
     }
 
     public void inAFormProgProgramme(AFormProgProgramme node)
@@ -1038,25 +1022,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outALFoncLdf(node);
     }
 
-    public void inALdf(ALdf node)
+    public void inAEpsLdf(AEpsLdf node)
     {
         defaultIn(node);
     }
 
-    public void outALdf(ALdf node)
+    public void outAEpsLdf(AEpsLdf node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseALdf(ALdf node)
+    public void caseAEpsLdf(AEpsLdf node)
     {
-        inALdf(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outALdf(node);
+        inAEpsLdf(node);
+        outAEpsLdf(node);
     }
 
     public void inAFoncDf(AFoncDf node)
@@ -1125,25 +1105,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAOptVarLdvOptional(node);
     }
 
-    public void inALdvOptional(ALdvOptional node)
+    public void inAEpsLdvOptional(AEpsLdvOptional node)
     {
         defaultIn(node);
     }
 
-    public void outALdvOptional(ALdvOptional node)
+    public void outAEpsLdvOptional(AEpsLdvOptional node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseALdvOptional(ALdvOptional node)
+    public void caseAEpsLdvOptional(AEpsLdvOptional node)
     {
-        inALdvOptional(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outALdvOptional(node);
+        inAEpsLdvOptional(node);
+        outAEpsLdvOptional(node);
     }
 
     public void inALVarLdv(ALVarLdv node)
@@ -1171,25 +1147,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outALVarLdv(node);
     }
 
-    public void inALdv(ALdv node)
+    public void inAEpsLdv(AEpsLdv node)
     {
         defaultIn(node);
     }
 
-    public void outALdv(ALdv node)
+    public void outAEpsLdv(AEpsLdv node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseALdv(ALdv node)
+    public void caseAEpsLdv(AEpsLdv node)
     {
-        inALdv(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outALdv(node);
+        inAEpsLdv(node);
+        outAEpsLdv(node);
     }
 
     public void inAVarDv(AVarDv node)
@@ -1283,24 +1255,20 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outALVarAfterCommaLdvBis(node);
     }
 
-    public void inALdvBis(ALdvBis node)
+    public void inAEpsLdvBis(AEpsLdvBis node)
     {
         defaultIn(node);
     }
 
-    public void outALdvBis(ALdvBis node)
+    public void outAEpsLdvBis(AEpsLdvBis node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseALdvBis(ALdvBis node)
+    public void caseAEpsLdvBis(AEpsLdvBis node)
     {
-        inALdvBis(node);
-        if(node.getEps() != null)
-        {
-            node.getEps().apply(this);
-        }
-        outALdvBis(node);
+        inAEpsLdvBis(node);
+        outAEpsLdvBis(node);
     }
 }

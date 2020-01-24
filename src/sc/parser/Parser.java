@@ -324,7 +324,7 @@ public class Parser
                 push(goTo(9), list, false);
             }
             break;
-            case 21: /* reduce ALe */
+            case 21: /* reduce AEpsLe */
             {
                 ArrayList<Object> list = new21();
                 push(goTo(9), list, false);
@@ -336,7 +336,7 @@ public class Parser
                 push(goTo(10), list, false);
             }
             break;
-            case 23: /* reduce AEBis */
+            case 23: /* reduce AEpsEBis */
             {
                 ArrayList<Object> list = new23();
                 push(goTo(10), list, false);
@@ -384,7 +384,7 @@ public class Parser
                 push(goTo(12), list, false);
             }
             break;
-            case 31: /* reduce AElseBlock */
+            case 31: /* reduce AEpsElseBlock */
             {
                 ArrayList<Object> list = new31();
                 push(goTo(12), list, false);
@@ -408,7 +408,7 @@ public class Parser
                 push(goTo(15), list, false);
             }
             break;
-            case 35: /* reduce AIBis */
+            case 35: /* reduce AEpsIBis */
             {
                 ArrayList<Object> list = new35();
                 push(goTo(15), list, false);
@@ -426,7 +426,7 @@ public class Parser
                 push(goTo(17), list, false);
             }
             break;
-            case 38: /* reduce ALdf */
+            case 38: /* reduce AEpsLdf */
             {
                 ArrayList<Object> list = new38();
                 push(goTo(17), list, false);
@@ -444,7 +444,7 @@ public class Parser
                 push(goTo(19), list, false);
             }
             break;
-            case 41: /* reduce ALdvOptional */
+            case 41: /* reduce AEpsLdvOptional */
             {
                 ArrayList<Object> list = new41();
                 push(goTo(19), list, false);
@@ -456,7 +456,7 @@ public class Parser
                 push(goTo(20), list, false);
             }
             break;
-            case 43: /* reduce ALdv */
+            case 43: /* reduce AEpsLdv */
             {
                 ArrayList<Object> list = new43();
                 push(goTo(20), list, false);
@@ -480,7 +480,7 @@ public class Parser
                 push(goTo(22), list, false);
             }
             break;
-            case 47: /* reduce ALdvBis */
+            case 47: /* reduce AEpsLdvBis */
             {
                 ArrayList<Object> list = new47();
                 push(goTo(22), list, false);
@@ -981,18 +981,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new21() /* reduce ALe */
+    ArrayList<Object> new21() /* reduce AEpsLe */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PLe pleNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pleNode1 = new ALe(tepsNode2);
+        pleNode1 = new AEpsLe();
         }
 	nodeList.add(pleNode1);
         return nodeList;
@@ -1027,18 +1024,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new23() /* reduce AEBis */
+    ArrayList<Object> new23() /* reduce AEpsEBis */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PEBis pebisNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pebisNode1 = new AEBis(tepsNode2);
+        pebisNode1 = new AEpsEBis();
         }
 	nodeList.add(pebisNode1);
         return nodeList;
@@ -1247,18 +1241,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new31() /* reduce AElseBlock */
+    ArrayList<Object> new31() /* reduce AEpsElseBlock */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PElseBlock pelseblockNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pelseblockNode1 = new AElseBlock(tepsNode2);
+        pelseblockNode1 = new AEpsElseBlock();
         }
 	nodeList.add(pelseblockNode1);
         return nodeList;
@@ -1339,18 +1330,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new35() /* reduce AIBis */
+    ArrayList<Object> new35() /* reduce AEpsIBis */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PIBis pibisNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pibisNode1 = new AIBis(tepsNode2);
+        pibisNode1 = new AEpsIBis();
         }
 	nodeList.add(pibisNode1);
         return nodeList;
@@ -1405,18 +1393,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new38() /* reduce ALdf */
+    ArrayList<Object> new38() /* reduce AEpsLdf */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PLdf pldfNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pldfNode1 = new ALdf(tepsNode2);
+        pldfNode1 = new AEpsLdf();
         }
 	nodeList.add(pldfNode1);
         return nodeList;
@@ -1483,18 +1468,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new41() /* reduce ALdvOptional */
+    ArrayList<Object> new41() /* reduce AEpsLdvOptional */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PLdvOptional pldvoptionalNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pldvoptionalNode1 = new ALdvOptional(tepsNode2);
+        pldvoptionalNode1 = new AEpsLdvOptional();
         }
 	nodeList.add(pldvoptionalNode1);
         return nodeList;
@@ -1526,18 +1508,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new43() /* reduce ALdv */
+    ArrayList<Object> new43() /* reduce AEpsLdv */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PLdv pldvNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pldvNode1 = new ALdv(tepsNode2);
+        pldvNode1 = new AEpsLdv();
         }
 	nodeList.add(pldvNode1);
         return nodeList;
@@ -1627,18 +1606,15 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new47() /* reduce ALdvBis */
+    ArrayList<Object> new47() /* reduce AEpsLdvBis */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
-        @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
         PLdvBis pldvbisNode1;
         {
             // Block
-        TEps tepsNode2;
-        tepsNode2 = (TEps)nodeArrayList1.get(0);
 
-        pldvbisNode1 = new ALdvBis(tepsNode2);
+        pldvbisNode1 = new AEpsLdvBis();
         }
 	nodeList.add(pldvbisNode1);
         return nodeList;
@@ -1654,7 +1630,7 @@ public class Parser
 			{{-1, ERROR, 3}, {0, SHIFT, 1}, {1, SHIFT, 2}, {24, SHIFT, 5}, },
 			{{-1, ERROR, 4}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {24, SHIFT, 5}, },
 			{{-1, ERROR, 5}, {2, SHIFT, 18}, },
-			{{-1, ERROR, 6}, {15, SHIFT, 19}, {28, ACCEPT, -1}, },
+			{{-1, ERROR, 6}, {15, SHIFT, 19}, {27, ACCEPT, -1}, },
 			{{-1, REDUCE, 1}, {14, SHIFT, 20}, },
 			{{-1, REDUCE, 3}, {23, SHIFT, 21}, },
 			{{-1, REDUCE, 5}, {13, SHIFT, 22}, {17, SHIFT, 23}, },
@@ -1663,10 +1639,10 @@ public class Parser
 			{{-1, REDUCE, 13}, },
 			{{-1, REDUCE, 15}, },
 			{{-1, REDUCE, 17}, },
-			{{-1, ERROR, 15}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, {27, SHIFT, 26}, },
-			{{-1, ERROR, 16}, {3, SHIFT, 29}, },
+			{{-1, REDUCE, 21}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
+			{{-1, ERROR, 16}, {3, SHIFT, 28}, },
 			{{-1, REDUCE, 12}, },
-			{{-1, ERROR, 18}, {3, SHIFT, 30}, },
+			{{-1, ERROR, 18}, {3, SHIFT, 29}, },
 			{{-1, ERROR, 19}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
 			{{-1, ERROR, 20}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
 			{{-1, ERROR, 21}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
@@ -1674,9 +1650,8 @@ public class Parser
 			{{-1, ERROR, 23}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
 			{{-1, ERROR, 24}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
 			{{-1, ERROR, 25}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
-			{{-1, REDUCE, 21}, },
-			{{-1, ERROR, 27}, {15, SHIFT, 19}, {20, SHIFT, 38}, {27, SHIFT, 39}, },
-			{{-1, ERROR, 28}, {3, SHIFT, 41}, },
+			{{-1, REDUCE, 23}, {15, SHIFT, 19}, {20, SHIFT, 37}, },
+			{{-1, ERROR, 27}, {3, SHIFT, 39}, },
 			{{-1, REDUCE, 14}, },
 			{{-1, REDUCE, 18}, },
 			{{-1, REDUCE, 0}, {14, SHIFT, 20}, },
@@ -1686,26 +1661,25 @@ public class Parser
 			{{-1, REDUCE, 7}, {18, SHIFT, 24}, {19, SHIFT, 25}, },
 			{{-1, REDUCE, 9}, },
 			{{-1, REDUCE, 10}, },
-			{{-1, ERROR, 38}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
-			{{-1, REDUCE, 23}, },
+			{{-1, ERROR, 37}, {0, SHIFT, 1}, {1, SHIFT, 2}, {2, SHIFT, 3}, {16, SHIFT, 4}, {24, SHIFT, 5}, },
 			{{-1, REDUCE, 20}, },
 			{{-1, REDUCE, 19}, },
-			{{-1, ERROR, 42}, {15, SHIFT, 19}, {20, SHIFT, 38}, {27, SHIFT, 39}, },
+			{{-1, REDUCE, 23}, {15, SHIFT, 19}, {20, SHIFT, 37}, },
 			{{-1, REDUCE, 22}, },
         };*/
     private static int[][][] gotoTable;
 /*      {
-			{{-1, 6}, {15, 27}, {38, 42}, },
-			{{-1, 7}, {19, 31}, },
-			{{-1, 8}, {20, 32}, },
-			{{-1, 9}, {21, 33}, },
-			{{-1, 10}, {22, 34}, {23, 35}, },
-			{{-1, 11}, {24, 36}, {25, 37}, },
+			{{-1, 6}, {15, 26}, {37, 40}, },
+			{{-1, 7}, {19, 30}, },
+			{{-1, 8}, {20, 31}, },
+			{{-1, 9}, {21, 32}, },
+			{{-1, 10}, {22, 33}, {23, 34}, },
+			{{-1, 11}, {24, 35}, {25, 36}, },
 			{{-1, 12}, {4, 17}, },
 			{{-1, 13}, {3, 16}, },
 			{{-1, 14}, },
-			{{-1, 28}, },
-			{{-1, 40}, {42, 43}, },
+			{{-1, 27}, },
+			{{-1, 38}, {40, 41}, },
 			{{-1, -1}, },
 			{{-1, -1}, },
 			{{-1, -1}, },
@@ -1723,21 +1697,20 @@ public class Parser
 /*      {
 			"expecting: id, nb, '(', '!', 'lire'",
 			"expecting: '('",
-			"expecting: ')', '+', '&', '|', '-', '*', '/', ',', '=', eps, EOF",
+			"expecting: ')', '+', '&', '|', '-', '*', '/', ',', '=', EOF",
 			"expecting: id, nb, 'lire'",
 			"expecting: id, nb, '(', 'lire'",
 			"expecting: '|', EOF",
-			"expecting: '&', '|', ',', eps, EOF",
-			"expecting: '&', '|', ',', '=', eps, EOF",
-			"expecting: '+', '&', '|', '-', ',', '=', eps, EOF",
-			"expecting: '+', '&', '|', '-', '*', '/', ',', '=', eps, EOF",
-			"expecting: id, nb, '(', '!', 'lire', eps",
+			"expecting: ')', '&', '|', ',', EOF",
+			"expecting: ')', '&', '|', ',', '=', EOF",
+			"expecting: ')', '+', '&', '|', '-', ',', '=', EOF",
+			"expecting: id, nb, '(', ')', '!', 'lire'",
 			"expecting: ')'",
-			"expecting: '|', ',', eps",
+			"expecting: ')', '|', ','",
         };*/
     private static int[] errors;
 /*      {
-			0, 1, 2, 3, 4, 1, 5, 6, 7, 8, 9, 9, 9, 9, 2, 10, 11, 9, 11, 0, 0, 0, 0, 0, 0, 0, 11, 12, 11, 9, 2, 6, 7, 8, 9, 9, 9, 9, 0, 11, 11, 2, 12, 11, 
+			0, 1, 2, 3, 4, 1, 5, 6, 7, 8, 2, 2, 2, 2, 2, 9, 10, 2, 10, 0, 0, 0, 0, 0, 0, 0, 11, 10, 2, 2, 6, 7, 8, 2, 2, 2, 2, 0, 10, 2, 11, 10, 
         };*/
 
     static 
