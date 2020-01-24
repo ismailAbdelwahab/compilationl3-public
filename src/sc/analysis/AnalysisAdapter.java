@@ -105,6 +105,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseALowerThanCompE(ALowerThanCompE node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAArithLowECompE(AArithLowECompE node)
     {
         defaultCase(node);
@@ -291,30 +297,6 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAFormProgProgramme(AFormProgProgramme node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseALFoncLdf(ALFoncLdf node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsLdf(AEpsLdf node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAFoncDf(AFoncDf node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
     public void caseAOptVarLdvOptional(AOptVarLdvOptional node)
     {
         defaultCase(node);
@@ -339,6 +321,18 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseALVarAfterCommaLdvBis(ALVarAfterCommaLdvBis node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsLdvBis(AEpsLdvBis node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAVarDv(AVarDv node)
     {
         defaultCase(node);
@@ -351,13 +345,25 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseALVarAfterCommaLdvBis(ALVarAfterCommaLdvBis node)
+    public void caseAListFuncLdf(AListFuncLdf node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEpsLdvBis(AEpsLdvBis node)
+    public void caseAEpsLdf(AEpsLdf node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADefFuncDf(ADefFuncDf node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAFormProgProgramme(AFormProgProgramme node)
     {
         defaultCase(node);
     }
@@ -502,6 +508,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTEqual(TEqual node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTLowerThan(TLowerThan node)
     {
         defaultCase(node);
     }

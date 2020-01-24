@@ -11,4 +11,4 @@ GREEN "\t=== Compiling the grammar ===\n"
 
 java -jar sablecc.jar src/grammaireL.sablecc
 
-echo -e "\tGrammar is treated.\nCheck src/sc to see the generated files."
+echo -e ""

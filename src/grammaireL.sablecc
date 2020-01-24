@@ -30,6 +30,7 @@ comma = ',';
 semicolon = ';';
 do = 'faire';
 equal = '=';
+lower_than = '<';
 lire = 'lire';
 ecrire = 'ecrire';
 return = 'retour';
@@ -43,7 +44,7 @@ espaces, commentaire;
 
 Productions
 
-///////////// Partie Expressions: ///////////////////////////////////////
+////////////////////////////////////////// Expressions: ///////////////
 e =
  {e} e or and_e |
  {and_e} and_e;
@@ -52,6 +53,7 @@ and_e =
  {comp_e} comp_e;
 comp_e =
  {equal} comp_e equal arith_low_e |
+ {lower_than} comp_e lower_than arith_low_e |
  {arith_low_e} arith_low_e;
 
 arith_low_e =
@@ -88,7 +90,7 @@ e_bis =
  {multiple_elements} comma e e_bis |
  {eps};
 
-//////////////// Partie  Instructions: ///////////////////////////////////////
+////////////////////////////////////////Instructions ///////////////
 i =
  {affectation} id equal e |
  {if} if e then bi else_block|
@@ -109,26 +111,27 @@ li =
 i_bis =
  {instruction_suiv} i i_bis | {eps} ;
 
-//////////////// Partie  Fonction, Vars, Programme: ///////////////////////////////////////
-programme =
- {form_prog} ldv_optional ldf ;
-
-ldf =
- {l_fonc} df ldf | {eps};
-
-df =
- {fonc} id po ldv pf ldv_optional bi;
-
+////////////////////////////////////// Variables ////////////////////
 ldv_optional =
  {opt_var} ldv semicolon | {eps};
 
 ldv =
  {l_var} dv ldv_bis | {eps};
 
-dv =
- {var} int id | int id co nb cf;
-
 ldv_bis =
  {l_var_after_comma} comma dv ldv_bis | {eps};
 
+dv =
+ {var} int id | int id co nb cf;
+
+////////////////////////////////////// Functions ///////////////////
+ldf =
+ {list_func} df ldf | {eps};
+
+df =
+ {def_func} id po ldv pf ldv_optional bi;
+
+////////////////////////////////////// Program ///////////////////
+programme =
+ {form_prog} ldv_optional ldf ;
 

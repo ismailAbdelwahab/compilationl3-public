@@ -17,6 +17,7 @@ public interface Analysis extends Switch
     void caseAAndEAndE(AAndEAndE node);
     void caseACompEAndE(ACompEAndE node);
     void caseAEqualCompE(AEqualCompE node);
+    void caseALowerThanCompE(ALowerThanCompE node);
     void caseAArithLowECompE(AArithLowECompE node);
     void caseAPlusArithLowE(APlusArithLowE node);
     void caseAMoinsArithLowE(AMoinsArithLowE node);
@@ -48,18 +49,18 @@ public interface Analysis extends Switch
     void caseAListInstructionLi(AListInstructionLi node);
     void caseAInstructionSuivIBis(AInstructionSuivIBis node);
     void caseAEpsIBis(AEpsIBis node);
-    void caseAFormProgProgramme(AFormProgProgramme node);
-    void caseALFoncLdf(ALFoncLdf node);
-    void caseAEpsLdf(AEpsLdf node);
-    void caseAFoncDf(AFoncDf node);
     void caseAOptVarLdvOptional(AOptVarLdvOptional node);
     void caseAEpsLdvOptional(AEpsLdvOptional node);
     void caseALVarLdv(ALVarLdv node);
     void caseAEpsLdv(AEpsLdv node);
-    void caseAVarDv(AVarDv node);
-    void caseADv(ADv node);
     void caseALVarAfterCommaLdvBis(ALVarAfterCommaLdvBis node);
     void caseAEpsLdvBis(AEpsLdvBis node);
+    void caseAVarDv(AVarDv node);
+    void caseADv(ADv node);
+    void caseAListFuncLdf(AListFuncLdf node);
+    void caseAEpsLdf(AEpsLdf node);
+    void caseADefFuncDf(ADefFuncDf node);
+    void caseAFormProgProgramme(AFormProgProgramme node);
 
     void caseTId(TId node);
     void caseTNb(TNb node);
@@ -85,6 +86,7 @@ public interface Analysis extends Switch
     void caseTSemicolon(TSemicolon node);
     void caseTDo(TDo node);
     void caseTEqual(TEqual node);
+    void caseTLowerThan(TLowerThan node);
     void caseTLire(TLire node);
     void caseTEcrire(TEcrire node);
     void caseTReturn(TReturn node);

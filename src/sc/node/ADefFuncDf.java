@@ -5,7 +5,7 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AFoncDf extends PDf
+public final class ADefFuncDf extends PDf
 {
     private TId _id_;
     private TPo _po_;
@@ -14,12 +14,12 @@ public final class AFoncDf extends PDf
     private PLdvOptional _ldvOptional_;
     private PBi _bi_;
 
-    public AFoncDf()
+    public ADefFuncDf()
     {
         // Constructor
     }
 
-    public AFoncDf(
+    public ADefFuncDf(
         @SuppressWarnings("hiding") TId _id_,
         @SuppressWarnings("hiding") TPo _po_,
         @SuppressWarnings("hiding") PLdv _ldv_,
@@ -45,7 +45,7 @@ public final class AFoncDf extends PDf
     @Override
     public Object clone()
     {
-        return new AFoncDf(
+        return new ADefFuncDf(
             cloneNode(this._id_),
             cloneNode(this._po_),
             cloneNode(this._ldv_),
@@ -57,7 +57,7 @@ public final class AFoncDf extends PDf
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAFoncDf(this);
+        ((Analysis) sw).caseADefFuncDf(this);
     }
 
     public TId getId()

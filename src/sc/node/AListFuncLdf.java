@@ -5,17 +5,17 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ALFoncLdf extends PLdf
+public final class AListFuncLdf extends PLdf
 {
     private PDf _df_;
     private PLdf _ldf_;
 
-    public ALFoncLdf()
+    public AListFuncLdf()
     {
         // Constructor
     }
 
-    public ALFoncLdf(
+    public AListFuncLdf(
         @SuppressWarnings("hiding") PDf _df_,
         @SuppressWarnings("hiding") PLdf _ldf_)
     {
@@ -29,7 +29,7 @@ public final class ALFoncLdf extends PLdf
     @Override
     public Object clone()
     {
-        return new ALFoncLdf(
+        return new AListFuncLdf(
             cloneNode(this._df_),
             cloneNode(this._ldf_));
     }
@@ -37,7 +37,7 @@ public final class ALFoncLdf extends PLdf
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseALFoncLdf(this);
+        ((Analysis) sw).caseAListFuncLdf(this);
     }
 
     public PDf getDf()
