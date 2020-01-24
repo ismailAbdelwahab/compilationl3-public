@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammaireL.sablecc" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammaireL.sablecc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +31,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -53,18 +57,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579881355418</updated>
-      <workItem from="1579881357956" duration="4735000" />
+      <workItem from="1579881357956" duration="5307000" />
     </task>
+    <task id="LOCAL-00001" summary="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L">
+      <created>1579886133980</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579886133980</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1579886133386">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886133386" />
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl" timestamp="1579881376003">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1579881376003" />
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1579886431530">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1579886431530" />
+    <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1579886296090">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886296090" />
     <state x="1103" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1579882263650">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>

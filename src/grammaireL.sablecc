@@ -113,16 +113,22 @@ i_bis =
 //////////////// Partie  Fonction, Vars, Programme: ///////////////////////////////////////
 programme =
  {form_prog} ldv_optional ldf ;
+
 ldf =
  {l_fonc} df ldf | eps;
+
 df =
  {fonc} id po ldv pf ldv_optional bi;
+
 ldv_optional =
  {opt_var} ldv semicolon | eps;
+
 ldv =
  {l_var} dv ldv_bis | eps;
+
 dv =
  {var} int id | int id co nb cf;
+
 ldv_bis =
  {l_var_after_comma} comma dv ldv_bis | eps;
 
