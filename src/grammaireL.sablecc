@@ -3,8 +3,37 @@ Package sc;
 Helpers
 
 lettre = [['a' .. 'z'] + ['A' .. 'Z']];
+chiffre = ['0' .. '9'];
 
-Tokens
+   Tokens
+id = lettre (lettre | chiffre | '_' | '$')*;
+nb = chiffre+;
+po = '(';
+pf = ')';
+co = '[';
+cf = ']';
+ao = '{';
+af = '}';
+tq = 'tantque';
+if = 'si';
+then = 'alors';
+else = 'sinon';
+int = 'entier';
+plus = '+';
+and = '&';
+or = '|';
+not = '!';
+minus = '-';
+mult = '*';
+div = '/';
+comma = ',';
+semicolon = ';';
+do = 'faire';
+equal = '=';
+lire = 'lire';
+ecrire = 'ecrire';
+return = 'retour';
+eps = ;
 
 espaces = (' ' | 13 | 10)+;
 commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
@@ -15,5 +44,86 @@ espaces, commentaire;
 
 Productions
 
-programme = optdecvar listedecfonc ;
+///////////// Partie Expressions: ///////////////////////////////////////
+e =
+ {e} e or and_e |
+ {and_e} and_e;
+and_e =
+ {and_e} and_e and comp_e |
+ {comp_e} comp_e;
+comp_e =
+ {equal} comp_e equal arith_low_e |
+ {arith_low_e} arith_low_e;
+
+arith_low_e =
+ {plus} arith_low_e plus arith_high_e |
+ {moins} arith_low_e minus arith_high_e |
+ {arith_high_e} arith_high_e;
+
+arith_high_e =
+ {mult} arith_high_e mult neg_e |
+ {div} arith_high_e div neg_e |
+ {neg_e} neg_e;
+
+neg_e =
+ {exclamation_mark} not parenth_e |
+ {parenth_e} parenth_e;
+
+parenth_e =
+ {parenthesis} po element pf |
+ {element} element;
+
+element =
+ {number} nb |
+ {function_call} app_function |
+ {read} lire po pf;
+
+app_function =
+ {function_call_def} id po le pf;
+
+le =
+ {list_expression} e e_bis |
+ eps;
+
+e_bis =
+ {multiple_elements} comma e e_bis |
+ eps;
+
+//////////////// Partie  Instructions: ///////////////////////////////////////
+i =
+ {affectation} id equal e |
+ {if} if e then bi else_block|
+ {while} tq e do bi |
+ {ret} return e semicolon |
+ {function_call} id po le pf semicolon |
+ {write} ecrire po e pf semicolon;
+
+else_block =
+ {else} else bi | eps;
+
+bi =
+ {bloc_instruction} ao li af ;
+
+li =
+ {list_instruction} i i_bis;
+
+i_bis =
+ {instruction_suiv} i i_bis | eps ;
+
+//////////////// Partie  Fonction, Vars, Programme: ///////////////////////////////////////
+programme =
+ {form_prog} ldv_optional ldf ;
+ldf =
+ {l_fonc} df ldf | eps;
+df =
+ {fonc} id po ldv pf ldv_optional bi;
+ldv_optional =
+ {opt_var} ldv semicolon | eps;
+ldv =
+ {l_var} dv ldv_bis | eps;
+dv =
+ {var} int id | int id co nb cf;
+ldv_bis =
+ {l_var_after_comma} comma dv ldv_bis | eps;
+
 
