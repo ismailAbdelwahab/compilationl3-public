@@ -21,15 +21,12 @@ function BLUE(){
 
 ################################
 #Check if sc/ folder exists
-
 if [ ! -d "sc" ] 
 then
 	RED "\tERROR : Folder sc/ not found."
-      	YELLOW "Please recompile the grammar to generate sc/:"
-	BLUE "Commands to execute:"
-       	BLUE "\t\$cd .."
-	BLUE "\t\$./compile_grammar.sh"	
-	exit -1
+      	YELLOW "Recompiling the grammar to generate sc/:"
+       	java -jar ../sablecc.jar grammaireL.sablecc
+	GREEN "\tFolder sc/ created."
 fi
 
 ################################
@@ -40,11 +37,39 @@ GREEN "     Compilation done.\n"
 
 ################################
 # Test all files in ../test/input
+TEST_FOLDER="../test/input/*.l" 
+BLUE "Starting to test with all file in: [${NC}${TEST_FOLDER}${BLUE}]"
 
-for filename in ../test/input/*.l; do
-	YELLOW "Testing file: ${filename}"
-	java Compiler ${filename}
+# Array of files incorrect syntactically
+declare -a files_with_errors=()
+
+for file in ${TEST_FOLDER}
+do
+	filename=$(basename ${file})
+	YELLOW "Testing file: ${filename}"	
+	OUTPUT="$(java Compiler ${file})"
+	if [ "${OUTPUT}" == "[SC]" ]
+	then
+		GREEN "\tProgram syntactically correct."
+	else
+		files_with_errors+=("${filename}")
+		echo -e "${RED}\tError detected:${NC} ${OUTPUT}"
+	fi
+	done
+
+echo ""
+
+# Print final message: errors found or successful execution.
+if [ ${#files_with_errors[@]} -eq 0 ]
+then
+	GREEN "\tAll files were tested."
+	GREEN "  No error found. Exiting successfuly.\n"
+else
+	RED "\tSome errors were found."
+	RED "Here is the list of files with errors:"
+	for filename in "${files_with_errors[@]}"
+	do
+		printf " ${filename} "
+	done
 	echo ""
-done
-
-GREEN " All file were tested. exit successful."
+fi

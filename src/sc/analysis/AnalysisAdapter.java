@@ -75,6 +75,150 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseAFormProgProgramme(AFormProgProgramme node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAListFuncLdf(AListFuncLdf node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsLdf(AEpsLdf node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADefFuncDf(ADefFuncDf node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAffectationI(AAffectationI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAIfI(AIfI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAWhileI(AWhileI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseARetI(ARetI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAFunctionCallI(AFunctionCallI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAWriteI(AWriteI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAElseElseBlock(AElseElseBlock node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsElseBlock(AEpsElseBlock node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABlocInstructionBi(ABlocInstructionBi node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAListInstructionLi(AListInstructionLi node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAInstructionSuivIBis(AInstructionSuivIBis node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsIBis(AEpsIBis node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAOptVarLdvOptional(AOptVarLdvOptional node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsLdvOptional(AEpsLdvOptional node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseALVarLdv(ALVarLdv node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsLdv(AEpsLdv node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseALVarAfterCommaLdvBis(ALVarAfterCommaLdvBis node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEpsLdvBis(AEpsLdvBis node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAVarDv(AVarDv node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADv(ADv node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAEE(AEE node)
     {
         defaultCase(node);
@@ -220,150 +364,6 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAEpsEBis(AEpsEBis node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAAffectationI(AAffectationI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAIfI(AIfI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAWhileI(AWhileI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseARetI(ARetI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAFunctionCallI(AFunctionCallI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAWriteI(AWriteI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAElseElseBlock(AElseElseBlock node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsElseBlock(AEpsElseBlock node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseABlocInstructionBi(ABlocInstructionBi node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAListInstructionLi(AListInstructionLi node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAInstructionSuivIBis(AInstructionSuivIBis node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsIBis(AEpsIBis node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAOptVarLdvOptional(AOptVarLdvOptional node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsLdvOptional(AEpsLdvOptional node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseALVarLdv(ALVarLdv node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsLdv(AEpsLdv node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseALVarAfterCommaLdvBis(ALVarAfterCommaLdvBis node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsLdvBis(AEpsLdvBis node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAVarDv(AVarDv node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseADv(ADv node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAListFuncLdf(AListFuncLdf node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAEpsLdf(AEpsLdf node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseADefFuncDf(ADefFuncDf node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAFormProgProgramme(AFormProgProgramme node)
     {
         defaultCase(node);
     }
