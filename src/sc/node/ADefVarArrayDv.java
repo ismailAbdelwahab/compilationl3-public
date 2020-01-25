@@ -5,49 +5,79 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AFunctionCallDefAppFunction extends PAppFunction
+public final class ADefVarArrayDv extends PDv
 {
+    private TInt _int_;
     private TId _id_;
-    private TPo _po_;
-    private PLe _le_;
-    private TPf _pf_;
+    private TCo _co_;
+    private TNb _nb_;
+    private TCf _cf_;
 
-    public AFunctionCallDefAppFunction()
+    public ADefVarArrayDv()
     {
         // Constructor
     }
 
-    public AFunctionCallDefAppFunction(
+    public ADefVarArrayDv(
+        @SuppressWarnings("hiding") TInt _int_,
         @SuppressWarnings("hiding") TId _id_,
-        @SuppressWarnings("hiding") TPo _po_,
-        @SuppressWarnings("hiding") PLe _le_,
-        @SuppressWarnings("hiding") TPf _pf_)
+        @SuppressWarnings("hiding") TCo _co_,
+        @SuppressWarnings("hiding") TNb _nb_,
+        @SuppressWarnings("hiding") TCf _cf_)
     {
         // Constructor
+        setInt(_int_);
+
         setId(_id_);
 
-        setPo(_po_);
+        setCo(_co_);
 
-        setLe(_le_);
+        setNb(_nb_);
 
-        setPf(_pf_);
+        setCf(_cf_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AFunctionCallDefAppFunction(
+        return new ADefVarArrayDv(
+            cloneNode(this._int_),
             cloneNode(this._id_),
-            cloneNode(this._po_),
-            cloneNode(this._le_),
-            cloneNode(this._pf_));
+            cloneNode(this._co_),
+            cloneNode(this._nb_),
+            cloneNode(this._cf_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAFunctionCallDefAppFunction(this);
+        ((Analysis) sw).caseADefVarArrayDv(this);
+    }
+
+    public TInt getInt()
+    {
+        return this._int_;
+    }
+
+    public void setInt(TInt node)
+    {
+        if(this._int_ != null)
+        {
+            this._int_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._int_ = node;
     }
 
     public TId getId()
@@ -75,16 +105,16 @@ public final class AFunctionCallDefAppFunction extends PAppFunction
         this._id_ = node;
     }
 
-    public TPo getPo()
+    public TCo getCo()
     {
-        return this._po_;
+        return this._co_;
     }
 
-    public void setPo(TPo node)
+    public void setCo(TCo node)
     {
-        if(this._po_ != null)
+        if(this._co_ != null)
         {
-            this._po_.parent(null);
+            this._co_.parent(null);
         }
 
         if(node != null)
@@ -97,19 +127,19 @@ public final class AFunctionCallDefAppFunction extends PAppFunction
             node.parent(this);
         }
 
-        this._po_ = node;
+        this._co_ = node;
     }
 
-    public PLe getLe()
+    public TNb getNb()
     {
-        return this._le_;
+        return this._nb_;
     }
 
-    public void setLe(PLe node)
+    public void setNb(TNb node)
     {
-        if(this._le_ != null)
+        if(this._nb_ != null)
         {
-            this._le_.parent(null);
+            this._nb_.parent(null);
         }
 
         if(node != null)
@@ -122,19 +152,19 @@ public final class AFunctionCallDefAppFunction extends PAppFunction
             node.parent(this);
         }
 
-        this._le_ = node;
+        this._nb_ = node;
     }
 
-    public TPf getPf()
+    public TCf getCf()
     {
-        return this._pf_;
+        return this._cf_;
     }
 
-    public void setPf(TPf node)
+    public void setCf(TCf node)
     {
-        if(this._pf_ != null)
+        if(this._cf_ != null)
         {
-            this._pf_.parent(null);
+            this._cf_.parent(null);
         }
 
         if(node != null)
@@ -147,44 +177,51 @@ public final class AFunctionCallDefAppFunction extends PAppFunction
             node.parent(this);
         }
 
-        this._pf_ = node;
+        this._cf_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
+            + toString(this._int_)
             + toString(this._id_)
-            + toString(this._po_)
-            + toString(this._le_)
-            + toString(this._pf_);
+            + toString(this._co_)
+            + toString(this._nb_)
+            + toString(this._cf_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
+        if(this._int_ == child)
+        {
+            this._int_ = null;
+            return;
+        }
+
         if(this._id_ == child)
         {
             this._id_ = null;
             return;
         }
 
-        if(this._po_ == child)
+        if(this._co_ == child)
         {
-            this._po_ = null;
+            this._co_ = null;
             return;
         }
 
-        if(this._le_ == child)
+        if(this._nb_ == child)
         {
-            this._le_ = null;
+            this._nb_ = null;
             return;
         }
 
-        if(this._pf_ == child)
+        if(this._cf_ == child)
         {
-            this._pf_ = null;
+            this._cf_ = null;
             return;
         }
 
@@ -195,27 +232,33 @@ public final class AFunctionCallDefAppFunction extends PAppFunction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
+        if(this._int_ == oldChild)
+        {
+            setInt((TInt) newChild);
+            return;
+        }
+
         if(this._id_ == oldChild)
         {
             setId((TId) newChild);
             return;
         }
 
-        if(this._po_ == oldChild)
+        if(this._co_ == oldChild)
         {
-            setPo((TPo) newChild);
+            setCo((TCo) newChild);
             return;
         }
 
-        if(this._le_ == oldChild)
+        if(this._nb_ == oldChild)
         {
-            setLe((PLe) newChild);
+            setNb((TNb) newChild);
             return;
         }
 
-        if(this._pf_ == oldChild)
+        if(this._cf_ == oldChild)
         {
-            setPf((TPf) newChild);
+            setCf((TCf) newChild);
             return;
         }
 

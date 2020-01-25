@@ -5,18 +5,18 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AMultipleElementsEBis extends PEBis
+public final class AExpressionAfterCommaEBis extends PEBis
 {
     private TComma _comma_;
     private PE _e_;
     private PEBis _eBis_;
 
-    public AMultipleElementsEBis()
+    public AExpressionAfterCommaEBis()
     {
         // Constructor
     }
 
-    public AMultipleElementsEBis(
+    public AExpressionAfterCommaEBis(
         @SuppressWarnings("hiding") TComma _comma_,
         @SuppressWarnings("hiding") PE _e_,
         @SuppressWarnings("hiding") PEBis _eBis_)
@@ -33,7 +33,7 @@ public final class AMultipleElementsEBis extends PEBis
     @Override
     public Object clone()
     {
-        return new AMultipleElementsEBis(
+        return new AExpressionAfterCommaEBis(
             cloneNode(this._comma_),
             cloneNode(this._e_),
             cloneNode(this._eBis_));
@@ -42,7 +42,7 @@ public final class AMultipleElementsEBis extends PEBis
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAMultipleElementsEBis(this);
+        ((Analysis) sw).caseAExpressionAfterCommaEBis(this);
     }
 
     public TComma getComma()

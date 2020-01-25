@@ -5,17 +5,17 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AVarDv extends PDv
+public final class ADefVarDv extends PDv
 {
     private TInt _int_;
     private TId _id_;
 
-    public AVarDv()
+    public ADefVarDv()
     {
         // Constructor
     }
 
-    public AVarDv(
+    public ADefVarDv(
         @SuppressWarnings("hiding") TInt _int_,
         @SuppressWarnings("hiding") TId _id_)
     {
@@ -29,7 +29,7 @@ public final class AVarDv extends PDv
     @Override
     public Object clone()
     {
-        return new AVarDv(
+        return new ADefVarDv(
             cloneNode(this._int_),
             cloneNode(this._id_));
     }
@@ -37,7 +37,7 @@ public final class AVarDv extends PDv
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAVarDv(this);
+        ((Analysis) sw).caseADefVarDv(this);
     }
 
     public TInt getInt()

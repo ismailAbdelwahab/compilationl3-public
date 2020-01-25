@@ -10,6 +10,7 @@ public final class AAffectationI extends PI
     private TId _id_;
     private TEqual _equal_;
     private PE _e_;
+    private TSemicolon _semicolon_;
 
     public AAffectationI()
     {
@@ -19,7 +20,8 @@ public final class AAffectationI extends PI
     public AAffectationI(
         @SuppressWarnings("hiding") TId _id_,
         @SuppressWarnings("hiding") TEqual _equal_,
-        @SuppressWarnings("hiding") PE _e_)
+        @SuppressWarnings("hiding") PE _e_,
+        @SuppressWarnings("hiding") TSemicolon _semicolon_)
     {
         // Constructor
         setId(_id_);
@@ -27,6 +29,8 @@ public final class AAffectationI extends PI
         setEqual(_equal_);
 
         setE(_e_);
+
+        setSemicolon(_semicolon_);
 
     }
 
@@ -36,7 +40,8 @@ public final class AAffectationI extends PI
         return new AAffectationI(
             cloneNode(this._id_),
             cloneNode(this._equal_),
-            cloneNode(this._e_));
+            cloneNode(this._e_),
+            cloneNode(this._semicolon_));
     }
 
     @Override
@@ -120,13 +125,39 @@ public final class AAffectationI extends PI
         this._e_ = node;
     }
 
+    public TSemicolon getSemicolon()
+    {
+        return this._semicolon_;
+    }
+
+    public void setSemicolon(TSemicolon node)
+    {
+        if(this._semicolon_ != null)
+        {
+            this._semicolon_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._semicolon_ = node;
+    }
+
     @Override
     public String toString()
     {
         return ""
             + toString(this._id_)
             + toString(this._equal_)
-            + toString(this._e_);
+            + toString(this._e_)
+            + toString(this._semicolon_);
     }
 
     @Override
@@ -148,6 +179,12 @@ public final class AAffectationI extends PI
         if(this._e_ == child)
         {
             this._e_ = null;
+            return;
+        }
+
+        if(this._semicolon_ == child)
+        {
+            this._semicolon_ = null;
             return;
         }
 
@@ -173,6 +210,12 @@ public final class AAffectationI extends PI
         if(this._e_ == oldChild)
         {
             setE((PE) newChild);
+            return;
+        }
+
+        if(this._semicolon_ == oldChild)
+        {
+            setSemicolon((TSemicolon) newChild);
             return;
         }
 

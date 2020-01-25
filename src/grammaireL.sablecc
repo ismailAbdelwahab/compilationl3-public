@@ -1,24 +1,24 @@
 Package sc;
 
-Helpers
+Helpers   ////////////////////////////////////////////////////////////////////
 
 lettre = [['a' .. 'z'] + ['A' .. 'Z']];
 chiffre = ['0' .. '9'];
 
-   Tokens
-id = lettre (lettre | chiffre | '_' | '$')*;
+   Tokens //////////////////////////////////////////////////////////////////////////
+id = (lettre | '_' | '$') (lettre | chiffre | '_' | '$')*; 
+// TODO : check that "id" is != of 'ecrire' or 'lire' , etc ....
 nb = chiffre+;
+/****** Punctuation **********/
 po = '(';
 pf = ')';
 co = '[';
 cf = ']';
 ao = '{';
 af = '}';
-tq = 'tantque';
-if = 'si';
-then = 'alors';
-else = 'sinon';
-int = 'entier';
+comma = ',';
+semicolon = ';';
+/****** Operators **********/
 plus = '+';
 and = '&';
 or = '|';
@@ -26,38 +26,67 @@ not = '!';
 minus = '-';
 mult = '*';
 div = '/';
-comma = ',';
-semicolon = ';';
-do = 'faire';
 equal = '=';
 lower_than = '<';
+/****** Key words **********/
+int = 'entier';
+if = 'si';
+then = 'alors';
+else = 'sinon';
+tq = 'tantque';
+do = 'faire';
 lire = 'lire';
 ecrire = 'ecrire';
 return = 'retour';
-
+/****** Ignored signs **********/
 espaces = (' ' | 13 | 10)+;
 commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
 
-Ignored Tokens
+Ignored Tokens ////////////////////////////////////////////////////////////////////////
 
 espaces, commentaire;
 
-Productions
-////////////////////////////////////// Program ///////////////////
+Productions ///////////////////////////////////////////////////////////////////////////
+
+/************************************* Program *********************/
 programme =
  {form_prog} ldv_optional ldf ;
 
-////////////////////////////////////// Functions ///////////////////
+/************************************* Functions *******************/
 ldf =
  {list_func} df ldf | {eps};
 
 df =
  {def_func} id po ldv pf ldv_optional bi;
 
-//////////////////////////////////////Instructions ///////////////
+/************************************* Variables *******************/
+ldv_optional =
+ {opt_var} ldv semicolon | {eps}; //////////////////// TO CHANGE
+
+ldv =
+ {l_var} dv ldv_bis | {eps}; //////////////////// TO CHANGE
+
+ldv_bis =
+ {l_var_after_comma} comma dv ldv_bis | {eps};
+
+dv =
+ {def_var} int id |
+ {def_var_array} int id co nb cf
+ ;//|{def_var_affectation} int id equal e;
+
+/************************************* Instructions *****************/
+bi =
+ {bloc_instruction} ao li af ;
+
+li =
+ {list_instructions} i i_bis;
+
+i_bis =
+ {instruction_suiv} i i_bis | {eps} ;
+
 i =
- {affectation} id equal e |
- {if} if e then bi else_block|
+ {affectation} id equal e semicolon |
+ {if} if e then bi else_block |
  {while} tq e do bi |
  {ret} return e semicolon |
  {function_call} id po le pf semicolon |
@@ -66,35 +95,15 @@ i =
 else_block =
  {else} else bi | {eps};
 
-bi =
- {bloc_instruction} ao li af ;
-
-li =
- {list_instruction} i i_bis;
-
-i_bis =
- {instruction_suiv} i i_bis | {eps} ;
-
-////////////////////////////////////// Variables ////////////////////
-ldv_optional =
- {opt_var} ldv semicolon | {eps};
-
-ldv =
- {l_var} dv ldv_bis | {eps};
-
-ldv_bis =
- {l_var_after_comma} comma dv ldv_bis | {eps};
-
-dv =
- {var} int id | int id co nb cf;
-
-////////////////////////////////////////// Expressions: ///////////////
+/************************************* Expressions *******************/
 e =
  {e} e or and_e |
  {and_e} and_e;
+
 and_e =
  {and_e} and_e and comp_e |
  {comp_e} comp_e;
+
 comp_e =
  {equal} comp_e equal arith_low_e |
  {lower_than} comp_e lower_than arith_low_e |
@@ -124,13 +133,11 @@ element =
  {read} lire po pf;
 
 app_function =
- {function_call_def} id po le pf;
+ {def_function_call} id po le pf;
 
 le =
- {list_expression} e e_bis |
- {eps};
+ {list_expression} e e_bis | {eps};
 
 e_bis =
- {multiple_elements} comma e e_bis |
- {eps};
+ {expression_after_comma} comma e e_bis | {eps};
 

@@ -5,17 +5,17 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AListInstructionLi extends PLi
+public final class AListInstructionsLi extends PLi
 {
     private PI _i_;
     private PIBis _iBis_;
 
-    public AListInstructionLi()
+    public AListInstructionsLi()
     {
         // Constructor
     }
 
-    public AListInstructionLi(
+    public AListInstructionsLi(
         @SuppressWarnings("hiding") PI _i_,
         @SuppressWarnings("hiding") PIBis _iBis_)
     {
@@ -29,7 +29,7 @@ public final class AListInstructionLi extends PLi
     @Override
     public Object clone()
     {
-        return new AListInstructionLi(
+        return new AListInstructionsLi(
             cloneNode(this._i_),
             cloneNode(this._iBis_));
     }
@@ -37,7 +37,7 @@ public final class AListInstructionLi extends PLi
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAListInstructionLi(this);
+        ((Analysis) sw).caseAListInstructionsLi(this);
     }
 
     public PI getI()

@@ -5,79 +5,49 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ADv extends PDv
+public final class ADefFunctionCallAppFunction extends PAppFunction
 {
-    private TInt _int_;
     private TId _id_;
-    private TCo _co_;
-    private TNb _nb_;
-    private TCf _cf_;
+    private TPo _po_;
+    private PLe _le_;
+    private TPf _pf_;
 
-    public ADv()
+    public ADefFunctionCallAppFunction()
     {
         // Constructor
     }
 
-    public ADv(
-        @SuppressWarnings("hiding") TInt _int_,
+    public ADefFunctionCallAppFunction(
         @SuppressWarnings("hiding") TId _id_,
-        @SuppressWarnings("hiding") TCo _co_,
-        @SuppressWarnings("hiding") TNb _nb_,
-        @SuppressWarnings("hiding") TCf _cf_)
+        @SuppressWarnings("hiding") TPo _po_,
+        @SuppressWarnings("hiding") PLe _le_,
+        @SuppressWarnings("hiding") TPf _pf_)
     {
         // Constructor
-        setInt(_int_);
-
         setId(_id_);
 
-        setCo(_co_);
+        setPo(_po_);
 
-        setNb(_nb_);
+        setLe(_le_);
 
-        setCf(_cf_);
+        setPf(_pf_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ADv(
-            cloneNode(this._int_),
+        return new ADefFunctionCallAppFunction(
             cloneNode(this._id_),
-            cloneNode(this._co_),
-            cloneNode(this._nb_),
-            cloneNode(this._cf_));
+            cloneNode(this._po_),
+            cloneNode(this._le_),
+            cloneNode(this._pf_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseADv(this);
-    }
-
-    public TInt getInt()
-    {
-        return this._int_;
-    }
-
-    public void setInt(TInt node)
-    {
-        if(this._int_ != null)
-        {
-            this._int_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._int_ = node;
+        ((Analysis) sw).caseADefFunctionCallAppFunction(this);
     }
 
     public TId getId()
@@ -105,16 +75,16 @@ public final class ADv extends PDv
         this._id_ = node;
     }
 
-    public TCo getCo()
+    public TPo getPo()
     {
-        return this._co_;
+        return this._po_;
     }
 
-    public void setCo(TCo node)
+    public void setPo(TPo node)
     {
-        if(this._co_ != null)
+        if(this._po_ != null)
         {
-            this._co_.parent(null);
+            this._po_.parent(null);
         }
 
         if(node != null)
@@ -127,19 +97,19 @@ public final class ADv extends PDv
             node.parent(this);
         }
 
-        this._co_ = node;
+        this._po_ = node;
     }
 
-    public TNb getNb()
+    public PLe getLe()
     {
-        return this._nb_;
+        return this._le_;
     }
 
-    public void setNb(TNb node)
+    public void setLe(PLe node)
     {
-        if(this._nb_ != null)
+        if(this._le_ != null)
         {
-            this._nb_.parent(null);
+            this._le_.parent(null);
         }
 
         if(node != null)
@@ -152,19 +122,19 @@ public final class ADv extends PDv
             node.parent(this);
         }
 
-        this._nb_ = node;
+        this._le_ = node;
     }
 
-    public TCf getCf()
+    public TPf getPf()
     {
-        return this._cf_;
+        return this._pf_;
     }
 
-    public void setCf(TCf node)
+    public void setPf(TPf node)
     {
-        if(this._cf_ != null)
+        if(this._pf_ != null)
         {
-            this._cf_.parent(null);
+            this._pf_.parent(null);
         }
 
         if(node != null)
@@ -177,51 +147,44 @@ public final class ADv extends PDv
             node.parent(this);
         }
 
-        this._cf_ = node;
+        this._pf_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._int_)
             + toString(this._id_)
-            + toString(this._co_)
-            + toString(this._nb_)
-            + toString(this._cf_);
+            + toString(this._po_)
+            + toString(this._le_)
+            + toString(this._pf_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._int_ == child)
-        {
-            this._int_ = null;
-            return;
-        }
-
         if(this._id_ == child)
         {
             this._id_ = null;
             return;
         }
 
-        if(this._co_ == child)
+        if(this._po_ == child)
         {
-            this._co_ = null;
+            this._po_ = null;
             return;
         }
 
-        if(this._nb_ == child)
+        if(this._le_ == child)
         {
-            this._nb_ = null;
+            this._le_ = null;
             return;
         }
 
-        if(this._cf_ == child)
+        if(this._pf_ == child)
         {
-            this._cf_ = null;
+            this._pf_ = null;
             return;
         }
 
@@ -232,33 +195,27 @@ public final class ADv extends PDv
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._int_ == oldChild)
-        {
-            setInt((TInt) newChild);
-            return;
-        }
-
         if(this._id_ == oldChild)
         {
             setId((TId) newChild);
             return;
         }
 
-        if(this._co_ == oldChild)
+        if(this._po_ == oldChild)
         {
-            setCo((TCo) newChild);
+            setPo((TPo) newChild);
             return;
         }
 
-        if(this._nb_ == oldChild)
+        if(this._le_ == oldChild)
         {
-            setNb((TNb) newChild);
+            setLe((PLe) newChild);
             return;
         }
 
-        if(this._cf_ == oldChild)
+        if(this._pf_ == oldChild)
         {
-            setCf((TCf) newChild);
+            setPf((TPf) newChild);
             return;
         }
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 RED=`tput bold && tput setaf 1`
 GREEN=`tput bold && tput setaf 2`
 YELLOW=`tput bold && tput setaf 3`
@@ -20,17 +19,21 @@ function BLUE(){
 }
 
 ################################
-#Check if sc/ folder exists
-if [ ! -d "sc" ] 
+# Delete and generate again sc/ directory
+
+sc_dir="sc/"
+if [ -d ${sc_dir} ] 
 then
-	RED "\tERROR : Folder sc/ not found."
-      	YELLOW "Recompiling the grammar to generate sc/:"
-       	java -jar ../sablecc.jar grammaireL.sablecc
-	GREEN "\tFolder sc/ created."
+      	YELLOW "Deleting ${sc_dir} ..."
+	rm -rf ${sc_dir}
 fi
 
+YELLOW "Generating ${sc_dir} ..." 
+java -jar ../sablecc.jar grammaireL.sablecc
+GREEN "\tDirectory ${sc_dir} created.\n"
+
 ################################
-#Compile the compiler
+# Compile the compiler
 YELLOW " === Compiling Compiler.java ==="
 javac Compiler.java
 GREEN "     Compilation done.\n"
