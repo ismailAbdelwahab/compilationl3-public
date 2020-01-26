@@ -7,7 +7,7 @@ import sc.analysis.*;
 @SuppressWarnings("nls")
 public final class AReadElement extends PElement
 {
-    private TLire _lire_;
+    private TRead _read_;
     private TPo _po_;
     private TPf _pf_;
 
@@ -17,12 +17,12 @@ public final class AReadElement extends PElement
     }
 
     public AReadElement(
-        @SuppressWarnings("hiding") TLire _lire_,
+        @SuppressWarnings("hiding") TRead _read_,
         @SuppressWarnings("hiding") TPo _po_,
         @SuppressWarnings("hiding") TPf _pf_)
     {
         // Constructor
-        setLire(_lire_);
+        setRead(_read_);
 
         setPo(_po_);
 
@@ -34,7 +34,7 @@ public final class AReadElement extends PElement
     public Object clone()
     {
         return new AReadElement(
-            cloneNode(this._lire_),
+            cloneNode(this._read_),
             cloneNode(this._po_),
             cloneNode(this._pf_));
     }
@@ -45,16 +45,16 @@ public final class AReadElement extends PElement
         ((Analysis) sw).caseAReadElement(this);
     }
 
-    public TLire getLire()
+    public TRead getRead()
     {
-        return this._lire_;
+        return this._read_;
     }
 
-    public void setLire(TLire node)
+    public void setRead(TRead node)
     {
-        if(this._lire_ != null)
+        if(this._read_ != null)
         {
-            this._lire_.parent(null);
+            this._read_.parent(null);
         }
 
         if(node != null)
@@ -67,7 +67,7 @@ public final class AReadElement extends PElement
             node.parent(this);
         }
 
-        this._lire_ = node;
+        this._read_ = node;
     }
 
     public TPo getPo()
@@ -124,7 +124,7 @@ public final class AReadElement extends PElement
     public String toString()
     {
         return ""
-            + toString(this._lire_)
+            + toString(this._read_)
             + toString(this._po_)
             + toString(this._pf_);
     }
@@ -133,9 +133,9 @@ public final class AReadElement extends PElement
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._lire_ == child)
+        if(this._read_ == child)
         {
-            this._lire_ = null;
+            this._read_ = null;
             return;
         }
 
@@ -158,9 +158,9 @@ public final class AReadElement extends PElement
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._lire_ == oldChild)
+        if(this._read_ == oldChild)
         {
-            setLire((TLire) newChild);
+            setRead((TRead) newChild);
             return;
         }
 

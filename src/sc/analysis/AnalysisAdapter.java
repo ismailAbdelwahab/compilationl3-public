@@ -147,6 +147,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseADefVarAffectationDv(ADefVarAffectationDv node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseABlocInstructionBi(ABlocInstructionBi node)
     {
         defaultCase(node);
@@ -172,6 +178,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAAffectationI(AAffectationI node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAffectationInArrayI(AAffectationInArrayI node)
     {
         defaultCase(node);
     }
@@ -327,6 +339,18 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseAVariableElement(AVariableElement node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAArrayElement(AArrayElement node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAFunctionCallElement(AFunctionCallElement node)
     {
         defaultCase(node);
@@ -435,24 +459,6 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTAnd(TAnd node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTOr(TOr node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTNot(TNot node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
     public void caseTMinus(TMinus node)
     {
         defaultCase(node);
@@ -477,13 +483,31 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseTNot(TNot node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTAnd(TAnd node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTOr(TOr node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseTLowerThan(TLowerThan node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTInt(TInt node)
+    public void caseTVarType(TVarType node)
     {
         defaultCase(node);
     }
@@ -507,7 +531,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTTq(TTq node)
+    public void caseTWhile(TWhile node)
     {
         defaultCase(node);
     }
@@ -519,13 +543,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTLire(TLire node)
+    public void caseTRead(TRead node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTEcrire(TEcrire node)
+    public void caseTWrite(TWrite node)
     {
         defaultCase(node);
     }

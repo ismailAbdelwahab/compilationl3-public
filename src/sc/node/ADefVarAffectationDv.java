@@ -5,54 +5,49 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ADefVarArrayDv extends PDv
+public final class ADefVarAffectationDv extends PDv
 {
     private TVarType _varType_;
     private TId _id_;
-    private TCo _co_;
-    private TNb _nb_;
-    private TCf _cf_;
+    private TEqual _equal_;
+    private PE _e_;
 
-    public ADefVarArrayDv()
+    public ADefVarAffectationDv()
     {
         // Constructor
     }
 
-    public ADefVarArrayDv(
+    public ADefVarAffectationDv(
         @SuppressWarnings("hiding") TVarType _varType_,
         @SuppressWarnings("hiding") TId _id_,
-        @SuppressWarnings("hiding") TCo _co_,
-        @SuppressWarnings("hiding") TNb _nb_,
-        @SuppressWarnings("hiding") TCf _cf_)
+        @SuppressWarnings("hiding") TEqual _equal_,
+        @SuppressWarnings("hiding") PE _e_)
     {
         // Constructor
         setVarType(_varType_);
 
         setId(_id_);
 
-        setCo(_co_);
+        setEqual(_equal_);
 
-        setNb(_nb_);
-
-        setCf(_cf_);
+        setE(_e_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ADefVarArrayDv(
+        return new ADefVarAffectationDv(
             cloneNode(this._varType_),
             cloneNode(this._id_),
-            cloneNode(this._co_),
-            cloneNode(this._nb_),
-            cloneNode(this._cf_));
+            cloneNode(this._equal_),
+            cloneNode(this._e_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseADefVarArrayDv(this);
+        ((Analysis) sw).caseADefVarAffectationDv(this);
     }
 
     public TVarType getVarType()
@@ -105,16 +100,16 @@ public final class ADefVarArrayDv extends PDv
         this._id_ = node;
     }
 
-    public TCo getCo()
+    public TEqual getEqual()
     {
-        return this._co_;
+        return this._equal_;
     }
 
-    public void setCo(TCo node)
+    public void setEqual(TEqual node)
     {
-        if(this._co_ != null)
+        if(this._equal_ != null)
         {
-            this._co_.parent(null);
+            this._equal_.parent(null);
         }
 
         if(node != null)
@@ -127,19 +122,19 @@ public final class ADefVarArrayDv extends PDv
             node.parent(this);
         }
 
-        this._co_ = node;
+        this._equal_ = node;
     }
 
-    public TNb getNb()
+    public PE getE()
     {
-        return this._nb_;
+        return this._e_;
     }
 
-    public void setNb(TNb node)
+    public void setE(PE node)
     {
-        if(this._nb_ != null)
+        if(this._e_ != null)
         {
-            this._nb_.parent(null);
+            this._e_.parent(null);
         }
 
         if(node != null)
@@ -152,32 +147,7 @@ public final class ADefVarArrayDv extends PDv
             node.parent(this);
         }
 
-        this._nb_ = node;
-    }
-
-    public TCf getCf()
-    {
-        return this._cf_;
-    }
-
-    public void setCf(TCf node)
-    {
-        if(this._cf_ != null)
-        {
-            this._cf_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._cf_ = node;
+        this._e_ = node;
     }
 
     @Override
@@ -186,9 +156,8 @@ public final class ADefVarArrayDv extends PDv
         return ""
             + toString(this._varType_)
             + toString(this._id_)
-            + toString(this._co_)
-            + toString(this._nb_)
-            + toString(this._cf_);
+            + toString(this._equal_)
+            + toString(this._e_);
     }
 
     @Override
@@ -207,21 +176,15 @@ public final class ADefVarArrayDv extends PDv
             return;
         }
 
-        if(this._co_ == child)
+        if(this._equal_ == child)
         {
-            this._co_ = null;
+            this._equal_ = null;
             return;
         }
 
-        if(this._nb_ == child)
+        if(this._e_ == child)
         {
-            this._nb_ = null;
-            return;
-        }
-
-        if(this._cf_ == child)
-        {
-            this._cf_ = null;
+            this._e_ = null;
             return;
         }
 
@@ -244,21 +207,15 @@ public final class ADefVarArrayDv extends PDv
             return;
         }
 
-        if(this._co_ == oldChild)
+        if(this._equal_ == oldChild)
         {
-            setCo((TCo) newChild);
+            setEqual((TEqual) newChild);
             return;
         }
 
-        if(this._nb_ == oldChild)
+        if(this._e_ == oldChild)
         {
-            setNb((TNb) newChild);
-            return;
-        }
-
-        if(this._cf_ == oldChild)
-        {
-            setCf((TCf) newChild);
+            setE((PE) newChild);
             return;
         }
 

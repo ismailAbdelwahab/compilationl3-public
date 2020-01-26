@@ -24,32 +24,52 @@ function BLUE(){
 sc_dir="sc/"
 if [ -d ${sc_dir} ] 
 then
-      	YELLOW "Deleting ${sc_dir} ..."
+      	YELLOW " === Deleting ${sc_dir} ==="
 	rm -rf ${sc_dir}
+	GREEN "\t${sc_dir} deleted.\n"
 fi
 
-YELLOW "Generating ${sc_dir} ..." 
-java -jar ../sablecc.jar grammaireL.sablecc
-GREEN "\tDirectory ${sc_dir} created.\n"
+YELLOW " === Generating ${sc_dir} ===" 
+OUTPUT=$(java -jar ../sablecc.jar grammaireL.sablecc)
+
+if [ $? -ne 0 ] # if compilation of grammar FAILED
+then
+	echo ${OUTPUT}
+	RED "\tError detected in the grammar."
+	YELLOW " Please check the output of the compilation above.\n"
+	exit -1
+else
+	GREEN "\tGrammar compiled.\n\tDirectory ${sc_dir} created.\n"
+fi
+
 
 ################################
 # Compile the compiler
 YELLOW " === Compiling Compiler.java ==="
-javac Compiler.java
-GREEN "     Compilation done.\n"
+OUTPUT=$(javac Compiler.java)
+
+if [ "${OUTPUT}" != "" ] # if compilation of Compiler.java FAILED
+then
+	echo ${OUTPUT}
+	RED "\t Error detected when compiling Compiler.java :"
+	YELLOW " Please check the output of the compilation above.\n"
+	exit -1
+else
+	GREEN "\tCompiler.java compiled.\n"
+fi
 
 ################################
 # Test all files in ../test/input
-TEST_FOLDER="../test/input/*.l" 
-BLUE "Starting to test with all file in: [${NC}${TEST_FOLDER}${BLUE}]"
+TEST_FILES="../test/input/*.l"
+YELLOW " === Launching tests ==="
+BLUE "Starting to test with all file in: [${NC}${TEST_FILES}${BLUE}]"
 
-# Array of files incorrect syntactically
-declare -a files_with_errors=()
+declare -a files_with_errors=() # Array of files incorrect syntactically
 
-for file in ${TEST_FOLDER}
+for file in ${TEST_FILES}
 do
 	filename=$(basename ${file})
-	YELLOW "Testing file: ${filename}"	
+	YELLOW "Testing file: < ${NC}${filename}${YELLOW} >"	
 	OUTPUT="$(java Compiler ${file})"
 	if [ "${OUTPUT}" == "[SC]" ]
 	then

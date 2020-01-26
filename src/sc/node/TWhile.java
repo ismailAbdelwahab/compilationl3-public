@@ -5,16 +5,16 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TEcrire extends Token
+public final class TWhile extends Token
 {
-    public TEcrire()
+    public TWhile()
     {
-        super.setText("ecrire");
+        super.setText("tantque ");
     }
 
-    public TEcrire(int line, int pos)
+    public TWhile(int line, int pos)
     {
-        super.setText("ecrire");
+        super.setText("tantque ");
         setLine(line);
         setPos(pos);
     }
@@ -22,18 +22,18 @@ public final class TEcrire extends Token
     @Override
     public Object clone()
     {
-      return new TEcrire(getLine(), getPos());
+      return new TWhile(getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTEcrire(this);
+        ((Analysis) sw).caseTWhile(this);
     }
 
     @Override
     public void setText(@SuppressWarnings("unused") String text)
     {
-        throw new RuntimeException("Cannot change TEcrire text.");
+        throw new RuntimeException("Cannot change TWhile text.");
     }
 }

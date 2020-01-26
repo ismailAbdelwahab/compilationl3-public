@@ -288,9 +288,9 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseADefVarDv(ADefVarDv node)
     {
         inADefVarDv(node);
-        if(node.getInt() != null)
+        if(node.getVarType() != null)
         {
-            node.getInt().apply(this);
+            node.getVarType().apply(this);
         }
         if(node.getId() != null)
         {
@@ -313,9 +313,9 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseADefVarArrayDv(ADefVarArrayDv node)
     {
         inADefVarArrayDv(node);
-        if(node.getInt() != null)
+        if(node.getVarType() != null)
         {
-            node.getInt().apply(this);
+            node.getVarType().apply(this);
         }
         if(node.getId() != null)
         {
@@ -334,6 +334,39 @@ public class DepthFirstAdapter extends AnalysisAdapter
             node.getCf().apply(this);
         }
         outADefVarArrayDv(node);
+    }
+
+    public void inADefVarAffectationDv(ADefVarAffectationDv node)
+    {
+        defaultIn(node);
+    }
+
+    public void outADefVarAffectationDv(ADefVarAffectationDv node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseADefVarAffectationDv(ADefVarAffectationDv node)
+    {
+        inADefVarAffectationDv(node);
+        if(node.getVarType() != null)
+        {
+            node.getVarType().apply(this);
+        }
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        if(node.getEqual() != null)
+        {
+            node.getEqual().apply(this);
+        }
+        if(node.getE() != null)
+        {
+            node.getE().apply(this);
+        }
+        outADefVarAffectationDv(node);
     }
 
     public void inABlocInstructionBi(ABlocInstructionBi node)
@@ -465,6 +498,51 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAAffectationI(node);
     }
 
+    public void inAAffectationInArrayI(AAffectationInArrayI node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAAffectationInArrayI(AAffectationInArrayI node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAAffectationInArrayI(AAffectationInArrayI node)
+    {
+        inAAffectationInArrayI(node);
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        if(node.getCo() != null)
+        {
+            node.getCo().apply(this);
+        }
+        if(node.getNb() != null)
+        {
+            node.getNb().apply(this);
+        }
+        if(node.getCf() != null)
+        {
+            node.getCf().apply(this);
+        }
+        if(node.getEqual() != null)
+        {
+            node.getEqual().apply(this);
+        }
+        if(node.getE() != null)
+        {
+            node.getE().apply(this);
+        }
+        if(node.getSemicolon() != null)
+        {
+            node.getSemicolon().apply(this);
+        }
+        outAAffectationInArrayI(node);
+    }
+
     public void inAIfI(AIfI node)
     {
         defaultIn(node);
@@ -516,9 +594,9 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAWhileI(AWhileI node)
     {
         inAWhileI(node);
-        if(node.getTq() != null)
+        if(node.getWhile() != null)
         {
-            node.getTq().apply(this);
+            node.getWhile().apply(this);
         }
         if(node.getE() != null)
         {
@@ -615,9 +693,9 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAWriteI(AWriteI node)
     {
         inAWriteI(node);
-        if(node.getEcrire() != null)
+        if(node.getWrite() != null)
         {
-            node.getEcrire().apply(this);
+            node.getWrite().apply(this);
         }
         if(node.getPo() != null)
         {
@@ -1134,6 +1212,60 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outANumberElement(node);
     }
 
+    public void inAVariableElement(AVariableElement node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAVariableElement(AVariableElement node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAVariableElement(AVariableElement node)
+    {
+        inAVariableElement(node);
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        outAVariableElement(node);
+    }
+
+    public void inAArrayElement(AArrayElement node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAArrayElement(AArrayElement node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAArrayElement(AArrayElement node)
+    {
+        inAArrayElement(node);
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        if(node.getCo() != null)
+        {
+            node.getCo().apply(this);
+        }
+        if(node.getE() != null)
+        {
+            node.getE().apply(this);
+        }
+        if(node.getCf() != null)
+        {
+            node.getCf().apply(this);
+        }
+        outAArrayElement(node);
+    }
+
     public void inAFunctionCallElement(AFunctionCallElement node)
     {
         defaultIn(node);
@@ -1169,9 +1301,9 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAReadElement(AReadElement node)
     {
         inAReadElement(node);
-        if(node.getLire() != null)
+        if(node.getRead() != null)
         {
-            node.getLire().apply(this);
+            node.getRead().apply(this);
         }
         if(node.getPo() != null)
         {

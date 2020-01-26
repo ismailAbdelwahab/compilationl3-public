@@ -7,7 +7,7 @@ import sc.analysis.*;
 @SuppressWarnings("nls")
 public final class AWriteI extends PI
 {
-    private TEcrire _ecrire_;
+    private TWrite _write_;
     private TPo _po_;
     private PE _e_;
     private TPf _pf_;
@@ -19,14 +19,14 @@ public final class AWriteI extends PI
     }
 
     public AWriteI(
-        @SuppressWarnings("hiding") TEcrire _ecrire_,
+        @SuppressWarnings("hiding") TWrite _write_,
         @SuppressWarnings("hiding") TPo _po_,
         @SuppressWarnings("hiding") PE _e_,
         @SuppressWarnings("hiding") TPf _pf_,
         @SuppressWarnings("hiding") TSemicolon _semicolon_)
     {
         // Constructor
-        setEcrire(_ecrire_);
+        setWrite(_write_);
 
         setPo(_po_);
 
@@ -42,7 +42,7 @@ public final class AWriteI extends PI
     public Object clone()
     {
         return new AWriteI(
-            cloneNode(this._ecrire_),
+            cloneNode(this._write_),
             cloneNode(this._po_),
             cloneNode(this._e_),
             cloneNode(this._pf_),
@@ -55,16 +55,16 @@ public final class AWriteI extends PI
         ((Analysis) sw).caseAWriteI(this);
     }
 
-    public TEcrire getEcrire()
+    public TWrite getWrite()
     {
-        return this._ecrire_;
+        return this._write_;
     }
 
-    public void setEcrire(TEcrire node)
+    public void setWrite(TWrite node)
     {
-        if(this._ecrire_ != null)
+        if(this._write_ != null)
         {
-            this._ecrire_.parent(null);
+            this._write_.parent(null);
         }
 
         if(node != null)
@@ -77,7 +77,7 @@ public final class AWriteI extends PI
             node.parent(this);
         }
 
-        this._ecrire_ = node;
+        this._write_ = node;
     }
 
     public TPo getPo()
@@ -184,7 +184,7 @@ public final class AWriteI extends PI
     public String toString()
     {
         return ""
-            + toString(this._ecrire_)
+            + toString(this._write_)
             + toString(this._po_)
             + toString(this._e_)
             + toString(this._pf_)
@@ -195,9 +195,9 @@ public final class AWriteI extends PI
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._ecrire_ == child)
+        if(this._write_ == child)
         {
-            this._ecrire_ = null;
+            this._write_ = null;
             return;
         }
 
@@ -232,9 +232,9 @@ public final class AWriteI extends PI
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._ecrire_ == oldChild)
+        if(this._write_ == oldChild)
         {
-            setEcrire((TEcrire) newChild);
+            setWrite((TWrite) newChild);
             return;
         }
 

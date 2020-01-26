@@ -5,16 +5,16 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TTq extends Token
+public final class TRead extends Token
 {
-    public TTq()
+    public TRead()
     {
-        super.setText("tantque");
+        super.setText("lire");
     }
 
-    public TTq(int line, int pos)
+    public TRead(int line, int pos)
     {
-        super.setText("tantque");
+        super.setText("lire");
         setLine(line);
         setPos(pos);
     }
@@ -22,18 +22,18 @@ public final class TTq extends Token
     @Override
     public Object clone()
     {
-      return new TTq(getLine(), getPos());
+      return new TRead(getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTTq(this);
+        ((Analysis) sw).caseTRead(this);
     }
 
     @Override
     public void setText(@SuppressWarnings("unused") String text)
     {
-        throw new RuntimeException("Cannot change TTq text.");
+        throw new RuntimeException("Cannot change TRead text.");
     }
 }

@@ -5,16 +5,16 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TInt extends Token
+public final class TWrite extends Token
 {
-    public TInt()
+    public TWrite()
     {
-        super.setText("entier");
+        super.setText("ecrire");
     }
 
-    public TInt(int line, int pos)
+    public TWrite(int line, int pos)
     {
-        super.setText("entier");
+        super.setText("ecrire");
         setLine(line);
         setPos(pos);
     }
@@ -22,18 +22,18 @@ public final class TInt extends Token
     @Override
     public Object clone()
     {
-      return new TInt(getLine(), getPos());
+      return new TWrite(getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTInt(this);
+        ((Analysis) sw).caseTWrite(this);
     }
 
     @Override
     public void setText(@SuppressWarnings("unused") String text)
     {
-        throw new RuntimeException("Cannot change TInt text.");
+        throw new RuntimeException("Cannot change TWrite text.");
     }
 }

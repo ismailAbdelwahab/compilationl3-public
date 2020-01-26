@@ -7,7 +7,7 @@ import sc.analysis.*;
 @SuppressWarnings("nls")
 public final class AWhileI extends PI
 {
-    private TTq _tq_;
+    private TWhile _while_;
     private PE _e_;
     private TDo _do_;
     private PBi _bi_;
@@ -18,13 +18,13 @@ public final class AWhileI extends PI
     }
 
     public AWhileI(
-        @SuppressWarnings("hiding") TTq _tq_,
+        @SuppressWarnings("hiding") TWhile _while_,
         @SuppressWarnings("hiding") PE _e_,
         @SuppressWarnings("hiding") TDo _do_,
         @SuppressWarnings("hiding") PBi _bi_)
     {
         // Constructor
-        setTq(_tq_);
+        setWhile(_while_);
 
         setE(_e_);
 
@@ -38,7 +38,7 @@ public final class AWhileI extends PI
     public Object clone()
     {
         return new AWhileI(
-            cloneNode(this._tq_),
+            cloneNode(this._while_),
             cloneNode(this._e_),
             cloneNode(this._do_),
             cloneNode(this._bi_));
@@ -50,16 +50,16 @@ public final class AWhileI extends PI
         ((Analysis) sw).caseAWhileI(this);
     }
 
-    public TTq getTq()
+    public TWhile getWhile()
     {
-        return this._tq_;
+        return this._while_;
     }
 
-    public void setTq(TTq node)
+    public void setWhile(TWhile node)
     {
-        if(this._tq_ != null)
+        if(this._while_ != null)
         {
-            this._tq_.parent(null);
+            this._while_.parent(null);
         }
 
         if(node != null)
@@ -72,7 +72,7 @@ public final class AWhileI extends PI
             node.parent(this);
         }
 
-        this._tq_ = node;
+        this._while_ = node;
     }
 
     public PE getE()
@@ -154,7 +154,7 @@ public final class AWhileI extends PI
     public String toString()
     {
         return ""
-            + toString(this._tq_)
+            + toString(this._while_)
             + toString(this._e_)
             + toString(this._do_)
             + toString(this._bi_);
@@ -164,9 +164,9 @@ public final class AWhileI extends PI
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._tq_ == child)
+        if(this._while_ == child)
         {
-            this._tq_ = null;
+            this._while_ = null;
             return;
         }
 
@@ -195,9 +195,9 @@ public final class AWhileI extends PI
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._tq_ == oldChild)
+        if(this._while_ == oldChild)
         {
-            setTq((TTq) newChild);
+            setWhile((TWhile) newChild);
             return;
         }
 

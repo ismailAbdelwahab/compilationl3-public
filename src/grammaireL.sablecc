@@ -1,80 +1,91 @@
 Package sc;
 
-Helpers   ////////////////////////////////////////////////////////////////////
+//##############################################################\\
+                             Helpers 
 
-lettre = [['a' .. 'z'] + ['A' .. 'Z']];
-chiffre = ['0' .. '9'];
+lettre         = [['a' .. 'z'] + ['A' .. 'Z']] ;
+chiffre        = ['0' .. '9']                  ;
+alpha_sign     = (lettre | '_' | '$')          ;
+alpha_sign_num = ( alpha_sign | chiffre )      ;
 
-   Tokens //////////////////////////////////////////////////////////////////////////
-id = (lettre | '_' | '$') (lettre | chiffre | '_' | '$')*; 
-// TODO : check that "id" is != of 'ecrire' or 'lire' , etc ....
+//##############################################################\\
+                             Tokens
+
+id = alpha_sign (alpha_sign_num)*; 
 nb = chiffre+;
 /****** Punctuation **********/
-po = '(';
-pf = ')';
-co = '[';
-cf = ']';
-ao = '{';
-af = '}';
-comma = ',';
-semicolon = ';';
-/****** Operators **********/
-plus = '+';
-and = '&';
-or = '|';
-not = '!';
-minus = '-';
-mult = '*';
-div = '/';
-equal = '=';
-lower_than = '<';
-/****** Key words **********/
-int = 'entier';
-if = 'si';
-then = 'alors';
-else = 'sinon';
-tq = 'tantque';
-do = 'faire';
-lire = 'lire';
-ecrire = 'ecrire';
-return = 'retour';
-/****** Ignored signs **********/
-espaces = (' ' | 13 | 10)+;
-commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
+po        = '(' ;
+pf        = ')' ;
+co        = '[' ;
+cf        = ']' ;
+ao        = '{' ;
+af        = '}' ;
+comma     = ',' ;
+semicolon = ';' ;
 
-Ignored Tokens ////////////////////////////////////////////////////////////////////////
+/****** Mathematical Operators *******/
+plus   = '+' ;
+minus  = '-' ;
+mult   = '*' ;
+div    = '/' ;
+
+/****** Logical Operators **********/
+equal      = '=' ;
+not        = '!' ;
+and        = '&' ;
+or         = '|' ;
+lower_than = '<' ;
+
+/****** Key words of L **********/
+var_type = 'entier' ;
+if       = 'si'     ;
+then     = 'alors'  ;
+else     = 'sinon'  ;
+while    = 'tantque ';
+do       = 'faire'  ;
+read     = 'lire'   ;
+write    = 'ecrire' ;
+return   = 'retour' ;
+
+/****** Ignored signs **********/
+espaces     = (' ' | 13 | 10)+ ;
+commentaire = '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
+
+//##############################################################\\
+                         Ignored Tokens 
 
 espaces, commentaire;
 
-Productions ///////////////////////////////////////////////////////////////////////////
+//##############################################################\\
+                          Productions 
 
-/************************************* Program *********************/
+/*********************** Program ********************************/
 programme =
  {form_prog} ldv_optional ldf ;
 
-/************************************* Functions *******************/
+/*********************** Functions ****************************/
 ldf =
  {list_func} df ldf | {eps};
 
 df =
  {def_func} id po ldv pf ldv_optional bi;
 
-/************************************* Variables *******************/
+/********************** Variables *******************************/
 ldv_optional =
- {opt_var} ldv semicolon | {eps}; //////////////////// TO CHANGE
+ {opt_var} ldv semicolon | {eps}; 
 
 ldv =
- {l_var} dv ldv_bis | {eps}; //////////////////// TO CHANGE
+ {l_var} dv ldv_bis | {eps};
 
 ldv_bis =
  {l_var_after_comma} comma dv ldv_bis | {eps};
 
 dv =
- {def_var} int id |
- {def_var_array} int id co nb cf
- ;//|{def_var_affectation} int id equal e;
+ {def_var} var_type id |
+ {def_var_array} var_type  id co nb cf |
+ {def_var_affectation} var_type id equal e;
 
-/************************************* Instructions *****************/
+/********************* Instructions ***************************/
 bi =
  {bloc_instruction} ao li af ;
 
@@ -86,16 +97,17 @@ i_bis =
 
 i =
  {affectation} id equal e semicolon |
+ {affectation_in_array} id co nb cf equal e semicolon |
  {if} if e then bi else_block |
- {while} tq e do bi |
+ {while} while e do bi |
  {ret} return e semicolon |
  {function_call} id po le pf semicolon |
- {write} ecrire po e pf semicolon;
+ {write} write po e pf semicolon;
 
 else_block =
  {else} else bi | {eps};
 
-/************************************* Expressions *******************/
+/********************* Expressions ***************************/
 e =
  {e} e or and_e |
  {and_e} and_e;
@@ -129,8 +141,10 @@ parenth_e =
 
 element =
  {number} nb |
+ {variable} id |
+ {array} id co e cf |
  {function_call} app_function |
- {read} lire po pf;
+ {read} read po pf;
 
 app_function =
  {def_function_call} id po le pf;
@@ -140,4 +154,3 @@ le =
 
 e_bis =
  {expression_after_comma} comma e e_bis | {eps};
-

@@ -5,23 +5,19 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ADefVarDv extends PDv
+public final class AVariableElement extends PElement
 {
-    private TVarType _varType_;
     private TId _id_;
 
-    public ADefVarDv()
+    public AVariableElement()
     {
         // Constructor
     }
 
-    public ADefVarDv(
-        @SuppressWarnings("hiding") TVarType _varType_,
+    public AVariableElement(
         @SuppressWarnings("hiding") TId _id_)
     {
         // Constructor
-        setVarType(_varType_);
-
         setId(_id_);
 
     }
@@ -29,40 +25,14 @@ public final class ADefVarDv extends PDv
     @Override
     public Object clone()
     {
-        return new ADefVarDv(
-            cloneNode(this._varType_),
+        return new AVariableElement(
             cloneNode(this._id_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseADefVarDv(this);
-    }
-
-    public TVarType getVarType()
-    {
-        return this._varType_;
-    }
-
-    public void setVarType(TVarType node)
-    {
-        if(this._varType_ != null)
-        {
-            this._varType_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._varType_ = node;
+        ((Analysis) sw).caseAVariableElement(this);
     }
 
     public TId getId()
@@ -94,7 +64,6 @@ public final class ADefVarDv extends PDv
     public String toString()
     {
         return ""
-            + toString(this._varType_)
             + toString(this._id_);
     }
 
@@ -102,12 +71,6 @@ public final class ADefVarDv extends PDv
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._varType_ == child)
-        {
-            this._varType_ = null;
-            return;
-        }
-
         if(this._id_ == child)
         {
             this._id_ = null;
@@ -121,12 +84,6 @@ public final class ADefVarDv extends PDv
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._varType_ == oldChild)
-        {
-            setVarType((TVarType) newChild);
-            return;
-        }
-
         if(this._id_ == oldChild)
         {
             setId((TId) newChild);

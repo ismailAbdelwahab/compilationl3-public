@@ -5,29 +5,31 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ADefVarArrayDv extends PDv
+public final class AAffectationInArrayI extends PI
 {
-    private TVarType _varType_;
     private TId _id_;
     private TCo _co_;
     private TNb _nb_;
     private TCf _cf_;
+    private TEqual _equal_;
+    private PE _e_;
+    private TSemicolon _semicolon_;
 
-    public ADefVarArrayDv()
+    public AAffectationInArrayI()
     {
         // Constructor
     }
 
-    public ADefVarArrayDv(
-        @SuppressWarnings("hiding") TVarType _varType_,
+    public AAffectationInArrayI(
         @SuppressWarnings("hiding") TId _id_,
         @SuppressWarnings("hiding") TCo _co_,
         @SuppressWarnings("hiding") TNb _nb_,
-        @SuppressWarnings("hiding") TCf _cf_)
+        @SuppressWarnings("hiding") TCf _cf_,
+        @SuppressWarnings("hiding") TEqual _equal_,
+        @SuppressWarnings("hiding") PE _e_,
+        @SuppressWarnings("hiding") TSemicolon _semicolon_)
     {
         // Constructor
-        setVarType(_varType_);
-
         setId(_id_);
 
         setCo(_co_);
@@ -36,48 +38,31 @@ public final class ADefVarArrayDv extends PDv
 
         setCf(_cf_);
 
+        setEqual(_equal_);
+
+        setE(_e_);
+
+        setSemicolon(_semicolon_);
+
     }
 
     @Override
     public Object clone()
     {
-        return new ADefVarArrayDv(
-            cloneNode(this._varType_),
+        return new AAffectationInArrayI(
             cloneNode(this._id_),
             cloneNode(this._co_),
             cloneNode(this._nb_),
-            cloneNode(this._cf_));
+            cloneNode(this._cf_),
+            cloneNode(this._equal_),
+            cloneNode(this._e_),
+            cloneNode(this._semicolon_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseADefVarArrayDv(this);
-    }
-
-    public TVarType getVarType()
-    {
-        return this._varType_;
-    }
-
-    public void setVarType(TVarType node)
-    {
-        if(this._varType_ != null)
-        {
-            this._varType_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._varType_ = node;
+        ((Analysis) sw).caseAAffectationInArrayI(this);
     }
 
     public TId getId()
@@ -180,27 +165,98 @@ public final class ADefVarArrayDv extends PDv
         this._cf_ = node;
     }
 
+    public TEqual getEqual()
+    {
+        return this._equal_;
+    }
+
+    public void setEqual(TEqual node)
+    {
+        if(this._equal_ != null)
+        {
+            this._equal_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._equal_ = node;
+    }
+
+    public PE getE()
+    {
+        return this._e_;
+    }
+
+    public void setE(PE node)
+    {
+        if(this._e_ != null)
+        {
+            this._e_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._e_ = node;
+    }
+
+    public TSemicolon getSemicolon()
+    {
+        return this._semicolon_;
+    }
+
+    public void setSemicolon(TSemicolon node)
+    {
+        if(this._semicolon_ != null)
+        {
+            this._semicolon_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._semicolon_ = node;
+    }
+
     @Override
     public String toString()
     {
         return ""
-            + toString(this._varType_)
             + toString(this._id_)
             + toString(this._co_)
             + toString(this._nb_)
-            + toString(this._cf_);
+            + toString(this._cf_)
+            + toString(this._equal_)
+            + toString(this._e_)
+            + toString(this._semicolon_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._varType_ == child)
-        {
-            this._varType_ = null;
-            return;
-        }
-
         if(this._id_ == child)
         {
             this._id_ = null;
@@ -225,6 +281,24 @@ public final class ADefVarArrayDv extends PDv
             return;
         }
 
+        if(this._equal_ == child)
+        {
+            this._equal_ = null;
+            return;
+        }
+
+        if(this._e_ == child)
+        {
+            this._e_ = null;
+            return;
+        }
+
+        if(this._semicolon_ == child)
+        {
+            this._semicolon_ = null;
+            return;
+        }
+
         throw new RuntimeException("Not a child.");
     }
 
@@ -232,12 +306,6 @@ public final class ADefVarArrayDv extends PDv
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._varType_ == oldChild)
-        {
-            setVarType((TVarType) newChild);
-            return;
-        }
-
         if(this._id_ == oldChild)
         {
             setId((TId) newChild);
@@ -259,6 +327,24 @@ public final class ADefVarArrayDv extends PDv
         if(this._cf_ == oldChild)
         {
             setCf((TCf) newChild);
+            return;
+        }
+
+        if(this._equal_ == oldChild)
+        {
+            setEqual((TEqual) newChild);
+            return;
+        }
+
+        if(this._e_ == oldChild)
+        {
+            setE((PE) newChild);
+            return;
+        }
+
+        if(this._semicolon_ == oldChild)
+        {
+            setSemicolon((TSemicolon) newChild);
             return;
         }
 

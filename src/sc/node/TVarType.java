@@ -5,16 +5,16 @@ package sc.node;
 import sc.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TLire extends Token
+public final class TVarType extends Token
 {
-    public TLire()
+    public TVarType()
     {
-        super.setText("lire");
+        super.setText("entier");
     }
 
-    public TLire(int line, int pos)
+    public TVarType(int line, int pos)
     {
-        super.setText("lire");
+        super.setText("entier");
         setLine(line);
         setPos(pos);
     }
@@ -22,18 +22,18 @@ public final class TLire extends Token
     @Override
     public Object clone()
     {
-      return new TLire(getLine(), getPos());
+      return new TVarType(getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTLire(this);
+        ((Analysis) sw).caseTVarType(this);
     }
 
     @Override
     public void setText(@SuppressWarnings("unused") String text)
     {
-        throw new RuntimeException("Cannot change TLire text.");
+        throw new RuntimeException("Cannot change TVarType text.");
     }
 }
