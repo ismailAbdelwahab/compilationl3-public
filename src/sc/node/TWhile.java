@@ -9,12 +9,12 @@ public final class TWhile extends Token
 {
     public TWhile()
     {
-        super.setText("tantque ");
+        super.setText("tantque");
     }
 
     public TWhile(int line, int pos)
     {
-        super.setText("tantque ");
+        super.setText("tantque");
         setLine(line);
         setPos(pos);
     }

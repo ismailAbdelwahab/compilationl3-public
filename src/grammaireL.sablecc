@@ -10,9 +10,9 @@ alpha_sign_num = ( alpha_sign | chiffre )      ;
 
 //##############################################################\\
                              Tokens
-
-id = alpha_sign (alpha_sign_num)*; 
+/******* Numbers *************/
 nb = chiffre+;
+
 /****** Punctuation **********/
 po        = '(' ;
 pf        = ')' ;
@@ -41,11 +41,14 @@ var_type = 'entier' ;
 if       = 'si'     ;
 then     = 'alors'  ;
 else     = 'sinon'  ;
-while    = 'tantque ';
+while    = 'tantque';
 do       = 'faire'  ;
 read     = 'lire'   ;
 write    = 'ecrire' ;
 return   = 'retour' ;
+
+/********** ID ******************/
+id = alpha_sign (alpha_sign_num)*; 
 
 /****** Ignored signs **********/
 espaces     = (' ' | 13 | 10)+ ;
@@ -61,7 +64,7 @@ espaces, commentaire;
 
 /*********************** Program ********************************/
 programme =
- {form_prog} ldv_optional ldf ;
+ {prog} ldv_optional ldf ;
 
 /*********************** Functions ****************************/
 ldf =
@@ -72,36 +75,36 @@ df =
 
 /********************** Variables *******************************/
 ldv_optional =
- {opt_var} ldv semicolon | {eps}; 
+ {opt_list_var} ldv semicolon | {eps}; 
 
 ldv =
- {l_var} dv ldv_bis | {eps};
+ {list_var} dv ldv_bis | {eps};
 
 ldv_bis =
- {l_var_after_comma} comma dv ldv_bis | {eps};
+ {list_var_after_comma} comma dv ldv_bis | {eps};
 
 dv =
  {def_var} var_type id |
- {def_var_array} var_type  id co nb cf |
+ {def_var_array} var_type id co nb cf |
  {def_var_affectation} var_type id equal e;
 
 /********************* Instructions ***************************/
 bi =
- {bloc_instruction} ao li af ;
+ {bloc_inst} ao li af ;
 
 li =
- {list_instructions} i i_bis;
+ {list_inst} i i_bis;
 
 i_bis =
- {instruction_suiv} i i_bis | {eps} ;
+ {list_inst_next} i i_bis | {eps} ;
 
 i =
- {affectation} id equal e semicolon |
- {affectation_in_array} id co nb cf equal e semicolon |
+ {affect} id equal e semicolon |
+ {affect_in_array} id co nb cf equal e semicolon |
  {if} if e then bi else_block |
  {while} while e do bi |
  {ret} return e semicolon |
- {function_call} id po le pf semicolon |
+ {func_call} id po le pf semicolon |
  {write} write po e pf semicolon;
 
 else_block =
@@ -132,25 +135,26 @@ arith_high_e =
  {neg_e} neg_e;
 
 neg_e =
- {exclamation_mark} not parenth_e |
+ {not} not parenth_e |
  {parenth_e} parenth_e;
 
 parenth_e =
- {parenthesis} po element pf |
+ {parenth} po e pf |
  {element} element;
+ 
 
 element =
  {number} nb |
  {variable} id |
- {array} id co e cf |
- {function_call} app_function |
- {read} read po pf;
+ {array_element} id co e cf |
+ {read} read po pf |
+ {func_call} app_function;
 
 app_function =
- {def_function_call} id po le pf;
+ {def_func_call} id po le pf;
 
 le =
- {list_expression} e e_bis | {eps};
+ {list_exp} e e_bis | {eps};
 
 e_bis =
- {expression_after_comma} comma e e_bis | {eps};
+ {exp_after_comma} comma e e_bis | {eps};
