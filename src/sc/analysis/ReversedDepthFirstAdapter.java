@@ -61,20 +61,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAProgProgramme(node);
     }
 
-    public void inAListFuncLdf(AListFuncLdf node)
+    public void inARegularLdf(ARegularLdf node)
     {
         defaultIn(node);
     }
 
-    public void outAListFuncLdf(AListFuncLdf node)
+    public void outARegularLdf(ARegularLdf node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAListFuncLdf(AListFuncLdf node)
+    public void caseARegularLdf(ARegularLdf node)
     {
-        inAListFuncLdf(node);
+        inARegularLdf(node);
         if(node.getLdf() != null)
         {
             node.getLdf().apply(this);
@@ -83,7 +83,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getDf().apply(this);
         }
-        outAListFuncLdf(node);
+        outARegularLdf(node);
     }
 
     public void inAEpsLdf(AEpsLdf node)
@@ -103,20 +103,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAEpsLdf(node);
     }
 
-    public void inADefFuncDf(ADefFuncDf node)
+    public void inARegularDf(ARegularDf node)
     {
         defaultIn(node);
     }
 
-    public void outADefFuncDf(ADefFuncDf node)
+    public void outARegularDf(ARegularDf node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADefFuncDf(ADefFuncDf node)
+    public void caseARegularDf(ARegularDf node)
     {
-        inADefFuncDf(node);
+        inARegularDf(node);
         if(node.getBi() != null)
         {
             node.getBi().apply(this);
@@ -141,23 +141,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getId().apply(this);
         }
-        outADefFuncDf(node);
+        outARegularDf(node);
     }
 
-    public void inAOptListVarLdvOptional(AOptListVarLdvOptional node)
+    public void inARegularLdvOptional(ARegularLdvOptional node)
     {
         defaultIn(node);
     }
 
-    public void outAOptListVarLdvOptional(AOptListVarLdvOptional node)
+    public void outARegularLdvOptional(ARegularLdvOptional node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAOptListVarLdvOptional(AOptListVarLdvOptional node)
+    public void caseARegularLdvOptional(ARegularLdvOptional node)
     {
-        inAOptListVarLdvOptional(node);
+        inARegularLdvOptional(node);
         if(node.getSemicolon() != null)
         {
             node.getSemicolon().apply(this);
@@ -166,7 +166,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getLdv().apply(this);
         }
-        outAOptListVarLdvOptional(node);
+        outARegularLdvOptional(node);
     }
 
     public void inAEpsLdvOptional(AEpsLdvOptional node)
@@ -186,20 +186,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAEpsLdvOptional(node);
     }
 
-    public void inAListVarLdv(AListVarLdv node)
+    public void inARegularLdv(ARegularLdv node)
     {
         defaultIn(node);
     }
 
-    public void outAListVarLdv(AListVarLdv node)
+    public void outARegularLdv(ARegularLdv node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAListVarLdv(AListVarLdv node)
+    public void caseARegularLdv(ARegularLdv node)
     {
-        inAListVarLdv(node);
+        inARegularLdv(node);
         if(node.getLdvBis() != null)
         {
             node.getLdvBis().apply(this);
@@ -208,7 +208,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getDv().apply(this);
         }
-        outAListVarLdv(node);
+        outARegularLdv(node);
     }
 
     public void inAEpsLdv(AEpsLdv node)
@@ -228,20 +228,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAEpsLdv(node);
     }
 
-    public void inAListVarAfterCommaLdvBis(AListVarAfterCommaLdvBis node)
+    public void inARegularLdvBis(ARegularLdvBis node)
     {
         defaultIn(node);
     }
 
-    public void outAListVarAfterCommaLdvBis(AListVarAfterCommaLdvBis node)
+    public void outARegularLdvBis(ARegularLdvBis node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAListVarAfterCommaLdvBis(AListVarAfterCommaLdvBis node)
+    public void caseARegularLdvBis(ARegularLdvBis node)
     {
-        inAListVarAfterCommaLdvBis(node);
+        inARegularLdvBis(node);
         if(node.getLdvBis() != null)
         {
             node.getLdvBis().apply(this);
@@ -254,7 +254,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getComma().apply(this);
         }
-        outAListVarAfterCommaLdvBis(node);
+        outARegularLdvBis(node);
     }
 
     public void inAEpsLdvBis(AEpsLdvBis node)
@@ -274,20 +274,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAEpsLdvBis(node);
     }
 
-    public void inADefVarDv(ADefVarDv node)
+    public void inARegularVariableDv(ARegularVariableDv node)
     {
         defaultIn(node);
     }
 
-    public void outADefVarDv(ADefVarDv node)
+    public void outARegularVariableDv(ARegularVariableDv node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADefVarDv(ADefVarDv node)
+    public void caseARegularVariableDv(ARegularVariableDv node)
     {
-        inADefVarDv(node);
+        inARegularVariableDv(node);
         if(node.getId() != null)
         {
             node.getId().apply(this);
@@ -296,23 +296,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getVarType().apply(this);
         }
-        outADefVarDv(node);
+        outARegularVariableDv(node);
     }
 
-    public void inADefVarArrayDv(ADefVarArrayDv node)
+    public void inARegularArrayDv(ARegularArrayDv node)
     {
         defaultIn(node);
     }
 
-    public void outADefVarArrayDv(ADefVarArrayDv node)
+    public void outARegularArrayDv(ARegularArrayDv node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADefVarArrayDv(ADefVarArrayDv node)
+    public void caseARegularArrayDv(ARegularArrayDv node)
     {
-        inADefVarArrayDv(node);
+        inARegularArrayDv(node);
         if(node.getCf() != null)
         {
             node.getCf().apply(this);
@@ -333,56 +333,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getVarType().apply(this);
         }
-        outADefVarArrayDv(node);
+        outARegularArrayDv(node);
     }
 
-    public void inADefVarAffectationDv(ADefVarAffectationDv node)
+    public void inARegularBi(ARegularBi node)
     {
         defaultIn(node);
     }
 
-    public void outADefVarAffectationDv(ADefVarAffectationDv node)
+    public void outARegularBi(ARegularBi node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADefVarAffectationDv(ADefVarAffectationDv node)
+    public void caseARegularBi(ARegularBi node)
     {
-        inADefVarAffectationDv(node);
-        if(node.getE() != null)
-        {
-            node.getE().apply(this);
-        }
-        if(node.getEqual() != null)
-        {
-            node.getEqual().apply(this);
-        }
-        if(node.getId() != null)
-        {
-            node.getId().apply(this);
-        }
-        if(node.getVarType() != null)
-        {
-            node.getVarType().apply(this);
-        }
-        outADefVarAffectationDv(node);
-    }
-
-    public void inABlocInstBi(ABlocInstBi node)
-    {
-        defaultIn(node);
-    }
-
-    public void outABlocInstBi(ABlocInstBi node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseABlocInstBi(ABlocInstBi node)
-    {
-        inABlocInstBi(node);
+        inARegularBi(node);
         if(node.getAf() != null)
         {
             node.getAf().apply(this);
@@ -395,23 +362,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getAo().apply(this);
         }
-        outABlocInstBi(node);
+        outARegularBi(node);
     }
 
-    public void inAListInstLi(AListInstLi node)
+    public void inARegularLi(ARegularLi node)
     {
         defaultIn(node);
     }
 
-    public void outAListInstLi(AListInstLi node)
+    public void outARegularLi(ARegularLi node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAListInstLi(AListInstLi node)
+    public void caseARegularLi(ARegularLi node)
     {
-        inAListInstLi(node);
+        inARegularLi(node);
         if(node.getIBis() != null)
         {
             node.getIBis().apply(this);
@@ -420,23 +387,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getI().apply(this);
         }
-        outAListInstLi(node);
+        outARegularLi(node);
     }
 
-    public void inAListInstNextIBis(AListInstNextIBis node)
+    public void inARegularIBis(ARegularIBis node)
     {
         defaultIn(node);
     }
 
-    public void outAListInstNextIBis(AListInstNextIBis node)
+    public void outARegularIBis(ARegularIBis node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAListInstNextIBis(AListInstNextIBis node)
+    public void caseARegularIBis(ARegularIBis node)
     {
-        inAListInstNextIBis(node);
+        inARegularIBis(node);
         if(node.getIBis() != null)
         {
             node.getIBis().apply(this);
@@ -445,7 +412,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getI().apply(this);
         }
-        outAListInstNextIBis(node);
+        outARegularIBis(node);
     }
 
     public void inAEpsIBis(AEpsIBis node)
@@ -491,56 +458,11 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getEqual().apply(this);
         }
-        if(node.getId() != null)
+        if(node.getVar() != null)
         {
-            node.getId().apply(this);
+            node.getVar().apply(this);
         }
         outAAffectI(node);
-    }
-
-    public void inAAffectInArrayI(AAffectInArrayI node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAAffectInArrayI(AAffectInArrayI node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseAAffectInArrayI(AAffectInArrayI node)
-    {
-        inAAffectInArrayI(node);
-        if(node.getSemicolon() != null)
-        {
-            node.getSemicolon().apply(this);
-        }
-        if(node.getE() != null)
-        {
-            node.getE().apply(this);
-        }
-        if(node.getEqual() != null)
-        {
-            node.getEqual().apply(this);
-        }
-        if(node.getCf() != null)
-        {
-            node.getCf().apply(this);
-        }
-        if(node.getNb() != null)
-        {
-            node.getNb().apply(this);
-        }
-        if(node.getCo() != null)
-        {
-            node.getCo().apply(this);
-        }
-        if(node.getId() != null)
-        {
-            node.getId().apply(this);
-        }
-        outAAffectInArrayI(node);
     }
 
     public void inAIfI(AIfI node)
@@ -613,20 +535,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAWhileI(node);
     }
 
-    public void inARetI(ARetI node)
+    public void inAReturnI(AReturnI node)
     {
         defaultIn(node);
     }
 
-    public void outARetI(ARetI node)
+    public void outAReturnI(AReturnI node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseARetI(ARetI node)
+    public void caseAReturnI(AReturnI node)
     {
-        inARetI(node);
+        inAReturnI(node);
         if(node.getSemicolon() != null)
         {
             node.getSemicolon().apply(this);
@@ -639,7 +561,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getReturn().apply(this);
         }
-        outARetI(node);
+        outAReturnI(node);
     }
 
     public void inAFuncCallI(AFuncCallI node)
@@ -716,20 +638,74 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAWriteI(node);
     }
 
-    public void inAElseElseBlock(AElseElseBlock node)
+    public void inARegularVar(ARegularVar node)
     {
         defaultIn(node);
     }
 
-    public void outAElseElseBlock(AElseElseBlock node)
+    public void outARegularVar(ARegularVar node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAElseElseBlock(AElseElseBlock node)
+    public void caseARegularVar(ARegularVar node)
     {
-        inAElseElseBlock(node);
+        inARegularVar(node);
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        outARegularVar(node);
+    }
+
+    public void inAArrayVar(AArrayVar node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAArrayVar(AArrayVar node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAArrayVar(AArrayVar node)
+    {
+        inAArrayVar(node);
+        if(node.getCf() != null)
+        {
+            node.getCf().apply(this);
+        }
+        if(node.getNb() != null)
+        {
+            node.getNb().apply(this);
+        }
+        if(node.getCo() != null)
+        {
+            node.getCo().apply(this);
+        }
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        outAArrayVar(node);
+    }
+
+    public void inARegularElseBlock(ARegularElseBlock node)
+    {
+        defaultIn(node);
+    }
+
+    public void outARegularElseBlock(ARegularElseBlock node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseARegularElseBlock(ARegularElseBlock node)
+    {
+        inARegularElseBlock(node);
         if(node.getBi() != null)
         {
             node.getBi().apply(this);
@@ -738,7 +714,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getElse().apply(this);
         }
-        outAElseElseBlock(node);
+        outARegularElseBlock(node);
     }
 
     public void inAEpsElseBlock(AEpsElseBlock node)
@@ -758,20 +734,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAEpsElseBlock(node);
     }
 
-    public void inAEE(AEE node)
+    public void inARegularE(ARegularE node)
     {
         defaultIn(node);
     }
 
-    public void outAEE(AEE node)
+    public void outARegularE(ARegularE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEE(AEE node)
+    public void caseARegularE(ARegularE node)
     {
-        inAEE(node);
+        inARegularE(node);
         if(node.getAndE() != null)
         {
             node.getAndE().apply(this);
@@ -784,44 +760,44 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getE().apply(this);
         }
-        outAEE(node);
+        outARegularE(node);
     }
 
-    public void inAAndEE(AAndEE node)
+    public void inAPassE(APassE node)
     {
         defaultIn(node);
     }
 
-    public void outAAndEE(AAndEE node)
+    public void outAPassE(APassE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAndEE(AAndEE node)
+    public void caseAPassE(APassE node)
     {
-        inAAndEE(node);
+        inAPassE(node);
         if(node.getAndE() != null)
         {
             node.getAndE().apply(this);
         }
-        outAAndEE(node);
+        outAPassE(node);
     }
 
-    public void inAAndEAndE(AAndEAndE node)
+    public void inARegularAndE(ARegularAndE node)
     {
         defaultIn(node);
     }
 
-    public void outAAndEAndE(AAndEAndE node)
+    public void outARegularAndE(ARegularAndE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAndEAndE(AAndEAndE node)
+    public void caseARegularAndE(ARegularAndE node)
     {
-        inAAndEAndE(node);
+        inARegularAndE(node);
         if(node.getCompE() != null)
         {
             node.getCompE().apply(this);
@@ -834,28 +810,28 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getAndE().apply(this);
         }
-        outAAndEAndE(node);
+        outARegularAndE(node);
     }
 
-    public void inACompEAndE(ACompEAndE node)
+    public void inAPassAndE(APassAndE node)
     {
         defaultIn(node);
     }
 
-    public void outACompEAndE(ACompEAndE node)
+    public void outAPassAndE(APassAndE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseACompEAndE(ACompEAndE node)
+    public void caseAPassAndE(APassAndE node)
     {
-        inACompEAndE(node);
+        inAPassAndE(node);
         if(node.getCompE() != null)
         {
             node.getCompE().apply(this);
         }
-        outACompEAndE(node);
+        outAPassAndE(node);
     }
 
     public void inAEqualCompE(AEqualCompE node)
@@ -916,25 +892,25 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outALowerThanCompE(node);
     }
 
-    public void inAArithLowECompE(AArithLowECompE node)
+    public void inAPassCompE(APassCompE node)
     {
         defaultIn(node);
     }
 
-    public void outAArithLowECompE(AArithLowECompE node)
+    public void outAPassCompE(APassCompE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAArithLowECompE(AArithLowECompE node)
+    public void caseAPassCompE(APassCompE node)
     {
-        inAArithLowECompE(node);
+        inAPassCompE(node);
         if(node.getArithLowE() != null)
         {
             node.getArithLowE().apply(this);
         }
-        outAArithLowECompE(node);
+        outAPassCompE(node);
     }
 
     public void inAPlusArithLowE(APlusArithLowE node)
@@ -995,25 +971,25 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAMoinsArithLowE(node);
     }
 
-    public void inAArithHighEArithLowE(AArithHighEArithLowE node)
+    public void inAPassArithLowE(APassArithLowE node)
     {
         defaultIn(node);
     }
 
-    public void outAArithHighEArithLowE(AArithHighEArithLowE node)
+    public void outAPassArithLowE(APassArithLowE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAArithHighEArithLowE(AArithHighEArithLowE node)
+    public void caseAPassArithLowE(APassArithLowE node)
     {
-        inAArithHighEArithLowE(node);
+        inAPassArithLowE(node);
         if(node.getArithHighE() != null)
         {
             node.getArithHighE().apply(this);
         }
-        outAArithHighEArithLowE(node);
+        outAPassArithLowE(node);
     }
 
     public void inAMultArithHighE(AMultArithHighE node)
@@ -1074,41 +1050,41 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outADivArithHighE(node);
     }
 
-    public void inANegEArithHighE(ANegEArithHighE node)
+    public void inAPassArithHighE(APassArithHighE node)
     {
         defaultIn(node);
     }
 
-    public void outANegEArithHighE(ANegEArithHighE node)
+    public void outAPassArithHighE(APassArithHighE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseANegEArithHighE(ANegEArithHighE node)
+    public void caseAPassArithHighE(APassArithHighE node)
     {
-        inANegEArithHighE(node);
+        inAPassArithHighE(node);
         if(node.getNegE() != null)
         {
             node.getNegE().apply(this);
         }
-        outANegEArithHighE(node);
+        outAPassArithHighE(node);
     }
 
-    public void inANotNegE(ANotNegE node)
+    public void inARegularNegE(ARegularNegE node)
     {
         defaultIn(node);
     }
 
-    public void outANotNegE(ANotNegE node)
+    public void outARegularNegE(ARegularNegE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseANotNegE(ANotNegE node)
+    public void caseARegularNegE(ARegularNegE node)
     {
-        inANotNegE(node);
+        inARegularNegE(node);
         if(node.getParenthE() != null)
         {
             node.getParenthE().apply(this);
@@ -1117,44 +1093,44 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getNot().apply(this);
         }
-        outANotNegE(node);
+        outARegularNegE(node);
     }
 
-    public void inAParenthENegE(AParenthENegE node)
+    public void inAPassNegE(APassNegE node)
     {
         defaultIn(node);
     }
 
-    public void outAParenthENegE(AParenthENegE node)
+    public void outAPassNegE(APassNegE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAParenthENegE(AParenthENegE node)
+    public void caseAPassNegE(APassNegE node)
     {
-        inAParenthENegE(node);
+        inAPassNegE(node);
         if(node.getParenthE() != null)
         {
             node.getParenthE().apply(this);
         }
-        outAParenthENegE(node);
+        outAPassNegE(node);
     }
 
-    public void inAParenthParenthE(AParenthParenthE node)
+    public void inARegularParenthE(ARegularParenthE node)
     {
         defaultIn(node);
     }
 
-    public void outAParenthParenthE(AParenthParenthE node)
+    public void outARegularParenthE(ARegularParenthE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAParenthParenthE(AParenthParenthE node)
+    public void caseARegularParenthE(ARegularParenthE node)
     {
-        inAParenthParenthE(node);
+        inARegularParenthE(node);
         if(node.getPf() != null)
         {
             node.getPf().apply(this);
@@ -1167,28 +1143,28 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getPo().apply(this);
         }
-        outAParenthParenthE(node);
+        outARegularParenthE(node);
     }
 
-    public void inAElementParenthE(AElementParenthE node)
+    public void inAPassParenthE(APassParenthE node)
     {
         defaultIn(node);
     }
 
-    public void outAElementParenthE(AElementParenthE node)
+    public void outAPassParenthE(APassParenthE node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAElementParenthE(AElementParenthE node)
+    public void caseAPassParenthE(APassParenthE node)
     {
-        inAElementParenthE(node);
+        inAPassParenthE(node);
         if(node.getElement() != null)
         {
             node.getElement().apply(this);
         }
-        outAElementParenthE(node);
+        outAPassParenthE(node);
     }
 
     public void inANumberElement(ANumberElement node)
@@ -1233,20 +1209,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAVariableElement(node);
     }
 
-    public void inAArrayElementElement(AArrayElementElement node)
+    public void inAArrayElement(AArrayElement node)
     {
         defaultIn(node);
     }
 
-    public void outAArrayElementElement(AArrayElementElement node)
+    public void outAArrayElement(AArrayElement node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAArrayElementElement(AArrayElementElement node)
+    public void caseAArrayElement(AArrayElement node)
     {
-        inAArrayElementElement(node);
+        inAArrayElement(node);
         if(node.getCf() != null)
         {
             node.getCf().apply(this);
@@ -1263,7 +1239,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getId().apply(this);
         }
-        outAArrayElementElement(node);
+        outAArrayElement(node);
     }
 
     public void inAReadElement(AReadElement node)
@@ -1316,20 +1292,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAFuncCallElement(node);
     }
 
-    public void inADefFuncCallAppFunction(ADefFuncCallAppFunction node)
+    public void inARegularAppFunction(ARegularAppFunction node)
     {
         defaultIn(node);
     }
 
-    public void outADefFuncCallAppFunction(ADefFuncCallAppFunction node)
+    public void outARegularAppFunction(ARegularAppFunction node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADefFuncCallAppFunction(ADefFuncCallAppFunction node)
+    public void caseARegularAppFunction(ARegularAppFunction node)
     {
-        inADefFuncCallAppFunction(node);
+        inARegularAppFunction(node);
         if(node.getPf() != null)
         {
             node.getPf().apply(this);
@@ -1346,23 +1322,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getId().apply(this);
         }
-        outADefFuncCallAppFunction(node);
+        outARegularAppFunction(node);
     }
 
-    public void inAListExpLe(AListExpLe node)
+    public void inARegularLe(ARegularLe node)
     {
         defaultIn(node);
     }
 
-    public void outAListExpLe(AListExpLe node)
+    public void outARegularLe(ARegularLe node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAListExpLe(AListExpLe node)
+    public void caseARegularLe(ARegularLe node)
     {
-        inAListExpLe(node);
+        inARegularLe(node);
         if(node.getEBis() != null)
         {
             node.getEBis().apply(this);
@@ -1371,7 +1347,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getE().apply(this);
         }
-        outAListExpLe(node);
+        outARegularLe(node);
     }
 
     public void inAEpsLe(AEpsLe node)
@@ -1391,20 +1367,20 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAEpsLe(node);
     }
 
-    public void inAExpAfterCommaEBis(AExpAfterCommaEBis node)
+    public void inARegularEBis(ARegularEBis node)
     {
         defaultIn(node);
     }
 
-    public void outAExpAfterCommaEBis(AExpAfterCommaEBis node)
+    public void outARegularEBis(ARegularEBis node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpAfterCommaEBis(AExpAfterCommaEBis node)
+    public void caseARegularEBis(ARegularEBis node)
     {
-        inAExpAfterCommaEBis(node);
+        inARegularEBis(node);
         if(node.getEBis() != null)
         {
             node.getEBis().apply(this);
@@ -1417,7 +1393,7 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getComma().apply(this);
         }
-        outAExpAfterCommaEBis(node);
+        outARegularEBis(node);
     }
 
     public void inAEpsEBis(AEpsEBis node)

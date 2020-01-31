@@ -81,7 +81,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAListFuncLdf(AListFuncLdf node)
+    public void caseARegularLdf(ARegularLdf node)
     {
         defaultCase(node);
     }
@@ -93,13 +93,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseADefFuncDf(ADefFuncDf node)
+    public void caseARegularDf(ARegularDf node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAOptListVarLdvOptional(AOptListVarLdvOptional node)
+    public void caseARegularLdvOptional(ARegularLdvOptional node)
     {
         defaultCase(node);
     }
@@ -111,7 +111,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAListVarLdv(AListVarLdv node)
+    public void caseARegularLdv(ARegularLdv node)
     {
         defaultCase(node);
     }
@@ -123,7 +123,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAListVarAfterCommaLdvBis(AListVarAfterCommaLdvBis node)
+    public void caseARegularLdvBis(ARegularLdvBis node)
     {
         defaultCase(node);
     }
@@ -135,37 +135,31 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseADefVarDv(ADefVarDv node)
+    public void caseARegularVariableDv(ARegularVariableDv node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADefVarArrayDv(ADefVarArrayDv node)
+    public void caseARegularArrayDv(ARegularArrayDv node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADefVarAffectationDv(ADefVarAffectationDv node)
+    public void caseARegularBi(ARegularBi node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABlocInstBi(ABlocInstBi node)
+    public void caseARegularLi(ARegularLi node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAListInstLi(AListInstLi node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAListInstNextIBis(AListInstNextIBis node)
+    public void caseARegularIBis(ARegularIBis node)
     {
         defaultCase(node);
     }
@@ -183,12 +177,6 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAAffectInArrayI(AAffectInArrayI node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
     public void caseAIfI(AIfI node)
     {
         defaultCase(node);
@@ -201,7 +189,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseARetI(ARetI node)
+    public void caseAReturnI(AReturnI node)
     {
         defaultCase(node);
     }
@@ -219,7 +207,19 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAElseElseBlock(AElseElseBlock node)
+    public void caseARegularVar(ARegularVar node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAArrayVar(AArrayVar node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseARegularElseBlock(ARegularElseBlock node)
     {
         defaultCase(node);
     }
@@ -231,25 +231,25 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAEE(AEE node)
+    public void caseARegularE(ARegularE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAAndEE(AAndEE node)
+    public void caseAPassE(APassE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAAndEAndE(AAndEAndE node)
+    public void caseARegularAndE(ARegularAndE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACompEAndE(ACompEAndE node)
+    public void caseAPassAndE(APassAndE node)
     {
         defaultCase(node);
     }
@@ -267,7 +267,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAArithLowECompE(AArithLowECompE node)
+    public void caseAPassCompE(APassCompE node)
     {
         defaultCase(node);
     }
@@ -285,7 +285,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAArithHighEArithLowE(AArithHighEArithLowE node)
+    public void caseAPassArithLowE(APassArithLowE node)
     {
         defaultCase(node);
     }
@@ -303,31 +303,31 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseANegEArithHighE(ANegEArithHighE node)
+    public void caseAPassArithHighE(APassArithHighE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseANotNegE(ANotNegE node)
+    public void caseARegularNegE(ARegularNegE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAParenthENegE(AParenthENegE node)
+    public void caseAPassNegE(APassNegE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAParenthParenthE(AParenthParenthE node)
+    public void caseARegularParenthE(ARegularParenthE node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAElementParenthE(AElementParenthE node)
+    public void caseAPassParenthE(APassParenthE node)
     {
         defaultCase(node);
     }
@@ -345,7 +345,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAArrayElementElement(AArrayElementElement node)
+    public void caseAArrayElement(AArrayElement node)
     {
         defaultCase(node);
     }
@@ -363,13 +363,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseADefFuncCallAppFunction(ADefFuncCallAppFunction node)
+    public void caseARegularAppFunction(ARegularAppFunction node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAListExpLe(AListExpLe node)
+    public void caseARegularLe(ARegularLe node)
     {
         defaultCase(node);
     }
@@ -381,7 +381,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAExpAfterCommaEBis(AExpAfterCommaEBis node)
+    public void caseARegularEBis(ARegularEBis node)
     {
         defaultCase(node);
     }

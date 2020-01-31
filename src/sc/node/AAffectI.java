@@ -7,7 +7,7 @@ import sc.analysis.*;
 @SuppressWarnings("nls")
 public final class AAffectI extends PI
 {
-    private TId _id_;
+    private PVar _var_;
     private TEqual _equal_;
     private PE _e_;
     private TSemicolon _semicolon_;
@@ -18,13 +18,13 @@ public final class AAffectI extends PI
     }
 
     public AAffectI(
-        @SuppressWarnings("hiding") TId _id_,
+        @SuppressWarnings("hiding") PVar _var_,
         @SuppressWarnings("hiding") TEqual _equal_,
         @SuppressWarnings("hiding") PE _e_,
         @SuppressWarnings("hiding") TSemicolon _semicolon_)
     {
         // Constructor
-        setId(_id_);
+        setVar(_var_);
 
         setEqual(_equal_);
 
@@ -38,7 +38,7 @@ public final class AAffectI extends PI
     public Object clone()
     {
         return new AAffectI(
-            cloneNode(this._id_),
+            cloneNode(this._var_),
             cloneNode(this._equal_),
             cloneNode(this._e_),
             cloneNode(this._semicolon_));
@@ -50,16 +50,16 @@ public final class AAffectI extends PI
         ((Analysis) sw).caseAAffectI(this);
     }
 
-    public TId getId()
+    public PVar getVar()
     {
-        return this._id_;
+        return this._var_;
     }
 
-    public void setId(TId node)
+    public void setVar(PVar node)
     {
-        if(this._id_ != null)
+        if(this._var_ != null)
         {
-            this._id_.parent(null);
+            this._var_.parent(null);
         }
 
         if(node != null)
@@ -72,7 +72,7 @@ public final class AAffectI extends PI
             node.parent(this);
         }
 
-        this._id_ = node;
+        this._var_ = node;
     }
 
     public TEqual getEqual()
@@ -154,7 +154,7 @@ public final class AAffectI extends PI
     public String toString()
     {
         return ""
-            + toString(this._id_)
+            + toString(this._var_)
             + toString(this._equal_)
             + toString(this._e_)
             + toString(this._semicolon_);
@@ -164,9 +164,9 @@ public final class AAffectI extends PI
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._id_ == child)
+        if(this._var_ == child)
         {
-            this._id_ = null;
+            this._var_ = null;
             return;
         }
 
@@ -195,9 +195,9 @@ public final class AAffectI extends PI
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._id_ == oldChild)
+        if(this._var_ == oldChild)
         {
-            setId((TId) newChild);
+            setVar((PVar) newChild);
             return;
         }
 

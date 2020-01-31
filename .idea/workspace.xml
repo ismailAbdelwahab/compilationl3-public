@@ -2,28 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/delete_sc_folder.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile_grammar.sh" beforeDir="false" afterPath="$PROJECT_DIR$/compile_grammar.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammaireL.sablecc" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammaireL.sablecc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/IPushbackReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/IPushbackReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer$State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/Lexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/LexerException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/LexerException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/lexer/lexer.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AAffectationI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AAffectationI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/Analysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AAffectI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/node/AAffectI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AAffectI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/node/AAffectI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AAffectInArrayI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AAffectInArrayI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AAndEAndE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AAndEAndE.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AAndEE.class" beforeDir="false" />
@@ -32,221 +24,58 @@
       <change beforePath="$PROJECT_DIR$/src/sc/node/AArithHighEArithLowE.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AArithLowECompE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AArithLowECompE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ABlocInstructionBi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ABlocInstructionBi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AArrayElementElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AArrayElementElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ABlocInstBi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ABlocInstBi.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/ACompEAndE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/ACompEAndE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ADivArithHighE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ADivArithHighE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ADv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ADv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefFuncCallAppFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefFuncCallAppFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefFuncDf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefFuncDf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefVarAffectationDv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefVarAffectationDv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefVarArrayDv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefVarArrayDv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefVarDv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ADefVarDv.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AEE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AEE.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AElementParenthE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AElementParenthE.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AElseElseBlock.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AElseElseBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsEBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsEBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsElseBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsElseBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsIBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsIBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdvBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdvBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdvOptional.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLdvOptional.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEpsLe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEqualCompE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AEqualCompE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AExclamationMarkNegE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AExclamationMarkNegE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFoncDf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFoncDf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFormProgProgramme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFormProgProgramme.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFunctionCallDefAppFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFunctionCallDefAppFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFunctionCallElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFunctionCallElement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFunctionCallI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AFunctionCallI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AIfI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AIfI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AInstructionSuivIBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AInstructionSuivIBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ALFoncLdf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ALFoncLdf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ALVarAfterCommaLdvBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ALVarAfterCommaLdvBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ALVarLdv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ALVarLdv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AListExpressionLe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AListExpressionLe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AListInstructionLi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AListInstructionLi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AMoinsArithLowE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AMoinsArithLowE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AMultArithHighE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AMultArithHighE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AMultipleElementsEBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AMultipleElementsEBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AExpAfterCommaEBis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AExpAfterCommaEBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListExpLe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListExpLe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListFuncLdf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListFuncLdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListInstLi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListInstLi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListInstNextIBis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListInstNextIBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListVarAfterCommaLdvBis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListVarAfterCommaLdvBis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListVarLdv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AListVarLdv.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/ANegEArithHighE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/ANegEArithHighE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ANumberElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/ANumberElement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AOptVarLdvOptional.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AOptVarLdvOptional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ANotNegE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/ANotNegE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AOptListVarLdvOptional.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AOptListVarLdvOptional.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AParenthENegE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/AParenthENegE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AParenthesisParenthE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AParenthesisParenthE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/APlusArithLowE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/APlusArithLowE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AReadElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AReadElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AParenthParenthE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/node/AParenthParenthE.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/ARetI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sc/node/ARetI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AVarDv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AVarDv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AWhileI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AWhileI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AWriteI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AWriteI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/EOF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/EOF.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/InvalidToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/InvalidToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PAndE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PAndE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PAppFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PAppFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PArithHighE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PArithHighE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PArithLowE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PArithLowE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PBi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PBi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PCompE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PCompE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PDf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PDf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PDv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PDv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PEBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PEBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PElement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PElseBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PElseBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PIBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PIBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdvBis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdvBis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdvOptional.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLdvOptional.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PLi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PNegE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PNegE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PParenthE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PParenthE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PProgramme.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/PProgramme.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Start.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Start.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Switch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Switch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Switchable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Switchable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TAf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TAf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TAnd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TAnd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TAo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TAo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TCf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TCf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TCo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TCo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TComma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TComma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TCommentaire.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TCommentaire.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TDiv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TDiv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TDo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TDo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TEcrire.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TEcrire.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TElse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TElse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TEqual.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TEqual.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TEspaces.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TEspaces.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TId.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TIf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TIf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TInt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TLire.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TLire.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TMinus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TMinus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TMult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TMult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TNb.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TNb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TNot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TNot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TOr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TOr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TPf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TPf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TPlus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TPlus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TPo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TPo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TReturn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TReturn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TSemicolon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TSemicolon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TThen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TThen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TTq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/TTq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/Token.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/ParserException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/ParserException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/State.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/TokenIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/TokenIndex.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/parser.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sc/parser/parser.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/parser.dat" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -278,17 +107,17 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.13908046" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -303,6 +132,8 @@
       <option name="presentableId" value="Default" />
       <updated>1579881355418</updated>
       <workItem from="1579881357956" duration="5861000" />
+      <workItem from="1580312506951" duration="668000" />
+      <workItem from="1580486191529" duration="5549000" />
     </task>
     <task id="LOCAL-00001" summary="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L">
       <created>1579886133980</created>
@@ -329,7 +160,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -342,22 +175,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="adding sc ( result of compiled grammar with sablecc)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1579887328579">
+    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580486312994">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1579887328579" />
-    <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl" timestamp="1579881376003">
+    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1580486312994" />
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1580491863191">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="743" y="298" width="426" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1579881376003" />
-    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1579886431530">
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1580491863191" />
+    <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl" timestamp="1580486218650">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1579886431530" />
+    <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1580486218650" />
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1580486306303">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1580486306303" />
     <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1579886782218">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886782218" />
+    <state x="538" y="142" width="1374" height="795" key="new project wizard" timestamp="1580314181121">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="538" y="142" width="1374" height="795" key="new project wizard/0.28.1920.1024@0.28.1920.1024" timestamp="1580314181121" />
     <state x="1103" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1579882263650">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>

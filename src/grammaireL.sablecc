@@ -68,93 +68,95 @@ programme =
 
 /*********************** Functions ****************************/
 ldf =
- {list_func} df ldf | {eps};
+ {regular} df ldf | {eps};
 
 df =
- {def_func} id po ldv pf ldv_optional bi;
+ {regular} id po ldv pf ldv_optional bi;
 
 /********************** Variables *******************************/
 ldv_optional =
- {opt_list_var} ldv semicolon | {eps}; 
+ {regular} ldv semicolon | {eps};
 
 ldv =
- {list_var} dv ldv_bis | {eps};
+ {regular} dv ldv_bis | {eps};
 
 ldv_bis =
- {list_var_after_comma} comma dv ldv_bis | {eps};
+ {regular} comma dv ldv_bis | {eps};
 
 dv =
- {def_var} var_type id |
- {def_var_array} var_type id co nb cf |
- {def_var_affectation} var_type id equal e;
+ {regular_variable} var_type id |
+ {regular_array} var_type id co nb cf;
 
 /********************* Instructions ***************************/
 bi =
- {bloc_inst} ao li af ;
+ {regular} ao li af ;
 
 li =
- {list_inst} i i_bis;
+ {regular} i i_bis;
 
 i_bis =
- {list_inst_next} i i_bis | {eps} ;
+ {regular} i i_bis | {eps} ;
 
 i =
- {affect} id equal e semicolon |
- {affect_in_array} id co nb cf equal e semicolon |
+ {affect} var equal e semicolon |
  {if} if e then bi else_block |
  {while} while e do bi |
- {ret} return e semicolon |
+ {return} return e semicolon |
  {func_call} id po le pf semicolon |
  {write} write po e pf semicolon;
 
+var =
+    {regular} id |
+    {array} id co nb cf;
+
 else_block =
- {else} else bi | {eps};
+ {regular} else bi | {eps};
 
 /********************* Expressions ***************************/
 e =
- {e} e or and_e |
- {and_e} and_e;
+ {regular} e or and_e |
+ {pass} and_e;
 
 and_e =
- {and_e} and_e and comp_e |
- {comp_e} comp_e;
+ {regular} and_e and comp_e |
+ {pass} comp_e;
 
 comp_e =
  {equal} comp_e equal arith_low_e |
  {lower_than} comp_e lower_than arith_low_e |
- {arith_low_e} arith_low_e;
+ {pass} arith_low_e;
 
 arith_low_e =
  {plus} arith_low_e plus arith_high_e |
  {moins} arith_low_e minus arith_high_e |
- {arith_high_e} arith_high_e;
+ {pass} arith_high_e;
 
 arith_high_e =
  {mult} arith_high_e mult neg_e |
  {div} arith_high_e div neg_e |
- {neg_e} neg_e;
+ {pass} neg_e;
 
 neg_e =
- {not} not parenth_e |
- {parenth_e} parenth_e;
+ {regular} not parenth_e |
+ {pass} parenth_e;
 
 parenth_e =
- {parenth} po e pf |
- {element} element;
+ {regular} po e pf |
+ {pass} element;
  
 
 element =
  {number} nb |
  {variable} id |
- {array_element} id co e cf |
+ {array} id co e cf |
  {read} read po pf |
  {func_call} app_function;
 
 app_function =
- {def_func_call} id po le pf;
+ {regular} id po le pf;
 
 le =
- {list_exp} e e_bis | {eps};
+ {regular} e e_bis | {eps};
 
 e_bis =
- {exp_after_comma} comma e e_bis | {eps};
+ {regular} comma e e_bis | {eps};
