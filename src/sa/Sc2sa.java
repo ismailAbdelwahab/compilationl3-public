@@ -137,6 +137,122 @@ public class Sc2sa extends DepthFirstAdapter {
 		SaAppel appel = new SaAppel(nom.getNom(), le);
 		this.returnValue = new SaExpAppel(appel);
 	}
-	//TODO from ARegularArrayDv
+
+	public void caseARegularArrayDv(ARegularArrayDv node) {
+		SaVarIndicee nom = null;
+		SaExpInt size = null;
+		node.getId().apply(this);
+		nom = (SaVarIndicee) this.returnValue;
+		node.getNb().apply(this);
+		size = (SaExpInt) this.returnValue;
+		this.returnValue = new SaDecTab(nom.getNom(), size.getVal() );
+	}
+	public void caseARegularBi(ARegularBi node) {
+		SaLInst li = null;
+		node.getLi().apply(this);
+		li = (SaLInst) this.returnValue;
+		this.returnValue = new SaInstBloc(li);
+	}
+	public void caseARegularDf(ARegularDf node) {
+		SaVarSimple nom = null;
+		SaLDec params = null;
+		SaLDec vars = null;
+		SaInst corps = null;
+		node.getId().apply(this);
+		nom = (SaVarSimple) this.returnValue;
+		node.getLdv().apply(this);
+		params = (SaLDec) this.returnValue;
+		node.getLdvOptional().apply(this);
+		vars = (SaLDec) this.returnValue;
+		node.getBi().apply(this);
+		corps = (SaInst) this.returnValue;
+		this.returnValue = new SaDecFonc(nom.getNom(), params, vars, corps);
+	}
+	public void caseARegularE(ARegularE node) {
+		SaExp op1 = null;
+		SaExp op2 = null;
+		node.getE().apply(this);
+		op1 = (SaExp) this.returnValue;
+		node.getAndE().apply(this);
+		op2 = (SaExp) this.returnValue;
+		this.returnValue = new SaExpOr(op1, op2);
+	}
+	//ARegularEBis//
+	//ARegularElseBlock//
+	//ARegularIBis//
+	public void caseARegularLdf(ARegularLdf node) {
+		SaDec df = null;
+		SaLDec ldf = null;
+		node.getDf().apply(this);
+		df = (SaDec) this.returnValue;
+		node.getLdf().apply(this);
+		ldf = (SaLDec) this.returnValue;
+		this.returnValue = new SaLDec(df, ldf);
+	}
+	public void caseARegularLdv(ARegularLdv node) {
+		SaDec dv = null;
+		SaLDec ldv = null;
+		node.getDv().apply(this);
+		dv = (SaDec) this.returnValue;
+		node.getLdvBis().apply(this);
+		ldv = (SaLDec) this.returnValue;
+		this.returnValue = new SaLDec(dv, ldv);
+	}
+	//ARegularLdvBis//
+	//ARegularLdvOptional//
+	public void caseARegularLe(ARegularLe node) {
+		SaDec e = null;
+		SaLDec e_bis = null;
+		node.getE().apply(this);
+		e = (SaDec) this.returnValue;
+		node.getEBis().apply(this);
+		e_bis = (SaLDec) this.returnValue;
+		this.returnValue = new SaLDec(e, e_bis);
+	}
+	public void caseARegularLi(ARegularLi node) {
+		SaInst head = null;
+		SaLInst tail = null;
+		node.getI().apply(this);
+		head = (SaInst) this.returnValue;
+		node.getIBis().apply(this);
+		tail = (SaLInst) this.returnValue;
+		this.returnValue = new SaLInst(head, tail);
+	}
+	public void caseARegularNegE(ARegularNegE node) {
+		SaExp op1 = null;
+		node.getParenthE().apply(this);
+		op1 = (SaExp) this.returnValue;
+		this.returnValue = new SaExpNot(op1);
+	}
+	//ARegularParenthE//
+	//ARegularVar//
+	public void caseARegularVariableDv(ARegularVariableDv node) {
+		SaVarSimple nom = null;
+		node.getId().apply(this);
+		nom = (SaVarSimple) this.returnValue;
+		this.returnValue = new SaDecVar(nom.getNom());
+	}
+	public void caseAReturnI(AReturnI node) {
+		SaExp val = null;
+		node.getE().apply(this);
+		val = (SaExp) this.returnValue;
+		this.returnValue = new SaInstRetour(val);
+	}
+	//AVariableElement//
+	public void caseAWhileI(AWhileI node) {
+		SaExp test = null;
+		SaInst bi = null;
+		node.getE().apply(this);
+		test = (SaExp) this.returnValue;
+		node.getBi().apply(this);
+		bi = (SaInst) this.returnValue;
+		this.returnValue = new SaInstTantQue(test, bi);
+	}
+	public void caseAWriteI(AWriteI node) {
+		SaExp arg = null;
+		node.getE().apply(this);
+		arg = (SaExp) this.returnValue;
+		this.returnValue = new SaInstEcriture(arg);
+	}
 	//////////////////////////////////////////////////////////////
 }
