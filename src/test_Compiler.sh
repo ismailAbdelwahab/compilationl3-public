@@ -71,17 +71,19 @@ do
 	filename=$(basename ${file})
 	YELLOW "Testing file: < ${NC}${filename}${YELLOW} >"	
 	OUTPUT="$(java Compiler ${file})"
-	if [ "${OUTPUT}" == "[SC]\n[SA]" ]
+	if [ "${OUTPUT}" == "[SC]\n[SA]\n" ]
 	then
-		GREEN "\tProgram syntactically correct."
+		GREEN "\t[SC] -> Program syntactically correct."
+		GREEN "\t[SA] -> Abstract syntax verified."
 	else
 		files_with_errors+=("${filename}")
-		echo -e "${RED}\tError detected:${NC} ${OUTPUT}"
+		echo -e "${RED}\tError detected:\n${NC}${OUTPUT}"
 	fi
 	done
 
 echo ""
 
+############################################################
 # Print final message: errors found or successful execution.
 if [ ${#files_with_errors[@]} -eq 0 ]
 then

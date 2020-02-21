@@ -3,7 +3,7 @@ import sc.node.*;
 import sa.*;
 
 //test with:
-// javac Compiler.java && java Compiler ../test/input/add1.l
+// javac Compiler.java && java Compiler ../test/input/appel.l
 
 public class Sc2sa extends DepthFirstAdapter {
 	private SaNode returnValue;
@@ -25,6 +25,7 @@ public class Sc2sa extends DepthFirstAdapter {
         node.getE().apply(this);
         SaExp value = (SaExp) this.returnValue;
         this.returnValue = new SaVarIndicee(id, value);
+		System.out.println("Var array found: "+ id +"[]");
 	}
     //AArrayVar//
 	public void caseAArrayVar(AArrayVar node) {
@@ -32,14 +33,15 @@ public class Sc2sa extends DepthFirstAdapter {
 		node.getNb().apply(this);
         SaExp indice = (SaExp) this.returnValue;
 		this.returnValue = new SaVarIndicee(id, indice);
+		System.out.println("Var array Indicée found: "+ id +"[]");
 	}
 	public void caseADivArithHighE(ADivArithHighE node) {
+		System.out.println(" -> division");
         node.getArithHighE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
         node.getNegE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
         this.returnValue = new SaExpDiv(op1, op2);
-		System.out.println(" -> division");
 	}
 
 	//AEpsEBis//
@@ -75,20 +77,22 @@ public class Sc2sa extends DepthFirstAdapter {
 	    this.returnValue = null;
     }
 	public void caseAEqualCompE(AEqualCompE node) {
+		System.out.println(" -> equal");
         node.getCompE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
         node.getArithLowE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
         this.returnValue = new SaExpEqual(op1, op2);
-		System.out.println(" -> equal");
 	}
 	public void caseAFuncCallElement(AFuncCallElement node) {
+		System.out.println("ALAIDE appel func ELMENT starting" );
         node.getAppFunction().apply(this);
-        SaAppel val = (SaAppel) this.returnValue;
-        this.returnValue = new SaExpAppel(val);
+        SaAppel funcName = (SaAppel) this.returnValue;
+        this.returnValue = new SaExpAppel(funcName);
 	}
 
 	public void caseAFuncCallI(AFuncCallI node) {
+		System.out.println("ALAIDE appel func insTRUCITON");
         String id = node.getId().getText();
         node.getLe().apply(this);
         SaLExp params = (SaLExp) this.returnValue;
@@ -105,73 +109,74 @@ public class Sc2sa extends DepthFirstAdapter {
         this.returnValue = new SaInstSi(test, alors, sinon);
 	}
 	public void caseALowerThanCompE(ALowerThanCompE node) {
+		System.out.println(" ->  < (lower)");
         node.getCompE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
         node.getArithLowE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
         this.returnValue = new SaExpInf(op1, op2);
-		System.out.println(" ->  < (lower)");
 	}
 	public void caseAMoinsArithLowE(AMoinsArithLowE node) {
+		System.out.println(" -> soustraction");
         node.getArithLowE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
         node.getArithHighE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
         this.returnValue = new SaExpSub(op1, op2);
-		System.out.println(" -> soustraction");
 	}
 	public void caseAMultArithHighE(AMultArithHighE node) {
+		System.out.println(" -> multiplication");
         node.getArithHighE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
         node.getNegE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
         this.returnValue = new SaExpMult(op1, op2);
-		System.out.println(" -> multiplication");
 	}
 	public void caseANumberElement(ANumberElement node) {
 		//node.getNb().apply(this);
         //SaExpInt nb = (SaExpInt) this.returnValue;
         int value = Integer.parseInt(node.getNb().getText());
 		this.returnValue = new SaExpInt( value );
-		System.out.println("ALAIDE Valeur trouvée");
+		System.out.println("ALAIDE Valeur trouvée -> "+ value );
 	}
 	/* TOUT les "APASS" sont ici */
 	public void caseAPassAndE(APassAndE node) {
-	    this.returnValue = null;
 		System.out.println(" -> passed and");
+		node.getCompE().apply( this );
     }
 	public void caseAPassArithHighE(APassArithHighE node) {
-	    this.returnValue = null;
+	    //this.returnValue = null;
 		System.out.println(" -> passed arith high");
+		node.getNegE().apply( this );
     }
 	public void caseAPassArithLowE(APassArithLowE node) {
-	    this.returnValue = null;
 		System.out.println(" -> passed arith low");
+	    node.getArithHighE().apply( this );
     }
 	public void caseAPassCompE(APassCompE node) {
-	    this.returnValue = null;
 		System.out.println(" -> passed comparaison");
+	    node.getArithLowE().apply( this );
     }
 	public void caseAPassE(APassE node) {
-	    this.returnValue = null;
 		System.out.println(" -> passed or");
+	    node.getAndE().apply( this );
     }
 	public void caseAPassNegE(APassNegE node) {
-	    this.returnValue = null;
 		System.out.println(" -> passed negation");
+	    node.getParenthE().apply( this );
     }
 	public void caseAPassParenthE(APassParenthE node) {
-	    this.returnValue = null;
 		System.out.println(" -> passed parentheses");
+	    node.getElement().apply( this );
     }
 
 	public void caseAPlusArithLowE(APlusArithLowE node) {
+		System.out.println(" -> addition");
 		node.getArithLowE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
 		node.getArithHighE().apply(this);
         SaExp op2= (SaExp) this.returnValue;
 		this.returnValue = new SaExpAdd(op1, op2);
-		System.out.println(" -> addition");
 	}
 
 	public void caseAProgProgramme(AProgProgramme node) {
@@ -185,19 +190,19 @@ public class Sc2sa extends DepthFirstAdapter {
 		this.returnValue = new SaExpLire();
 	}
 	public void caseARegularAndE(ARegularAndE node) {
+		System.out.println(" -> AND");
 		node.getAndE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
 		node.getCompE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
 		this.returnValue = new SaExpAnd(op1, op2);
-		System.out.println(" -> AND");
 	}
 	public void caseARegularAppFunction(ARegularAppFunction node) {
 		String id = node.getId().getText();
 		node.getLe().apply(this);
         SaLExp le = (SaLExp) this.returnValue;
 		SaAppel appel = new SaAppel(id, le);
-		this.returnValue = new SaExpAppel(appel);
+		this.returnValue = new SaAppel(id, le);
 	}
 
 	public void caseARegularArrayDv(ARegularArrayDv node) {
@@ -221,24 +226,34 @@ public class Sc2sa extends DepthFirstAdapter {
 		this.returnValue = new SaDecFonc(id, params, vars, iBloc);
 	}
 	public void caseARegularE(ARegularE node) {
+		System.out.println(" -> Or");
 		node.getE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
 		node.getAndE().apply(this);
         SaExp op2 = (SaExp) this.returnValue;
 		this.returnValue = new SaExpOr(op1, op2);
-		System.out.println(" -> Or");
 	}
 	//ARegularEBis//
 	public void caseARegularEBis(ARegularEBis node) {
-	    this.returnValue = null;
+	    node.getE().apply( this );
+	    SaExp currExp = (SaExp) this.returnValue;
+	    node.getEBis().apply( this );
+	    SaLExp tail = (SaLExp) this.returnValue;
+		this.returnValue = new SaLExp( currExp, tail);
     }
 	//ARegularElseBlock//
 	public void caseARegularElseBlock(ARegularElseBlock node) {
-	    this.returnValue = null;
+		node.getBi().apply(this);
+		//this.returnValue = null;
     }
 	//ARegularIBis//
 	public void caseARegularIBis(ARegularIBis node) {
-	    this.returnValue = null;
+		node.getI().apply(this);
+		SaInst head = (SaInst) this.returnValue;
+		node.getIBis().apply(this);
+		SaLInst tail = (SaLInst) this.returnValue;
+		this.returnValue = new SaLInst(head, tail);
+		//this.returnValue = null;
     }
 	public void caseARegularLdf(ARegularLdf node) {
 		node.getDf().apply(this);
@@ -256,7 +271,12 @@ public class Sc2sa extends DepthFirstAdapter {
 	}
 	//ARegularLdvBis//
 	public void caseARegularLdvBis(ARegularLdvBis node) {
-	    this.returnValue = null;
+		node.getDv().apply(this);
+		SaDec dv = (SaDec) this.returnValue;
+		node.getLdvBis().apply(this);
+		SaLDec ldv = (SaLDec) this.returnValue;
+		this.returnValue = new SaLDec(dv, ldv);
+		//this.returnValue = null;
     }
 	//ARegularLdvOptional//
 	public void ARegularLdvOptional(ARegularLdvOptional node) {
@@ -277,20 +297,21 @@ public class Sc2sa extends DepthFirstAdapter {
 		this.returnValue = new SaLInst(head, tail);
 	}
 	public void caseARegularNegE(ARegularNegE node) {
+		System.out.println(" -> negation");
 		node.getParenthE().apply(this);
         SaExp op1 = (SaExp) this.returnValue;
 		this.returnValue = new SaExpNot(op1);
-		System.out.println(" -> negation");
 	}
 	//ARegularParenthE//
 	public void caseARegularParenthE(ARegularParenthE node) {
-	    node.getE().apply( this );
 		System.out.println(" -> parentheses");
+	    node.getE().apply( this );
     }
 	//ARegularVar//
 	public void caseARegularVar(ARegularVar node) {
 	    String id = node.getId().getText();
 		this.returnValue = new SaVarSimple(id);
+		System.out.println("Var found -------->" + id );
 	    //this.returnValue = null;
     }
 	public void caseARegularVariableDv(ARegularVariableDv node) {
@@ -304,8 +325,8 @@ public class Sc2sa extends DepthFirstAdapter {
 	}
 	public void caseAVariableElement(AVariableElement node) {
 		node.getId().apply(this);
-        SaVarSimple val = (SaVarSimple) this.returnValue;
-		this.returnValue = new SaExpVar(val);
+        //SaVarSimple val = (SaVarSimple) this.returnValue;
+		//this.returnValue = new SaExpVar( val );
 	}
 	public void caseAWhileI(AWhileI node) {
 		node.getE().apply(this);
@@ -315,12 +336,15 @@ public class Sc2sa extends DepthFirstAdapter {
 		this.returnValue = new SaInstTantQue(test, bi);
 	}
 	public void caseAWriteI(AWriteI node) {
+		System.out.println("ALAIDE ecriture");
 		node.getE().apply(this);
         SaExp arg = (SaExp) this.returnValue;
 		this.returnValue = new SaInstEcriture(arg);
-		System.out.println("ALAIDE ecriture");
 	}
 
+
+	@Override
+	public void caseEOF(EOF node){}
 
 	//////////////////////////////////////////////////////////////
 }
