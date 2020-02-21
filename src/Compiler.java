@@ -40,7 +40,7 @@ public class Compiler
 	    tree.apply(sc2sa);
 	    SaNode saRoot = sc2sa.getRoot();
 	    new Sa2Xml(saRoot, baseName);
-		   /*
+		/*
 	    System.out.println("[TABLE SYMBOLES]");
 	    Ts table = new Sa2ts(saRoot).getTableGlobale();
 	    table.afficheTout(baseName);

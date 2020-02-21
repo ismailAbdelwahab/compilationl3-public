@@ -71,7 +71,7 @@ do
 	filename=$(basename ${file})
 	YELLOW "Testing file: < ${NC}${filename}${YELLOW} >"	
 	OUTPUT="$(java Compiler ${file})"
-	if [ "${OUTPUT}" == "[SC]" ]
+	if [ "${OUTPUT}" == "[SC]\n[SA]" ]
 	then
 		GREEN "\tProgram syntactically correct."
 	else

@@ -4,10 +4,9 @@
     <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sa/Sc2sa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sa/Sc2sa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sc2sa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sc2sa.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,99 +36,19 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.13908046" />
   </component>
-  <component name="RunManager">
-    <configuration name="Compiler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Compiler" />
-      <module name="compilationl3-public" />
-      <option name="PROGRAM_PARAMETERS" value="../test/input/add1.l" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="WebSphereRunConfigurationType" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="PORT" value="9080" />
-      <deployment />
-      <server-settings>
-        <option name="PROFILE_PATH" value="" />
-        <option name="SOAP_PORT" value="8880" />
-        <option name="CELL_NAME" value="" />
-        <option name="NODE_NAME" value="" />
-        <option name="SERVER_NAME" value="" />
-        <option name="USERNAME" value="" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="WebSphere" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="45803" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="DEBUG" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="DEBUG" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="DEBUG" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <item itemvalue="Application.Compiler" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -161,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579886722081</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="continuation of TP2.&#10;Some methods added to Sc2sa.java">
+      <created>1580587760471</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580587760471</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,81 +110,34 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L" />
     <MESSAGE value="adding sc ( result of compiled grammar with sablecc)" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding sc ( result of compiled grammar with sablecc)" />
+    <MESSAGE value="continuation of TP2.&#10;Some methods added to Sc2sa.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="continuation of TP2.&#10;Some methods added to Sc2sa.java" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="207" y="197" width="673" height="684" key="#Unnamed" timestamp="1581092782000">
+    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580486312994">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="207" y="197" width="673" height="684" key="#Unnamed/0.28.1920.1024@0.28.1920.1024" timestamp="1581092782000" />
-    <state x="99" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581093201668">
+    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1580486312994" />
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1580491863191">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="99" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1581093201668" />
-    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581089708476">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1581089708476" />
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1581096226028">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1581096226028" />
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1580491863191" />
     <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl" timestamp="1580486218650">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1580486218650" />
-    <state width="1047" height="269" key="GridCell.Tab.0.bottom" timestamp="1581096037381">
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1580486306303">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state width="1047" height="269" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1581096037381" />
-    <state width="1047" height="269" key="GridCell.Tab.0.center" timestamp="1581096037381">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="269" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1581096037381" />
-    <state width="1047" height="269" key="GridCell.Tab.0.left" timestamp="1581096037381">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="269" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1581096037381" />
-    <state width="1047" height="269" key="GridCell.Tab.0.right" timestamp="1581096037381">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="269" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1581096037381" />
-    <state width="1047" height="332" key="GridCell.Tab.1.bottom" timestamp="1581093233133">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="332" key="GridCell.Tab.1.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1581093233133" />
-    <state width="1047" height="332" key="GridCell.Tab.1.center" timestamp="1581093233133">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="332" key="GridCell.Tab.1.center/0.28.1920.1024@0.28.1920.1024" timestamp="1581093233133" />
-    <state width="1047" height="332" key="GridCell.Tab.1.left" timestamp="1581093233133">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="332" key="GridCell.Tab.1.left/0.28.1920.1024@0.28.1920.1024" timestamp="1581093233133" />
-    <state width="1047" height="332" key="GridCell.Tab.1.right" timestamp="1581093233133">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state width="1047" height="332" key="GridCell.Tab.1.right/0.28.1920.1024@0.28.1920.1024" timestamp="1581093233133" />
-    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1581092698432">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1581092698432" />
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1580486306303" />
     <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1579886782218">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1579886782218" />
-    <state x="208" y="158" width="671" height="763" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581094658030">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state x="208" y="158" width="671" height="763" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.28.1920.1024@0.28.1920.1024" timestamp="1581094658030" />
     <state x="538" y="142" width="1374" height="795" key="new project wizard" timestamp="1580314181121">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="538" y="142" width="1374" height="795" key="new project wizard/0.28.1920.1024@0.28.1920.1024" timestamp="1580314181121" />
-    <state x="210" y="247" key="run.anything.popup" timestamp="1581095044133">
-      <screen x="0" y="28" width="1920" height="1024" />
-    </state>
-    <state x="210" y="247" key="run.anything.popup/0.28.1920.1024@0.28.1920.1024" timestamp="1581095044133" />
     <state x="1103" y="253" width="672" height="678" key="search.everywhere.popup" timestamp="1579882263650">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
