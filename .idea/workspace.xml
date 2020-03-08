@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="TP2 finish, Cleaning file Sc2sa, (added a minor change to  the grammar)&#10;&#10;In expression, a variable is now just &quot;var&quot;,&#10;&#10;var can then be written as :">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sc2sa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sc2sa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammaireL.sablecc" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammaireL.sablecc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/Analysis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/AnalysisAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/DepthFirstAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/analysis/ReversedDepthFirstAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/node/AVariableElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/node/AVariableElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sc/parser/parser.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/sc/parser/parser.dat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580587760471</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="TP2 working, sa trees fully generated.">
+      <created>1583664213714</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583664213714</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +118,8 @@
     <MESSAGE value="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L" />
     <MESSAGE value="adding sc ( result of compiled grammar with sablecc)" />
     <MESSAGE value="continuation of TP2.&#10;Some methods added to Sc2sa.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="continuation of TP2.&#10;Some methods added to Sc2sa.java" />
+    <MESSAGE value="TP2 working, sa trees fully generated." />
+    <option name="LAST_COMMIT_MESSAGE" value="TP2 working, sa trees fully generated." />
   </component>
   <component name="WindowStateProjectService">
     <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582284580362">

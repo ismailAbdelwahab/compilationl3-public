@@ -155,14 +155,6 @@ var =
  {regular} id |
  {array} id co e cf;
 
-/*
-element =
- {number} nb |
- {variable} id |
- {array} id co e cf |
- {read} read po pf |
- {func_call} app_function;
- */
 app_function =
  {regular} id po le pf;
 
