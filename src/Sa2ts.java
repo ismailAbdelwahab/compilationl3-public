@@ -1,6 +1,9 @@
 import sa.*;
 import ts.Ts;
 
+/**
+ * Enumeration that gives out the current context of the SaNode we are visiting.
+ */
 enum CONTEXT{
     GLOBAL,
     LOCAL,
@@ -18,23 +21,31 @@ public class Sa2ts extends SaDepthFirstVisitor {
     public Sa2ts(SaNode root){
         this.globalTable = new Ts();
         this.currentLocalTable = null;
-        context = CONTEXT.GLOBAL;
+        this.context = CONTEXT.GLOBAL;
         root.accept(this);
     }
 
     public Ts getTableGlobale() { return globalTable; }
 
+    /**
+     * @param table The Ts table to search in.
+     * @param varName The name of the variable to search.
+     * @return True if "varName" is found in "table", False otherwise.
+     */
     private boolean isVariableNotInTable(Ts table, String varName ){
         return table.getVar( varName ) == null ;
     }
+
+    /**
+     * @param functionName The function we are searching.
+     * @return True if "functionName" is found in "this.globalTable"
+     */
     private boolean isFunctionNotInGlobalTable( String functionName ){
         return globalTable.getFct( functionName ) == null ;
     }
 
     public Void visit(SaDecVar node){
-        System.out.println("trying to start SaDecVar is it null ???");
         String varName = node.getNom();
-        System.out.println("Starting SaDecVar for variable: "+ varName);
         if( context.isGlobal() ){
             if( isVariableNotInTable(globalTable, varName) )
                 node.tsItem = globalTable.addVar( varName, 1 );
@@ -81,71 +92,34 @@ public class Sa2ts extends SaDepthFirstVisitor {
     }
 
     public Void visit(SaDecFonc node){
-        System.out.println("Trying to declare function");
         String functionName = node.getNom();
-        System.out.println("Starting to declare fiunction: ["+functionName+"]");
         if ( context.isGlobal() ){
             if( isFunctionNotInGlobalTable( functionName ) ){
                 Ts functionTable = new Ts();
                 this.currentLocalTable = functionTable;
                 int nbParameters = (node.getParametres() == null) ? 0 : node.getParametres().length();
-                /////////////////////////////////////////////////// Treat parameters
-                this.context = CONTEXT.PARAM;
-                System.out.println(">>>>>> Starting to define {Params} for function: ["+functionName+"]");
                 SaLDec function_parameters = node.getParametres();
-                if (function_parameters != null )
-                    node.getParametres().accept( this );
-                System.out.println("<<<<<< End of definition of {Params} for function: ["+functionName+"]");
-                /*
-                SaLDec remaining_parameters = node.getParametres();
-                while ( remaining_parameters.getTete() != null ){
-                    SaDecVar parameter = (SaDecVar) remaining_parameters.getTete();
-                    visit( parameter );
-                    remaining_parameters = remaining_parameters.getQueue();
-                }
-                 */
-                //////////////////////////////////////////////////// Treat variables
-                this.context = CONTEXT.LOCAL;
-                System.out.println("####>>> Starting to define {variables} for function:["+functionName+"]");
                 SaLDec function_variables = node.getVariable();
-                if( function_variables != null ) // if there is at least one variable:
+                /////////////////////////////////////////////////// Handle parameters
+                this.context = CONTEXT.PARAM;
+                if (function_parameters != null )
+                    function_parameters.accept( this );
+                /////////////////////////////////////////////////// Handle variables
+                this.context = CONTEXT.LOCAL;
+                if( function_variables != null )
                     function_variables.accept( this );
-                System.out.println("<<<#### End of definition of {variables} for function:["+functionName+"]");
-                /*
-
-                SaLDec remaining_variables = node.getVariable();
-                while( remaining_variables.getTete() != null ){
-                    SaDecVar variable = (SaDecVar) remaining_variables.getTete();
-                    visit( variable );
-                    remaining_variables = remaining_variables.getQueue();
-                }
-                 */
-                //////////////////////////////////////////////////////////// TREAT the body of the function
-                // Symbole table does not care about the body of function ? as there is no decalaration in there.
-                /*
-                System.out.println("##>>>>Starting to define {BODY ??} for function:"+functionName);
-                node.getCorps().accept( this );
-                System.out.println("<<<<##End of definition of {BODY ??} for function:"+functionName);
-                 */
-                /////////////////////////////////////////////////////// Add function to global table
-
-                System.out.println("Adding :["+functionName+"] into global table.");
+                //////////////////////////////////////////////////// Add function to global table
                 node.tsItem = globalTable.addFct(functionName,nbParameters, functionTable, node );
-                System.out.println("Added function done.");
             }else {
                 System.err.println("Function [" + functionName + "] is already defined in {Global table}.");
                 System.exit(1);
             }
         }
-        else if( context.isLocal() ){
-            System.err.println("Declaration of function cannot be in {LOCAL Context}");
+        else if( context.isLocal() || context.isParam() ){
+            System.err.println("Declaration of function cannot be in {Local or Param Context}");
             System.exit( 1 );
         }
-        else if (context.isParam() ){
-            System.err.println("Declaration of function cannot be in {Parameter Context}");
-            System.exit( 1 );
-        }
-        ///// Reset variables to be in global context:
+        /////// Reset variables to be in global context:
         this.currentLocalTable = null;
         this.context = CONTEXT.GLOBAL;
         return null;
@@ -153,14 +127,14 @@ public class Sa2ts extends SaDepthFirstVisitor {
 
     public Void visit(SaVarSimple node){
         String varName = node.getNom();
-        if( ( context.isLocal()||context.isParam() ) &&
-                currentLocalTable.getVar( varName ) == null &&
-                globalTable.getVar( varName ) == null){
+        if( (context.isLocal()||context.isParam()) && // Context is [A] Local OR [B] Param
+                currentLocalTable.getVar( varName ) == null && // Var must be: [1] a Local variable OR [2] a Parameter
+                globalTable.getVar( varName ) == null){        //                  OR [3] a Global variable
             System.err.println("{Variable}["+ varName +"] not declared in {Local/Param context} nor in {Global context}.");
             System.exit( 1 );
         }
-        else if( context.isGlobal() &&
-                 globalTable.getVar( varName ) == null ){
+        else if( context.isGlobal() &&                // Context is [C] Global
+                 globalTable.getVar( varName ) == null ){ // Var must be Global.
             System.err.println("{Variable}["+ varName +"] not declared in {Global context}.");
             System.exit( 1 );
         }
@@ -169,7 +143,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
 
     public Void visit(SaVarIndicee node){
         String varName = node.getNom();
-        if( node.getIndice() == null ) { // Check that array variable has an index
+        if( node.getIndice() == null ) {
             System.err.println("Error: {Array variable}[" + varName + "], must be used with an index.");
             System.exit(1);
         }
