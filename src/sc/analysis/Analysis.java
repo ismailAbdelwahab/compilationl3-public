@@ -34,8 +34,8 @@ public interface Analysis extends Switch
     void caseAReturnI(AReturnI node);
     void caseAFuncCallI(AFuncCallI node);
     void caseAWriteI(AWriteI node);
-    void caseARegularVar(ARegularVar node);
-    void caseAArrayVar(AArrayVar node);
+    void caseARegularVarI(ARegularVarI node);
+    void caseAArrayVarI(AArrayVarI node);
     void caseARegularElseBlock(ARegularElseBlock node);
     void caseAEpsElseBlock(AEpsElseBlock node);
     void caseARegularE(ARegularE node);
@@ -57,9 +57,10 @@ public interface Analysis extends Switch
     void caseAPassParenthE(APassParenthE node);
     void caseANumberElement(ANumberElement node);
     void caseAVariableElement(AVariableElement node);
-    void caseAArrayElement(AArrayElement node);
     void caseAReadElement(AReadElement node);
     void caseAFuncCallElement(AFuncCallElement node);
+    void caseARegularVar(ARegularVar node);
+    void caseAArrayVar(AArrayVar node);
     void caseARegularAppFunction(ARegularAppFunction node);
     void caseARegularLe(ARegularLe node);
     void caseAEpsLe(AEpsLe node);

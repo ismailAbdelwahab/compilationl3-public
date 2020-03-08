@@ -105,7 +105,7 @@ i =
  {func_call} id po le pf semicolon |
  {write} write po e pf semicolon;
 
-var =
+var_i =
     {regular} id |
     {array} id co nb cf;
 
@@ -147,11 +147,22 @@ parenth_e =
 
 element =
  {number} nb |
+ {variable} var |
+ {read} read po pf |
+ {func_call} app_function;
+
+var =
+ {regular} id |
+ {array} id co e cf;
+
+/*
+element =
+ {number} nb |
  {variable} id |
  {array} id co e cf |
  {read} read po pf |
  {func_call} app_function;
-
+ */
 app_function =
  {regular} id po le pf;
 

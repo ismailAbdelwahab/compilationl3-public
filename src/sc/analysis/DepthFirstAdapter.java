@@ -638,41 +638,41 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAWriteI(node);
     }
 
-    public void inARegularVar(ARegularVar node)
+    public void inARegularVarI(ARegularVarI node)
     {
         defaultIn(node);
     }
 
-    public void outARegularVar(ARegularVar node)
+    public void outARegularVarI(ARegularVarI node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseARegularVar(ARegularVar node)
+    public void caseARegularVarI(ARegularVarI node)
     {
-        inARegularVar(node);
+        inARegularVarI(node);
         if(node.getId() != null)
         {
             node.getId().apply(this);
         }
-        outARegularVar(node);
+        outARegularVarI(node);
     }
 
-    public void inAArrayVar(AArrayVar node)
+    public void inAArrayVarI(AArrayVarI node)
     {
         defaultIn(node);
     }
 
-    public void outAArrayVar(AArrayVar node)
+    public void outAArrayVarI(AArrayVarI node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAArrayVar(AArrayVar node)
+    public void caseAArrayVarI(AArrayVarI node)
     {
-        inAArrayVar(node);
+        inAArrayVarI(node);
         if(node.getId() != null)
         {
             node.getId().apply(this);
@@ -689,7 +689,7 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getCf().apply(this);
         }
-        outAArrayVar(node);
+        outAArrayVarI(node);
     }
 
     public void inARegularElseBlock(ARegularElseBlock node)
@@ -1202,44 +1202,11 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAVariableElement(AVariableElement node)
     {
         inAVariableElement(node);
-        if(node.getId() != null)
+        if(node.getVar() != null)
         {
-            node.getId().apply(this);
+            node.getVar().apply(this);
         }
         outAVariableElement(node);
-    }
-
-    public void inAArrayElement(AArrayElement node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAArrayElement(AArrayElement node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseAArrayElement(AArrayElement node)
-    {
-        inAArrayElement(node);
-        if(node.getId() != null)
-        {
-            node.getId().apply(this);
-        }
-        if(node.getCo() != null)
-        {
-            node.getCo().apply(this);
-        }
-        if(node.getE() != null)
-        {
-            node.getE().apply(this);
-        }
-        if(node.getCf() != null)
-        {
-            node.getCf().apply(this);
-        }
-        outAArrayElement(node);
     }
 
     public void inAReadElement(AReadElement node)
@@ -1290,6 +1257,60 @@ public class DepthFirstAdapter extends AnalysisAdapter
             node.getAppFunction().apply(this);
         }
         outAFuncCallElement(node);
+    }
+
+    public void inARegularVar(ARegularVar node)
+    {
+        defaultIn(node);
+    }
+
+    public void outARegularVar(ARegularVar node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseARegularVar(ARegularVar node)
+    {
+        inARegularVar(node);
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        outARegularVar(node);
+    }
+
+    public void inAArrayVar(AArrayVar node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAArrayVar(AArrayVar node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAArrayVar(AArrayVar node)
+    {
+        inAArrayVar(node);
+        if(node.getId() != null)
+        {
+            node.getId().apply(this);
+        }
+        if(node.getCo() != null)
+        {
+            node.getCo().apply(this);
+        }
+        if(node.getE() != null)
+        {
+            node.getE().apply(this);
+        }
+        if(node.getCf() != null)
+        {
+            node.getCf().apply(this);
+        }
+        outAArrayVar(node);
     }
 
     public void inARegularAppFunction(ARegularAppFunction node)

@@ -207,13 +207,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseARegularVar(ARegularVar node)
+    public void caseARegularVarI(ARegularVarI node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAArrayVar(AArrayVar node)
+    public void caseAArrayVarI(AArrayVarI node)
     {
         defaultCase(node);
     }
@@ -345,12 +345,6 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAArrayElement(AArrayElement node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
     public void caseAReadElement(AReadElement node)
     {
         defaultCase(node);
@@ -358,6 +352,18 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAFuncCallElement(AFuncCallElement node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseARegularVar(ARegularVar node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAArrayVar(AArrayVar node)
     {
         defaultCase(node);
     }

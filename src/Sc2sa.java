@@ -20,15 +20,19 @@ public class Sc2sa extends DepthFirstAdapter {
         SaExp value = (SaExp) this.returnValue;
         this.returnValue = new SaInstAffect(id, value);
 	}
+	//************************************************************************************
+	/*
 	public void caseAArrayElement(AArrayElement node) {
         String id = node.getId().getText();
         node.getE().apply(this);
-        SaExp value = (SaExp) this.returnValue;
-        this.returnValue = new SaVarIndicee(id, value);
+        SaExp index = (SaExp) this.returnValue;
+        SaVarIndicee varIndicee = new SaVarIndicee(id, index);
+        this.returnValue = new SaExpVar( varIndicee );
 		System.out.println("Var array found: "+ id +"[]");
 	}
+	*/
     //AArrayVar//
-	public void caseAArrayVar(AArrayVar node) {
+	public void caseAArrayVarI(AArrayVarI node) {
         String id = node.getId().getText();
 		node.getNb().apply(this);
         SaExp indice = (SaExp) this.returnValue;
@@ -133,19 +137,16 @@ public class Sc2sa extends DepthFirstAdapter {
         this.returnValue = new SaExpMult(op1, op2);
 	}
 	public void caseANumberElement(ANumberElement node) {
-		//node.getNb().apply(this);
-        //SaExpInt nb = (SaExpInt) this.returnValue;
-        int value = Integer.parseInt(node.getNb().getText());
+        int value = Integer.parseInt( node.getNb().getText() );
 		this.returnValue = new SaExpInt( value );
 		System.out.println("ALAIDE Valeur trouvée -> "+ value );
 	}
-	/* TOUT les "APASS" sont ici */
+
 	public void caseAPassAndE(APassAndE node) {
 		System.out.println(" -> passed and");
 		node.getCompE().apply( this );
     }
 	public void caseAPassArithHighE(APassArithHighE node) {
-	    //this.returnValue = null;
 		System.out.println(" -> passed arith high");
 		node.getNegE().apply( this );
     }
@@ -244,7 +245,6 @@ public class Sc2sa extends DepthFirstAdapter {
 	//ARegularElseBlock//
 	public void caseARegularElseBlock(ARegularElseBlock node) {
 		node.getBi().apply(this);
-		//this.returnValue = null;
     }
 	//ARegularIBis//
 	public void caseARegularIBis(ARegularIBis node) {
@@ -253,7 +253,6 @@ public class Sc2sa extends DepthFirstAdapter {
 		node.getIBis().apply(this);
 		SaLInst tail = (SaLInst) this.returnValue;
 		this.returnValue = new SaLInst(head, tail);
-		//this.returnValue = null;
     }
 	public void caseARegularLdf(ARegularLdf node) {
 		node.getDf().apply(this);
@@ -276,11 +275,10 @@ public class Sc2sa extends DepthFirstAdapter {
 		node.getLdvBis().apply(this);
 		SaLDec ldv = (SaLDec) this.returnValue;
 		this.returnValue = new SaLDec(dv, ldv);
-		//this.returnValue = null;
     }
 	//ARegularLdvOptional//
 	public void ARegularLdvOptional(ARegularLdvOptional node) {
-	    node.getLdv().apply(this); //TODO : check this method
+	    node.getLdv().apply(this);
     }
 	public void caseARegularLe(ARegularLe node) {
 		node.getE().apply(this);
@@ -308,11 +306,10 @@ public class Sc2sa extends DepthFirstAdapter {
 	    node.getE().apply( this );
     }
 	//ARegularVar//
-	public void caseARegularVar(ARegularVar node) {
+	public void caseARegularVarI(ARegularVarI node) {
 	    String id = node.getId().getText();
 		this.returnValue = new SaVarSimple(id);
 		System.out.println("Var found -------->" + id );
-	    //this.returnValue = null;
     }
 	public void caseARegularVariableDv(ARegularVariableDv node) {
 		String id = node.getId().getText();
@@ -324,9 +321,11 @@ public class Sc2sa extends DepthFirstAdapter {
 		this.returnValue = new SaInstRetour(val);
 	}
 	public void caseAVariableElement(AVariableElement node) {
-		node.getId().apply(this);
-        //SaVarSimple val = (SaVarSimple) this.returnValue;
-		//this.returnValue = new SaExpVar( val );
+		node.getVar().apply( this );
+		SaVar var = (SaVar) this.returnValue;
+		this.returnValue =new SaExpVar( var );
+		//SaVarSimple variable = (SaVarSimple) this.returnValue;
+		//this.returnValue = new SaExpVar( variable );
 	}
 	public void caseAWhileI(AWhileI node) {
 		node.getE().apply(this);
@@ -342,7 +341,17 @@ public class Sc2sa extends DepthFirstAdapter {
 		this.returnValue = new SaInstEcriture(arg);
 	}
 
+	public void caseARegularVar(ARegularVar node){
+		String id = node.getId().getText();
+		this.returnValue = new SaVarSimple( id );
+	}
 
+	public void caseAArrayVar(AArrayVar node){
+		String id = node.getId().getText();
+		node.getE().apply( this );
+		SaExp index = (SaExp) this.returnValue;
+		this.returnValue = new SaVarIndicee( id, index );
+	}
 	@Override
 	public void caseEOF(EOF node){}
 

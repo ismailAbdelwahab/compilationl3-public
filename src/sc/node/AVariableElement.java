@@ -7,7 +7,7 @@ import sc.analysis.*;
 @SuppressWarnings("nls")
 public final class AVariableElement extends PElement
 {
-    private TId _id_;
+    private PVar _var_;
 
     public AVariableElement()
     {
@@ -15,10 +15,10 @@ public final class AVariableElement extends PElement
     }
 
     public AVariableElement(
-        @SuppressWarnings("hiding") TId _id_)
+        @SuppressWarnings("hiding") PVar _var_)
     {
         // Constructor
-        setId(_id_);
+        setVar(_var_);
 
     }
 
@@ -26,7 +26,7 @@ public final class AVariableElement extends PElement
     public Object clone()
     {
         return new AVariableElement(
-            cloneNode(this._id_));
+            cloneNode(this._var_));
     }
 
     @Override
@@ -35,16 +35,16 @@ public final class AVariableElement extends PElement
         ((Analysis) sw).caseAVariableElement(this);
     }
 
-    public TId getId()
+    public PVar getVar()
     {
-        return this._id_;
+        return this._var_;
     }
 
-    public void setId(TId node)
+    public void setVar(PVar node)
     {
-        if(this._id_ != null)
+        if(this._var_ != null)
         {
-            this._id_.parent(null);
+            this._var_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AVariableElement extends PElement
             node.parent(this);
         }
 
-        this._id_ = node;
+        this._var_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._id_);
+            + toString(this._var_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._id_ == child)
+        if(this._var_ == child)
         {
-            this._id_ = null;
+            this._var_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AVariableElement extends PElement
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._id_ == oldChild)
+        if(this._var_ == oldChild)
         {
-            setId((TId) newChild);
+            setVar((PVar) newChild);
             return;
         }
 
