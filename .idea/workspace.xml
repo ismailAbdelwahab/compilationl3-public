@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Sa2c3a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sa2ts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sa2ts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test_Compiler.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583679286939</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="TP3  [Sa2ts] finished. File cleared from comments and (sout)s.">
+      <created>1583680559679</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583680559679</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +151,8 @@
     <MESSAGE value="TP2 working, sa trees fully generated." />
     <MESSAGE value="TP2 finish, Cleaning file Sc2sa, (added a minor change to  the grammar)&#10;&#10;In expression, a variable is now just &quot;var&quot;,&#10;&#10;var can then be written as :&#10;var =&#10;  {regular} id |&#10;  {array} id co e cf ;" />
     <MESSAGE value="TP3 finished, this version is commited with System.out.println tags in the code." />
-    <option name="LAST_COMMIT_MESSAGE" value="TP3 finished, this version is commited with System.out.println tags in the code." />
+    <MESSAGE value="TP3  [Sa2ts] finished. File cleared from comments and (sout)s." />
+    <option name="LAST_COMMIT_MESSAGE" value="TP3  [Sa2ts] finished. File cleared from comments and (sout)s." />
   </component>
   <component name="WindowStateProjectService">
     <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582284580362">

@@ -45,6 +45,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
     }
 
     public Void visit(SaDecVar node){
+        System.out.println("SaDecVar node  name =>"+node.getNom());
         String varName = node.getNom();
         if( context.isGlobal() ){
             if( isVariableNotInTable(globalTable, varName) )
@@ -55,8 +56,10 @@ public class Sa2ts extends SaDepthFirstVisitor {
             }
         }
         else if( context.isLocal() ){
-            if( isVariableNotInTable(currentLocalTable, varName) )
+            if( isVariableNotInTable(currentLocalTable, varName) ) {
                 node.tsItem = currentLocalTable.addVar(varName, 1);
+                System.out.println("SA2TS : SaDecVar : " + varName + "// tsItem=> " + node.tsItem);
+            }
             else {
                 System.err.println("{LOCAL} TABLE ERROR: [" + varName + "] {simple variable} already exists.");
                 System.exit(1);
@@ -92,6 +95,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
     }
 
     public Void visit(SaDecFonc node){
+        System.out.println("Sa2TS SaDecFond ==> fonc name = "+node.getNom());
         String functionName = node.getNom();
         if ( context.isGlobal() ){
             if( isFunctionNotInGlobalTable( functionName ) ){
@@ -108,6 +112,8 @@ public class Sa2ts extends SaDepthFirstVisitor {
                 this.context = CONTEXT.LOCAL;
                 if( function_variables != null )
                     function_variables.accept( this );
+
+                //node.getCorps().accept( this ); // TODO check if we have to do this or not
                 //////////////////////////////////////////////////// Add function to global table
                 node.tsItem = globalTable.addFct(functionName,nbParameters, functionTable, node );
             }else {
@@ -127,6 +133,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
 
     public Void visit(SaVarSimple node){
         String varName = node.getNom();
+        System.out.println("SA2TS SaVarSimple node ==> "+node.getNom());
         if( (context.isLocal()||context.isParam()) && // Context is [A] Local OR [B] Param
                 currentLocalTable.getVar( varName ) == null && // Var must be: [1] a Local variable OR [2] a Parameter
                 globalTable.getVar( varName ) == null){        //                  OR [3] a Global variable
@@ -138,6 +145,12 @@ public class Sa2ts extends SaDepthFirstVisitor {
             System.err.println("{Variable}["+ varName +"] not declared in {Global context}.");
             System.exit( 1 );
         }
+
+
+        if ( context.isGlobal() )
+            node.tsItem = globalTable.getVar( varName );
+        else if ( context.isParam() || context.isLocal() )
+            node.tsItem = currentLocalTable.getVar( varName );
         return null;
     }
 
