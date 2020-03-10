@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20b2aa7c-3b54-4f91-9f5d-684950637d95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Sa2c3a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sa2c3a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sa2c3a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sa2ts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sa2ts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test_Compiler.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/launch_tests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/launch_tests.sh" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,15 +48,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.13908046" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -74,6 +73,7 @@
       <workItem from="1579881357956" duration="5861000" />
       <workItem from="1580312506951" duration="668000" />
       <workItem from="1580486191529" duration="5549000" />
+      <workItem from="1583840131594" duration="4308000" />
     </task>
     <task id="LOCAL-00001" summary="adding grammaireL.sablecc &#10;  Contains the grammar of our langage L">
       <created>1579886133980</created>
@@ -155,22 +155,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="TP3  [Sa2ts] finished. File cleared from comments and (sout)s." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582284580362">
+    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583841021834">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1582284580362" />
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1582290529906">
+    <state x="321" y="432" width="310" height="215" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1583841021834" />
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2" timestamp="1583844852079">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1582290529906" />
-    <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl" timestamp="1582288806798">
+    <state x="990" y="136" width="892" height="806" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1583844852079" />
+    <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl" timestamp="1583840164704">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1582288806798" />
-    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1580486306303">
+    <state x="743" y="298" width="497" height="483" key="FileChooserDialogImpl/0.28.1920.1024@0.28.1920.1024" timestamp="1583840164704" />
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor" timestamp="1583840166810">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
-    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1580486306303" />
+    <state x="886" y="117" width="1026" height="844" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1583840166810" />
     <state x="1035" y="276" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1579886782218">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>

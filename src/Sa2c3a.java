@@ -20,15 +20,19 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
         return null;
     }
 
-    public C3aOperand visit( SaInstEcriture node ){
-        System.out.println("SaInstEcriture detected:");
-        C3aOperand op = (C3aOperand) node.getArg().accept( this );
-        System.out.println( "op ==> "+ op.toString() );
-        c3a.ajouteInst( new C3aInstWrite( op, "" ) );
-        return null;
+
+    public C3aOperand visit( SaAppel node ){
+        if( node.getArguments() != null ) {
+            SaLExp arguments = node.getArguments();
+            while (arguments != null) {
+                C3aOperand param = arguments.getTete().accept(this);
+                c3a.ajouteInst(new C3aInstParam(param, ""));
+                arguments = arguments.getQueue();
+            }
+            System.out.println("C3A SaAPPEL ==> ts item ==> " + node.tsItem);
+        }
+        return new C3aFunction( node.tsItem );
     }
-
-
 /////////////////////////// SaExp are here ////////////////////////////////////////////
     public C3aOperand visit ( SaExpAdd node ){
         C3aOperand op1 = node.getOp1().accept( this );
@@ -45,6 +49,7 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
         C3aFunction op1 =(C3aFunction) node.getVal().accept( this );
         C3aTemp tmp = c3a.newTemp();
         c3a.ajouteInst( new C3aInstCall(op1, tmp, "") );
+        System.out.println("C3A ==> SaEXPappel FIN");
         return tmp;
     }
     public C3aOperand visit ( SaExpDiv node ){
@@ -113,12 +118,7 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
         c3a.addLabelToNextInst(continuation_of_prog);
         return t0;
     }
-    /*
-    t0 = 1
-	if 3 < 10 goto l0
-	t0 = 0
-l0	write t0
-     */
+
     public C3aOperand visit ( SaExpInf node ){
         C3aOperand t0 = c3a.newTemp();
         C3aLabel continuation_of_prog = c3a.newAutoLabel();
@@ -136,6 +136,13 @@ l0	write t0
         return t0;
     }
 //////////////// SaInst are here ////////////////////////////////////////////////
+    public C3aOperand visit( SaInstEcriture node ){
+        System.out.println("SaInstEcriture detected:");
+        C3aOperand op = (C3aOperand) node.getArg().accept( this );
+        System.out.println( "op ==> "+ op.toString() );
+        c3a.ajouteInst( new C3aInstWrite( op, "" ) );
+        return null;
+    }
     public C3aOperand visit ( SaInstAffect node ){
         System.out.println("///////////////AFFECTION SA Starting");
         C3aVar left = (C3aVar) node.getLhs().accept( this );
@@ -233,4 +240,5 @@ l0	write t0
         C3aOperand index = node.getIndice().accept( this );
         return new C3aVar(tsItemVar, index);
     }
+
 }

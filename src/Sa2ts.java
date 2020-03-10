@@ -1,5 +1,6 @@
 import sa.*;
 import ts.Ts;
+import ts.TsItemVar;
 
 /**
  * Enumeration that gives out the current context of the SaNode we are visiting.
@@ -113,7 +114,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
                 if( function_variables != null )
                     function_variables.accept( this );
 
-                //node.getCorps().accept( this ); // TODO check if we have to do this or not
+                node.getCorps().accept( this ); // TODO check if we have to do this or not
                 //////////////////////////////////////////////////// Add function to global table
                 node.tsItem = globalTable.addFct(functionName,nbParameters, functionTable, node );
             }else {
@@ -128,48 +129,50 @@ public class Sa2ts extends SaDepthFirstVisitor {
         /////// Reset variables to be in global context:
         this.currentLocalTable = null;
         this.context = CONTEXT.GLOBAL;
+        System.out.println(" end of declaration of funciton ==> " + functionName);
         return null;
     }
 
     public Void visit(SaVarSimple node){
         String varName = node.getNom();
         System.out.println("SA2TS SaVarSimple node ==> "+node.getNom());
-        if( (context.isLocal()||context.isParam()) && // Context is [A] Local OR [B] Param
-                currentLocalTable.getVar( varName ) == null && // Var must be: [1] a Local variable OR [2] a Parameter
-                globalTable.getVar( varName ) == null){        //                  OR [3] a Global variable
+        TsItemVar gTsItemVar = globalTable.getVar( varName );
+        TsItemVar lTsItemVar = currentLocalTable.getVar( varName );
+
+        if (lTsItemVar == null && gTsItemVar == null){
             System.err.println("{Variable}["+ varName +"] not declared in {Local/Param context} nor in {Global context}.");
             System.exit( 1 );
         }
-        else if( context.isGlobal() &&                // Context is [C] Global
-                 globalTable.getVar( varName ) == null ){ // Var must be Global.
-            System.err.println("{Variable}["+ varName +"] not declared in {Global context}.");
-            System.exit( 1 );
-        }
 
+        if ( gTsItemVar != null )
+            node.tsItem = gTsItemVar;
+        if ( lTsItemVar != null)
+            node.tsItem = lTsItemVar;
 
-        if ( context.isGlobal() )
-            node.tsItem = globalTable.getVar( varName );
-        else if ( context.isParam() || context.isLocal() )
-            node.tsItem = currentLocalTable.getVar( varName );
+        System.out.println(">>>>> Sa2ts here: varName => "+ varName +" node.tsItem ===> " + node.tsItem);
         return null;
     }
 
     public Void visit(SaVarIndicee node){
         String varName = node.getNom();
+        TsItemVar gTsItemVar = globalTable.getVar( varName );
         if( node.getIndice() == null ) {
             System.err.println("Error: {Array variable}[" + varName + "], must be used with an index.");
             System.exit(1);
         }
-        if( context.isGlobal() && globalTable.getVar(varName) == null ) {
+        if( gTsItemVar == null ) {
             System.err.println("{Array variable}[" + varName + "] not declared in {Global context}.");
             System.exit(1);
         }
+        node.tsItem = gTsItemVar;
         return null;
     }
 
     public Void visit(SaAppel node){
         String functionCalled = node.getNom();
-        int nbGivenArgs = node.getArguments().length();
+        System.out.println("\t>>>>>> debut appel fonc => "+ functionCalled);
+        int nbGivenArgs =  node.getArguments() == null ? 0 : node.getArguments().length();
+        System.out.println("ALAIDE");
         if( globalTable.getFct( functionCalled ) == null ) {
             System.err.println("Error:{function called}[" + functionCalled + "] is not defined in {Global table}.");
             System.exit(1);
@@ -183,6 +186,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
             System.err.println("Too few arguments given in {function call of}:[" + functionCalled + "].");
             System.exit(1);
         }
+        System.out.println("\t<<<<<< end => "+ functionCalled);
         return null;
     }
 }
