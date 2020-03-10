@@ -46,7 +46,6 @@ public class Sa2ts extends SaDepthFirstVisitor {
     }
 
     public Void visit(SaDecVar node){
-        System.out.println("SaDecVar node  name =>"+node.getNom());
         String varName = node.getNom();
         if( context.isGlobal() ){
             if( isVariableNotInTable(globalTable, varName) )
@@ -59,7 +58,6 @@ public class Sa2ts extends SaDepthFirstVisitor {
         else if( context.isLocal() ){
             if( isVariableNotInTable(currentLocalTable, varName) ) {
                 node.tsItem = currentLocalTable.addVar(varName, 1);
-                System.out.println("SA2TS : SaDecVar : " + varName + "// tsItem=> " + node.tsItem);
             }
             else {
                 System.err.println("{LOCAL} TABLE ERROR: [" + varName + "] {simple variable} already exists.");
@@ -96,7 +94,6 @@ public class Sa2ts extends SaDepthFirstVisitor {
     }
 
     public Void visit(SaDecFonc node){
-        System.out.println("Sa2TS SaDecFond ==> fonc name = "+node.getNom());
         String functionName = node.getNom();
         if ( context.isGlobal() ){
             if( isFunctionNotInGlobalTable( functionName ) ){
@@ -114,7 +111,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
                 if( function_variables != null )
                     function_variables.accept( this );
 
-                node.getCorps().accept( this ); // TODO check if we have to do this or not
+                node.getCorps().accept( this );
                 //////////////////////////////////////////////////// Add function to global table
                 node.tsItem = globalTable.addFct(functionName,nbParameters, functionTable, node );
             }else {
@@ -129,13 +126,11 @@ public class Sa2ts extends SaDepthFirstVisitor {
         /////// Reset variables to be in global context:
         this.currentLocalTable = null;
         this.context = CONTEXT.GLOBAL;
-        System.out.println(" end of declaration of funciton ==> " + functionName);
         return null;
     }
 
     public Void visit(SaVarSimple node){
         String varName = node.getNom();
-        System.out.println("SA2TS SaVarSimple node ==> "+node.getNom());
         TsItemVar gTsItemVar = globalTable.getVar( varName );
         TsItemVar lTsItemVar = currentLocalTable.getVar( varName );
 
@@ -149,7 +144,6 @@ public class Sa2ts extends SaDepthFirstVisitor {
         if ( lTsItemVar != null)
             node.tsItem = lTsItemVar;
 
-        System.out.println(">>>>> Sa2ts here: varName => "+ varName +" node.tsItem ===> " + node.tsItem);
         return null;
     }
 
@@ -170,9 +164,7 @@ public class Sa2ts extends SaDepthFirstVisitor {
 
     public Void visit(SaAppel node){
         String functionCalled = node.getNom();
-        System.out.println("\t>>>>>> debut appel fonc => "+ functionCalled);
         int nbGivenArgs =  node.getArguments() == null ? 0 : node.getArguments().length();
-        System.out.println("ALAIDE");
         if( globalTable.getFct( functionCalled ) == null ) {
             System.err.println("Error:{function called}[" + functionCalled + "] is not defined in {Global table}.");
             System.exit(1);
@@ -186,7 +178,6 @@ public class Sa2ts extends SaDepthFirstVisitor {
             System.err.println("Too few arguments given in {function call of}:[" + functionCalled + "].");
             System.exit(1);
         }
-        System.out.println("\t<<<<<< end => "+ functionCalled);
         return null;
     }
 }

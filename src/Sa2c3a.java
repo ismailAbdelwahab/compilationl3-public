@@ -29,7 +29,6 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
                 c3a.ajouteInst(new C3aInstParam(param, ""));
                 arguments = arguments.getQueue();
             }
-            System.out.println("C3A SaAPPEL ==> ts item ==> " + node.tsItem);
         }
         return new C3aFunction( node.tsItem );
     }
@@ -49,7 +48,6 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
         C3aFunction op1 =(C3aFunction) node.getVal().accept( this );
         C3aTemp tmp = c3a.newTemp();
         c3a.ajouteInst( new C3aInstCall(op1, tmp, "") );
-        System.out.println("C3A ==> SaEXPappel FIN");
         return tmp;
     }
     public C3aOperand visit ( SaExpDiv node ){
@@ -137,27 +135,19 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
     }
 //////////////// SaInst are here ////////////////////////////////////////////////
     public C3aOperand visit( SaInstEcriture node ){
-        System.out.println("SaInstEcriture detected:");
         C3aOperand op = (C3aOperand) node.getArg().accept( this );
-        System.out.println( "op ==> "+ op.toString() );
         c3a.ajouteInst( new C3aInstWrite( op, "" ) );
         return null;
     }
     public C3aOperand visit ( SaInstAffect node ){
-        System.out.println("///////////////AFFECTION SA Starting");
         C3aVar left = (C3aVar) node.getLhs().accept( this );
-        System.out.println("///////////////\t left is found Affect SA ");
         C3aOperand right = node.getRhs().accept( this );
-        System.out.println("///////////////\t right is found Affect SA ");
         c3a.ajouteInst( new C3aInstAffect(right, left, "") );
-        System.out.println("///////////////AFFECTION SA done..");
         return left;
     }
     public C3aOperand visit ( SaInstRetour node ){
-        System.out.println( "#############Start inst retour .");
         C3aOperand op1 = node.getVal().accept( this );
         c3a.ajouteInst( new C3aInstReturn(op1, "") );
-        System.out.println( "#############SA int retour DONE !!");
         return op1;
     }
     public C3aOperand visit ( SaInstBloc node ){
@@ -229,10 +219,7 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
     public C3aOperand visit( SaVarSimple node ){
         //TsItemVar tsItemVar = globalTable.getVar( node.getNom() );
         TsItemVar tsItemVar = node.tsItem;
-        System.out.println("SaVarSimple case used to get here. => " + node.getNom()+" && node : "+ node );
-        System.out.println("\t tsItemVar => "+ tsItemVar);
         C3aVar var =  new C3aVar(tsItemVar, null);
-        System.out.println("\tVar generated => "+ var);
         return var;
     }
     public C3aOperand visit( SaVarIndicee node ){
