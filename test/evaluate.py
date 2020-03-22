@@ -32,7 +32,7 @@ def deleteClasses() :
     for filename in files :
       if os.path.splitext(filename)[1] == ".class" :
         os.remove(root+"/"+filename)
-        
+
   return classpath
 ################################################################################
 
@@ -50,7 +50,7 @@ def findClasspath() :
       if os.path.splitext(filename)[1] == ".class" :
         classpath += ("" if len(classpath) == 0 else ":") + root
         break
-        
+
   return classpath
 ################################################################################
 
@@ -90,7 +90,7 @@ def findInputFiles() :
 
 ################################################################################
 def deleteCompilationOutputs() :
-  outputExtensions = [".sa", ".sc", ".ts", ".nasm", ".pre-nasm", ".c3a", ".c3aout", ".fg", ".fgs", ".ig"]
+  outputExtensions = [".exe", ".o", ".out", ".sa", ".sc", ".ts", ".nasm", ".pre-nasm", ".c3a", ".c3aout", ".fg", ".fgs", ".ig"]
   for filename in os.listdir(inputPath) :
     if os.path.splitext(filename)[1] in outputExtensions :
       os.remove(inputPath+filename)
@@ -125,7 +125,7 @@ def evaluateSa(inputFiles) :
     if not os.path.isfile(inputPath+saFilename) :
       evaluation[1]["notfound"].append(saFilename)
       continue
-    
+
     saRef = refPath+"sa-ref/"+saFilename
     if not os.path.isfile(saRef) :
       print("Fichier non trouvé : %s"%saRef, file=sys.stderr)
@@ -149,7 +149,7 @@ def evaluateDiff(inputFiles, extension, path, name) :
     if not os.path.isfile(inputPath+producedFile) :
       evaluation[1]["notfound"].append(producedFile)
       continue
-    
+
     ref = refPath+path+producedFile
     if not os.path.isfile(ref) :
       print("Fichier non trouvé : %s"%ref, file=sys.stderr)
@@ -162,6 +162,32 @@ def evaluateDiff(inputFiles, extension, path, name) :
       evaluation[1]["incorrect"].append(producedFile)
 
   return evaluation
+################################################################################
+
+################################################################################
+def evaluateNasm(inputFiles) :
+  for filename in inputFiles :
+    nasmFilename = changeExtension(filename, ".nasm")
+    objectFilename = changeExtension(filename, ".o")
+    execFilename = changeExtension(filename, ".exe")
+    outFilename = changeExtension(filename, ".out")
+    if not os.path.isfile(inputPath+nasmFilename) :
+      continue
+
+    out = subprocess.Popen("cd {} && nasm -f elf -dwarf -g {}".format(inputPath+"..","input/"+nasmFilename), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stderr.read()
+    if not os.path.isfile(inputPath+objectFilename) :
+      print(out, file=sys.stderr)
+      continue
+    out = subprocess.Popen("ld -m elf_i386 -o {}{} {}{}".format(inputPath,execFilename,inputPath,objectFilename), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stderr.read()
+    if not os.path.isfile(inputPath+execFilename) :
+      print(out, file=sys.stderr)
+      continue
+    out = subprocess.Popen("{}{} > {}{}".format(inputPath,execFilename,inputPath,outFilename), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stderr.read()
+    if not os.path.isfile(inputPath+outFilename) :
+      print(out, file=sys.stderr)
+      continue
+
+  return evaluateDiff(inputFiles, ".out", "out-ref/", "Execution du nasm")
 ################################################################################
 
 ################################################################################
@@ -206,7 +232,7 @@ if __name__ == "__main__" :
   saEvaluation = evaluateSa(inputFiles)
   tsEvaluation = evaluateDiff(inputFiles, ".ts", "ts-ref/", "Table des Symboles")
   c3aEvaluation = evaluateDiff(inputFiles, ".c3aout", "c3aout-ref/", "Code 3 Adresses")
-  prenasmEvaluation = evaluateDiff(inputFiles, ".pre-nasm", "prenasm-ref/", "Pre-Nasm")
+  nasmEvaluation = evaluateNasm(inputFiles)
 
   useColor = True
 
@@ -216,6 +242,5 @@ if __name__ == "__main__" :
   printEvaluationResult(sys.stdout, saEvaluation, useColor)
   printEvaluationResult(sys.stdout, tsEvaluation, useColor)
   printEvaluationResult(sys.stdout, c3aEvaluation, useColor)
-  printEvaluationResult(sys.stdout, prenasmEvaluation, useColor)
+  printEvaluationResult(sys.stdout, nasmEvaluation, useColor)
 ################################################################################
-
