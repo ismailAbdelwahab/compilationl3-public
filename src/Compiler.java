@@ -1,5 +1,6 @@
 import c3a.C3a;
 import fg.Fg;
+import fg.FgSolution;
 import sc.parser.*;
 import sc.lexer.*;
 import sc.node.*;
@@ -73,10 +74,10 @@ public class Compiler
 	    Fg fg = new Fg(nasm);
 	    System.out.print("[PRINT FG] ");
 	    fg.affiche(baseName);
-		/*
 	    System.out.println("[SOLVE FG]");
 	    FgSolution fgSolution = new FgSolution(nasm, fg);
 	    fgSolution.affiche(baseName);
+		/*
       */
 	}
 	catch(Exception e){

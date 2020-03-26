@@ -11,7 +11,7 @@ public class Fg implements NasmVisitor <Void> {
     Map< Node, NasmInst> node2Inst;
     Map< String, NasmInst> label2Inst;
 
-    private final Node[] nodeArray;
+    private final Node[] finalNodeArray;
 
     public Fg(Nasm nasm){
         this.nasm = nasm;
@@ -26,7 +26,7 @@ public class Fg implements NasmVisitor <Void> {
             putDataInMaps( inst, node );
         }
         // Get the array of nodes :
-        this.nodeArray = this.graph.nodeArray();
+        this.finalNodeArray = this.graph.nodeArray();
         /* Start the visit of instructions to create edges */
         for (NasmInst inst : nasm.listeInst )
             inst.accept( this );
@@ -81,10 +81,10 @@ public class Fg implements NasmVisitor <Void> {
         //Get current node
         Node currentNode = inst2Node.get( inst );
         //Check if our node is the LAST instruction:
-        if( currentNode.label()+1 >= nodeArray.length )
+        if( currentNode.label()+1 >= finalNodeArray.length )
             return; // No more instructions after the current one
         //If not: add an edge to the next instruction
-        Node nextNode =  this.nodeArray[ currentNode.label()+1 ];
+        Node nextNode =  this.finalNodeArray[ currentNode.label()+1 ];
         graph.addEdge( currentNode, nextNode);
     }
     private void addEdgeToLabel( NasmInst inst, String label ){
