@@ -78,11 +78,26 @@ public class Fg implements NasmVisitor <Void> {
     }
 /* ************** Manage edges ********************** */
     private void addEdgeToNextInstruction( NasmInst inst ){
+        //Get current node
         Node currentNode = inst2Node.get( inst );
+        //Check if our node is the LAST instruction:
         if( currentNode.label()+1 >= nodeArray.length )
             return; // No more instructions after the current one
+        //If not: add an edge to the next instruction
         Node nextNode =  this.nodeArray[ currentNode.label()+1 ];
         graph.addEdge( currentNode, nextNode);
+    }
+    private void addEdgeToLabel( NasmInst inst, String label ){
+        //Get current node
+        Node currentNode = inst2Node.get( inst );
+        //Get the node of the label (destination)
+        NasmInst destinationInst = label2Inst.get( label );
+        Node destinationNode = inst2Node.get( destinationInst );
+        //Add the edge
+        System.out.println("Adding label jump");
+        graph.addEdge( currentNode, destinationNode);
+
+
     }
 /* **************** Visit  ************************** */
     /* *********** Classic vertices **************** */
@@ -142,16 +157,59 @@ public class Fg implements NasmVisitor <Void> {
         addEdgeToNextInstruction( inst );
         return null;
     }
+    public Void visit(NasmInst inst){
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
     /* *********** Jump vertices *********************/
-    public Void visit(NasmCall inst){return null;}
-    public Void visit(NasmJe inst){return null;}
-    public Void visit(NasmJle inst){return null;}
-    public Void visit(NasmJne inst){return null;}
-    public Void visit(NasmInst inst){return null;}
-    public Void visit(NasmJge inst){return null;}
-    public Void visit(NasmJl inst){return null;}
-    public Void visit(NasmJg inst){return null;}
-    public Void visit(NasmJmp inst){return null;}
+    public Void visit(NasmCall inst){
+        //addEdgeToNextInstruction( inst ); NOT HERE ! we call a function
+        String functionName = ((NasmLabel) inst.address).val;
+        if ( ! functionName.equals("iprintLF") )
+            addEdgeToLabel( inst, functionName );
+        return null;
+    }
+    public Void visit(NasmJe inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
+    public Void visit(NasmJle inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
+    public Void visit(NasmJne inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
+    public Void visit(NasmJge inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
+    public Void visit(NasmJl inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
+    public Void visit(NasmJg inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        addEdgeToNextInstruction( inst );
+        return null;
+    }
+    public Void visit(NasmJmp inst){
+        String labelDestination = ((NasmLabel) inst.address).val;
+        addEdgeToLabel( inst, labelDestination );
+        return null;
+    }
 
     public Void visit(NasmAddress operand){return null;}
     public Void visit(NasmConstant operand){return null;}
