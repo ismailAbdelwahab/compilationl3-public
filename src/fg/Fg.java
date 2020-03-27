@@ -94,7 +94,6 @@ public class Fg implements NasmVisitor <Void> {
         NasmInst destinationInst = label2Inst.get( label );
         Node destinationNode = inst2Node.get( destinationInst );
         //Add the edge
-        System.out.println("Adding label jump");
         graph.addEdge( currentNode, destinationNode);
 
 

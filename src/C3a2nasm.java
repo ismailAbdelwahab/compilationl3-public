@@ -3,6 +3,7 @@ import nasm.*;
 import ts.Ts;
 
 public class C3a2nasm implements C3aVisitor<NasmOperand> {
+    private final NasmRegister unk;
     private final NasmRegister ebp;
     private final NasmRegister esp;
     private static final int INT_SIZE = 4;
@@ -15,26 +16,32 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     public C3a2nasm(C3a c3a, Ts globalTable) {
         this.c3a = c3a;
         this.globalTable = globalTable;
-        this.nasm = new Nasm( this.globalTable);
+        this.nasm = new Nasm( this.globalTable );
 
-        this.nasm.setTempCounter( 0 );
-        ebp = this.nasm.newRegister();
+        this.nasm.setTempCounter( -3 );
+        unk = this.nasm.newRegister();  // UNK
+        unk.colorRegister(Nasm.REG_UNK);
+        ebp = this.nasm.newRegister();  //EBP
         ebp.colorRegister(Nasm.REG_EBP);
-        esp = this.nasm.newRegister();
+        esp = this.nasm.newRegister();  //ESP
         esp.colorRegister(Nasm.REG_ESP);
         NasmRegister eax = new NasmRegister(Nasm.REG_EAX);
-        eax.colorRegister(Nasm.REG_EAX);
+        eax.colorRegister(Nasm.REG_EAX);// EAX
         NasmRegister ebx = new NasmRegister(Nasm.REG_EBX);
-        ebx.colorRegister(Nasm.REG_EBX);
-
+        ebx.colorRegister(Nasm.REG_EBX);// EBX
+        /*
+        NasmRegister ecx = new NasmRegister(Nasm.REG_EBX);
+        ecx.colorRegister(Nasm.REG_ECX);// ECX
+        NasmRegister edx = new NasmRegister(Nasm.REG_EBX);
+        edx.colorRegister(Nasm.REG_EDX);// EDX
+        */
         nasm.ajouteInst(new NasmCall(null, new NasmLabel("main"), ""));
         nasm.ajouteInst(new NasmMov(null, ebx, new NasmConstant(0), " valeur de retour du programme"));
         nasm.ajouteInst(new NasmMov(null, eax, new NasmConstant(1), ""));
         nasm.ajouteInst(new NasmInt(null, ""));
 
-        for(C3aInst inst : c3a.listeInst) {
+        for(C3aInst inst : c3a.listeInst)
             inst.accept(this);
-        }
     }
 
     public Nasm getNasm() { return nasm; }
@@ -61,8 +68,6 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
         nasm.ajouteInst(new NasmCall(null, functionName, ""));
 
         NasmOperand returnRegister = inst.result.accept(this);
-        //NasmRegister reg_eax = nasm.newRegister();
-        //reg_eax.colorRegister(Nasm.REG_EAX);
         nasm.ajouteInst(new NasmPop(null, returnRegister, "récupération de la valeur de retour"));
 
         if( inst.op1.val.nbArgs > 0 ) {
@@ -96,7 +101,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
         NasmOperand op2 = inst.op2.accept( this );
         NasmOperand destination =  inst.result.accept( this );
         if( inst.op1 instanceof C3aConstant ){
-            NasmRegister temp_reg = nasm.newRegister();
+            NasmRegister temp_reg = this.nasm.newRegister();
             nasm.ajouteInst(new NasmMov(label, temp_reg, op1, "JumpIfLess 1"  ));
             nasm.ajouteInst(new NasmCmp(null, temp_reg, op2, "on passe par un registre temporaire"));
         }else {
@@ -148,9 +153,9 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
         NasmOperand label = (inst.label !=null) ? inst.label.accept(this) :null;
         NasmOperand result = inst.result.accept( this );
         NasmOperand op1 = inst.op1.accept( this );
+        NasmRegister temp_reg = nasm.newRegister();
         if( inst.result instanceof C3aVar && inst.op1 instanceof C3aVar ){
             // We cannot do adr = adr, we must use a register for that.
-            NasmRegister temp_reg = nasm.newRegister();
             nasm.ajouteInst(new NasmMov(label, temp_reg, op1, "Affect"));
             nasm.ajouteInst(new NasmMov(null, result, temp_reg, ""));
         }else {
@@ -278,14 +283,6 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
         return new NasmRegister( oper.num );
         //return nasm.newRegister();
     }
-
-    /*
-    for array var: t[i]
-    t ==> array
-    i ==> index in array
-    t[i] --> adr => [t + i*4]
-                    [NasmLabel + (NasmConst||NasmVar) * 4]
-     */
 
     @Override
     public NasmOperand visit(C3aVar oper) {
