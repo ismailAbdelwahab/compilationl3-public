@@ -3,7 +3,7 @@ import nasm.*;
 import ts.Ts;
 
 public class C3a2nasm implements C3aVisitor<NasmOperand> {
-    private final NasmRegister unk;
+    //private final NasmRegister unk;
     private final NasmRegister ebp;
     private final NasmRegister esp;
     private static final int INT_SIZE = 4;
@@ -18,9 +18,9 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
         this.globalTable = globalTable;
         this.nasm = new Nasm( this.globalTable );
 
-        this.nasm.setTempCounter( -3 );
-        unk = this.nasm.newRegister();  // UNK
-        unk.colorRegister(Nasm.REG_UNK);
+        this.nasm.setTempCounter( -2 );
+        //unk = this.nasm.newRegister();  //UNK
+        //unk.colorRegister(Nasm.REG_UNK);
         ebp = this.nasm.newRegister();  //EBP
         ebp.colorRegister(Nasm.REG_EBP);
         esp = this.nasm.newRegister();  //ESP
@@ -33,8 +33,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
         NasmRegister ecx = new NasmRegister(Nasm.REG_EBX);
         ecx.colorRegister(Nasm.REG_ECX);// ECX
         NasmRegister edx = new NasmRegister(Nasm.REG_EBX);
-        edx.colorRegister(Nasm.REG_EDX);// EDX
-        */
+        edx.colorRegister(Nasm.REG_EDX);// EDX */
         nasm.ajouteInst(new NasmCall(null, new NasmLabel("main"), ""));
         nasm.ajouteInst(new NasmMov(null, ebx, new NasmConstant(0), " valeur de retour du programme"));
         nasm.ajouteInst(new NasmMov(null, eax, new NasmConstant(1), ""));
@@ -170,7 +169,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
 
         NasmOperand op1 = inst.op1.accept( this );
         NasmOperand op2 = inst.op2.accept( this );
-        NasmOperand destination = inst.result.accept( this ); //R0 -- R1
+        NasmOperand destination = inst.result.accept( this );
 
         NasmRegister reg_eax = nasm.newRegister(); // R2
         reg_eax.colorRegister(Nasm.REG_EAX);
@@ -178,6 +177,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
 
         if( op2 instanceof NasmConstant){
             NasmRegister temp_register = nasm.newRegister();
+            temp_register.colorRegister(Nasm.REG_EBX);
             nasm.ajouteInst(new NasmMov(null, temp_register, op2, ""));
             nasm.ajouteInst(new NasmDiv(null, temp_register, ""));
         }else {
