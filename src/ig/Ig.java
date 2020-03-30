@@ -25,17 +25,11 @@ public class Ig {
 	this.regNb = this.nasm.getTempCounter()+1;
 	this.int2Node = new Node[regNb];
 
-        System.out.print("Starting to build");
 	this.build();
-        System.out.println("\t DONE.");
 	pre_colors = getPrecoloredTemporaries();
-        System.out.print("Creating colored graph");
 	colorGraph = new ColorGraph(graph, regNb, pre_colors);
-        System.out.println("\t DONE.");
 
-        System.out.print("ALLOCATE reg");
 	allocateRegisters();
-        System.out.println("\t DOne...!!");
     }
     /////////////// Construction //////////////////////////////////////////////////
     public void build(){
@@ -70,11 +64,8 @@ public class Ig {
     }
     private void treatNasmRegister(NasmRegister register, int[] colors ){
         if( register.isGeneralRegister() )
-            if( register.color != Nasm.REG_UNK ) {
-                System.out.println("ERROR COMMING ????????");
+            if( register.color != Nasm.REG_UNK )
                 colors[register.val] = register.color;
-                System.out.println("ERROR NOt HErE !!!!!!!");
-            }
     }
     /////////////////////////////////////////////////////////////////////////////////
 

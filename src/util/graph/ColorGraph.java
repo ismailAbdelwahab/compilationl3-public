@@ -140,15 +140,13 @@ public class ColorGraph {
     /*-------------------------------------------------------------------------------------------------------------*/
     /*-------------------------------------------------------------------------------------------------------------*/
 
-    public void coloration()
-    {
+    public void coloration() {
 	this.simplification();
 	this.overflow();
 	this.selection();
     }
 
-    void affiche()
-    {
+    void affiche() {
 	System.out.println("vertex\tcolor");
 	for(int i = 0; i < R; i++){
 	    System.out.println(i + "\t" + couleur[i]);
