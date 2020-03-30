@@ -7,6 +7,7 @@
 *\.nasm
 *\.fg
 *\.fgs
+*\.ig
 *\.exe
 *\.out
 *\.o

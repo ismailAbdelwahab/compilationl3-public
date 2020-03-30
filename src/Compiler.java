@@ -1,6 +1,7 @@
 import c3a.C3a;
 import fg.Fg;
 import fg.FgSolution;
+import ig.Ig;
 import sc.parser.*;
 import sc.lexer.*;
 import sc.node.*;
@@ -77,8 +78,14 @@ public class Compiler
 	    System.out.println("[SOLVE FG]");
 	    FgSolution fgSolution = new FgSolution(nasm, fg);
 	    fgSolution.affiche(baseName);
-		/*
-      */
+
+		System.out.print("[BUILD IG] ");
+		Ig ig = new Ig(fgSolution);
+		System.out.println("[PRINT IG] ");
+		ig.affiche(baseName);
+
+		System.out.println("[PRINT NASM] ");
+		nasm.affiche(baseName);
 	}
 	catch(Exception e){
 	    System.out.println(e.getMessage());
